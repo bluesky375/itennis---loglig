@@ -1,0 +1,81 @@
+<ion-view cache-view="false" class="content">
+
+	<div class="header-first-raw">
+    	<a class="header-icon menu_icon" menu-toggle="right"></a>
+    	<div class="header-icon header-logo" ng-click="showSlide(0)">
+	        <img ng-src="{{util.teamImage(team.Logo)}}" alt=""/>
+	    </div>
+	    <h2 class="header-title" ng-click="showSlide(0)">
+	        <span>{{team.Title}}</span>
+	    </h2>
+    	<a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    	<a ng-show="navIndex == 1 || navIndex == 3" class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+    	<div ng-show="isSearchVisible" class="search-bar">
+		      <input type="text" ng-model="searchQuery.name" placeholder="{{ 'text_search' | translate }}">
+    	</div>
+  	</div>
+
+	<div class="league-nav rtl">
+		<!--<a class="l-leaders" ng-click="showSlide(0)" ng-class="{active: navIndex == 0}"></a>-->
+        <div class="inline">
+        	<span>{{'iconbar_about' | translate}}</span>
+            <a class="l-info" ng-click="showSlide(0)" ng-class="{active: navIndex == 0}"></a>
+        </div>
+<!-- 9/19 for assaf        
+		<div class="inline">
+			<a class="l-fans" ng-click="showSlide(1)" ng-class="{active: navIndex == 1}"></a>
+		</div>
+	-->
+		<div class="inline">
+			<span>{{'iconbar_players' | translate}}</span>
+			<a class="l-staff" ng-click="showSlide(3)" ng-class="{active: navIndex == 3}"></a>
+		</div>
+		<div class="inline">
+			<span>{{'fan_edit_gallery' | translate}}</span>
+			<a class="l-gallery" ng-click="showSlide(5)" ng-class="{active: navIndex == 5}"></a>
+		</div>
+	</div>
+
+	<div id="team-content" class="league-content">
+
+		<script id="dropdown.html" type="text/ng-template">
+			<ion-popover-view class="teams-ddl">
+				<div class="list">
+					<a class="item" ng-click="openCamera()">{{'fan_edit_camera' | translate}}</a>
+					<a class="item" ng-click="openGallery()">{{'fan_edit_gallery' | translate}}</a>
+				</div>
+			</ion-popover-view>
+		</script>
+		
+		<div ng-show="navIndex == 0">
+			<ng-include src="'app/teams/team-info-training.html?1'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 1">
+			<ng-include src="'app/teams/team-fans.html?1'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 2">
+			<ng-include src="'app/teams/team-games.html?3'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 3">
+			<ng-include src="'app/teams/team-staff.html?3'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 4">
+			<ng-include src="'app/teams/team-standing.html?4'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 5">
+      		<ion-gallery ion-gallery-items="galleryItems" refresh-callback="refreshCallback()" ion-gallery-toggle="false">
+			</ion-gallery>
+		</div>
+	</div>
+
+</ion-view>
+<script id="league-popover.html" type="text/ng-template">
+	<ion-popover-view class="teams-ddl">
+		<h4 ng-click="popover.hide()">
+			<i class="ion-arrow-up-b"></i> {{leagues.leagueDefault.Title}}
+		</h4>
+		<div class="list" ng-repeat="item in leagues.options">
+			<a class="item" ng-click="onChangeLigue(item.Id);popover.hide()">{{item.Title}}</a>
+		</div>
+	</ion-popover-view>
+</script>

@@ -1,0 +1,185 @@
+/************************************/
+/* Leagues List                     */
+/************************************/
+
+.leagues-list .items-box {
+    padding: 20px;
+}
+
+.leagues-list .popup-box {
+    padding: 10px;
+}
+
+.leagues-list .list-item {
+   border-bottom: 1px solid #DDD;
+   padding: 10px 0 10px 0;
+   /*overflow: hidden;*/
+   position: relative;
+}
+
+.leagues-list .list-item .item-cont1 {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.leagues-list .list-item .item-cont1 h4{
+    color: gray;
+    font-weight: bold;
+}
+.leagues-list .item-cont {
+    margin-right: 50px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.leagues-list .logo {
+    display: block;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    right: 5px;
+}
+.item-cont .eventlogo {
+    /* width: 20vw; */
+    /* height: 20vh; */
+    border-radius: 10%;
+    /* float: right; */
+    display: inline;
+}
+.eventlogo{
+    width: 100vw;
+    max-height: 270px;
+    border-radius: 10%;
+    margin: auto;
+    padding: 0;
+    clear: both;
+}
+.eventlogo img{
+    /* width: 100%; */
+    height: 18vh;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+.leagues-list .logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+.leagues-list .item-cont h4 {
+    color: #009edb;
+    font-size: 18px;
+    margin-bottom: 0px;
+    direction: rtl;
+    min-height: 20px;
+}
+
+.leagues-list .item-cont .subtitle {
+    color: #000000;
+    text-align: center;
+}
+.events-list .item-cont {
+    margin-right: 50px;
+    margin-left: 5px;
+    text-align: center;
+}
+.events-list .logo {
+    display: block;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: right;
+    margin-top:13px;
+    top: 23px;
+    right: 5px;
+}
+
+.events-list .logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+.cl{
+    clear: both;
+}
+.leagues-list .sharebutton{
+    width: 10vw;
+    height: 5vh;
+    position: relative;
+    top: -15px;
+    margin: auto;
+}
+.leagues-list .sharebutton img{
+    width: 10vw;
+    height: 5vh;
+}
+.events-list .item-cont h4 {
+    color: #009edb;
+    font-size: 18px;
+    margin-bottom: 0px;
+    direction: rtl;
+    min-height: 20px;
+}
+
+.events-list .item-cont .subtitle {
+    color: #000000;
+    text-align: center;
+}
+
+
+/* ==================================================================== */
+.rtl .league-table .text-left {
+	text-align: right
+}
+.leagures-title-top-padding {
+    padding-top: 5px
+}
+
+.leagures-subtitle {
+    padding: 5px;
+    text-align: right;
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+    float: right;
+    margin-bottom: 5px;
+}
+
+/** Pedro add : style for routes table */
+.league-info-part-sep {
+    border-top: 1px inset #434343;
+}
+
+.league-info-without-part-sep {
+    border-width: 0px;
+}
+
+.going-btn-left {
+    position: absolute;
+    text-align: left;
+    margin-left: 18px;
+    margin-top: 3px;
+    min-width: 80px;
+    height: 30px;
+    font-size: 18px !important;
+    left: 0;
+}
+
+.going-btn-right {
+    position: absolute;
+    text-align: right;
+    margin-right: 8px;
+    margin-top: 3px;
+    min-width: 80px;
+    height: 30px;
+    font-size: 18px !important;
+    right: 0;
+}

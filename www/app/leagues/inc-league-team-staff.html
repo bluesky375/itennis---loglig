@@ -1,0 +1,26 @@
+<div class="staff-list" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+
+	<div class="playes-list main-padding">
+		<h4 class="main-label">{{ 'teams_players' | translate }}</h4>
+		<ul>
+			<li ng-repeat="p in playersList | filter:searchQuery" ng-class="{'last-row': $last}">
+				<div class="player-box">
+					<div class="item-image img-circle-on" ui-sref="app.player({playerId: p.Id, leagueId: lId,Height:p.Height})">
+						<img actual-src="{{ util.fanImage(p.Image) }}" ng-src="images/fan-default.jpg"/>
+					</div>
+					<div class="desc" ui-sref="app.player({playerId: p.Id, leagueId: lId,Height:p.Age})">
+						<h4>{{ p.FullName }}</h4>
+                        <span>{{p.PositionTitle}}</span>
+                        <span>{{ 'player_age' | translate }}  {{ (p.Age )}} {{ 'player_age_unit' | translate }}</span>
+					</div>
+					<div class="last">
+						<div class="icons" ng-if="util.isLoggedIn() && util.User.Id != p.Id">
+							<a class="m-icon-message" user="p" app-message-button></a>
+							<a user="p" app-friend-button></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

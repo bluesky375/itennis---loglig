@@ -1,0 +1,22 @@
+<div ng-show="lastGame != null" class="last-game">
+	<div class="rtl  main-padding">
+		<span class="main-label">{{ 'fan_previous_game' | translate }}</span>
+	</div>
+	<div class="row text-center">
+		<div class="col">
+			<div class="team-box">
+				<var>{{lastGame.GuestTeamScore}}</var>
+				<span>{{lastGame.GuestTeam}}</span>
+			</div>
+		</div>
+		<div class="col">
+			<div class="date">{{lastGame.StartDate | date : 'dd.MM.yyyy'}}</div>
+		</div>
+		<div class="col">
+			<div class="team-box">
+				<var>{{lastGame.HomeTeamScore}}</var>
+				<span>{{lastGame.HomeTeam}}</span>
+			</div>
+		</div>
+	</div>
+</div>

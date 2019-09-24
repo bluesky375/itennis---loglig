@@ -1,0 +1,398 @@
+{
+  "Friends": [
+    {
+      "UserName": "אבנר בעלשםארוךמשהו1",
+      "Image": "images/Friends/1.jpg",
+      "Id": 21,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה 2",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "2יוסי",
+      "Image": "images/Friends/2.jpg",
+      "Id": 22,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "שם קבוצה",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "יוסי3",
+      "Image": "images/Friends/3.jpg",
+      "Id": 23,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "בעלשםארוךמשהו אבנר4",
+      "Image": "images/Friends/4.jpg",
+      "Id": 223,
+      "Teams": [
+        {
+          "TeamId": 54,
+          "Title": "קבוצה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 18,
+          "Title": "קבוצה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 768,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "5אבנר בעלשםארוךמשהו",
+      "Image": "",
+      "Id": 21,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה",
+          "LeagueId": 67
+        },
+        {
+          "TeamId": 1546,
+          "Title": "קבוצה מגניבה 2",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "יוסי6",
+      "Image": "images/Friends/2.jpg",
+      "Id": 22,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה",
+          "LeagueId": 444
+        },
+        {
+          "TeamId": 33,
+          "Title": "שם קבוצה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 33,
+          "Title": "מטה אשר",
+          "LeagueId": 34
+        }
+      ]
+    },
+    {
+      "UserName": "יוסי7",
+      "Image": "images/Friends/3.jpg",
+      "Id": 23,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "בעלשםארוךמשהו אבנר8",
+      "Image": "images/Friends/4.jpg",
+      "Id": 223,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "9אבנר בעלשםארוךמשהו",
+      "Image": "images/Friends/1.jpg",
+      "Id": 21,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "10יוסי",
+      "Image": "images/Friends/2.jpg",
+      "Id": 22,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "יוסי11",
+      "Id": 23,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "12בעלשםארוךמשהו אבנר",
+      "Image": "images/Friends/4.jpg",
+      "Id": 223,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "13אבנר בעלשםארוךמשהו",
+      "Image": "images/Friends/1.jpg",
+      "Id": 21,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה 2",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "14יוסי",
+      "Image": "images/Friends/2.jpg",
+      "Id": 22,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה",
+          "LeagueId": 3
+        },
+        {
+          "TeamId": 1,
+          "Title": "קבוצה מגניבה 2",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "יוסי15",
+      "Image": "images/Friends/3.jpg",
+      "Id": 23,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "16בעלשםארוךמשהו אבנר",
+      "Id": 223,
+      "Teams": [
+        {
+          "TeamId": 1,
+          "Title": "מטה אשר",
+          "LeagueId": 3
+        }
+      ]
+    },
+    {
+      "UserName": "17יוסי",
+      "Image": "images/Friends/5.jpg",
+      "Id": 1,
+      "teams": [
+        {
+          "TeamId": 12,
+          "Title": "ואפילו עוד קבוצה אחת ארוכה",
+          "LeagueId": 8
+        },
+        {
+          "TeamId": 2,
+          "Title": "מטה אשר",
+          "LeagueId": 8
+        },
+        {
+          "TeamId": 1,
+          "Title": "קבוצה 1",
+          "LeagueId": 8
+        }
+      ]
+    }
+  ],
+  "TeamFans": [
+    {
+      "UserName": "אבנר בעלשםארוךמשהו1",
+      "Image": "images/Friends/1.jpg",
+      "Id": 21,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "2יוסי",
+      "Image": "images/Friends/2.jpg",
+      "Id": 22,
+      "IsFriend": false,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי3",
+      "Image": "images/Friends/3.jpg",
+      "Id": 23,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "4בעלשםארוךמשהו אבנר",
+      "Image": "images/Friends/4.jpg",
+      "Id": 223,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "5יוסי",
+      "Image": "images/Friends/5.jpg",
+      "Id": 1,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "6יוסי",
+      "Image": "",
+      "Id": 323,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "7יוסי",
+      "Image": "images/Friends/2.jpg",
+      "Id": 4,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי8",
+      "Image": "images/Friends/3.jpg",
+      "Id": 5,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "יוסי9",
+      "Image": "images/Friends/4.jpg",
+      "Id": 6,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "10יוסי",
+      "Image": "images/Friends/5.jpg",
+      "Id": 7,
+      "IsFriend": false,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "11בעלשםארוךמשהו אבנר",
+      "Image": "",
+      "Id": 223,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "12יוסי",
+      "Image": "",
+      "Id": 1,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי13",
+      "Image": "images/Friends/1.jpg",
+      "Id": 323,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי14",
+      "Image": "images/Friends/2.jpg",
+      "Id": 4,
+      "IsFriend": true,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי15",
+      "Image": "",
+      "Id": 5,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "16יוסי",
+      "Image": "images/Friends/4.jpg",
+      "Id": 6,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "יוסי17",
+      "Image": "images/Friends/5.jpg",
+      "Id": 7,
+      "IsFriend": false,
+      "CanRcvMsg": true
+    },
+    {
+      "UserName": "יוסי18",
+      "Image": "images/Friends/3.jpg",
+      "Id": 5,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "19יוסי",
+      "Image": "images/Friends/4.jpg",
+      "Id": 6,
+      "IsFriend": false,
+      "CanRcvMsg": false
+    },
+    {
+      "UserName": "יוסי20",
+      "Image": "",
+      "Id": 7,
+      "IsFriend": false,
+      "CanRcvMsg": true
+    }
+  ]
+}

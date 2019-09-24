@@ -1,0 +1,57 @@
+<ion-view cache-view="false" class="content">
+    <app-user-header ng-if="user.Role!='workers'" team-changed="teamChanged(team)"></app-user-header>
+    <referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+    <ion-content class="fan-content" ng-class="{'main-content-top':user.Role=='workers'}">
+        <div id="sendView" class="padding">
+            <ion-list>
+                <textarea rows="3" ng-model="$parent.message" class="message-box" placeholder="Type a message here" ></textarea>
+                <!-- Pedro : add for image fullscreen using fancybox plugin
+                <div class="msg-media-pos" ng-show="mdaType == 1">
+                    <a href="{{util.uploadMedia(serverPath)}}" data-fancybox data-caption="">
+                      <img  class="m-cont-img" src="{{util.uploadMedia(serverPath)}}"/>
+                    </a>
+                    <img ng-click="removeVideo()" src="images/remove-item.png" class="msg-media-close-pos">
+                </div>
+                -->
+                <a href="{{util.uploadMedia(serverPath)}}" data-fancybox data-caption="" ng-show="mdaType == 1">
+                  <img  class="m-cont-img" src="{{util.uploadMedia(serverPath)}}"/>
+                </a>
+
+                <!-- Pedro : add : remove the video preview from message box of send and replay message -->
+                <!-- nng-show ? possible ng-show -->
+                <!--
+                <div class="msg-media-pos" ng-show="mdaType == 2">
+                    <videogular vg-theme="themeurl">
+                      <vg-media vg-src="sources"
+                                vg-native-controls="true">
+                      </vg-media>
+                    </videogular>
+                    <img ng-click="removeVideo()" src="images/remove-item.png" class="msg-media-close-pos">
+                </div>
+                -->
+                <videogular vg-theme="themeurl" ng-show="mdaType == 2">
+                  <vg-media vg-src="sources"
+                            vg-native-controls="true">
+                  </vg-media>
+                </videogular>
+
+                <script id="picture-dropdown.html" type="text/ng-template">
+                    <ion-popover-view class="teams-ddl">
+                        <div class="list">
+                            <a class="item" ng-click="openCamera()">{{'fan_edit_camera' | translate}}</a>
+                            <a class="item" ng-click="openGallery()">{{'fan_edit_gallery' | translate}}</a>
+                        </div>
+                    </ion-popover-view>
+                </script>
+                <div class="camera-buttons">
+                    <img ng-click="openPopover(1, $event);" class="camera-btn" src="images/PNGADD_photo_BTN_ACTIVE.png"/> 
+                    <!-- <img ng-click="openPopover(2, $event);" class="video-btn" src="images/PNGADD_Video_BTN_INACTIVE.png"/> -->
+                </div>
+
+            </ion-list>
+
+            <button ng-click="sendMsg();" class="button button-positive">{{'dialog_box_forgot_btn_positive' | translate }}</button>
+            <button ng-click="cancel();" class="button button-cancel">{{'dialog_box_forgot_btn_cancel' | translate }}</button>
+        </div>
+    </ion-content>
+</ion-view>

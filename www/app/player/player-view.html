@@ -1,0 +1,106 @@
+<ion-view>
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+	</div>
+
+	<ion-content class="has-main-header player-cont">
+
+		<div class="player-box" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+			<div class="item-image img-circle-on">
+				<img actual-src="{{ util.fanImage(player.Image) }}" ng-src="images/fan-default.jpg" />
+			</div>
+			<div class="desc name-style">
+				<h4>{{ player.FullName != undefined ? player.FullName : player.UserName}}</h4>
+				<!-- need for Assaf 9/19
+				<span ng-if="isCurrentLangIsHebrew()">{{selectedTeam.Position }} {{ 'player_role' | translate }} </span>
+				<span ng-if="isCurrentLangIsEnglish()">{{ 'player_role' | translate }} {{selectedTeam.Position }}</span>
+				-->
+				<span>{{selectedTeam.Position }}</span>
+				<span>{{ 'player_age' | translate }} {{ player.Age }} {{ 'player_age_unit' | translate }}</span>
+			</div>
+			<div class="last">
+				<!-- need for Assaf 9/19
+				<div class="icon-shirt">
+					<var>{{ selectedTeam.ShirtNum }}</var>
+				</div>
+				-->
+				<div class="icons" ng-if="util.isLoggedIn() && util.User.Id != player.Id">
+					<a class="m-icon-message" user="player" app-message-button></a>
+					<a user="player" app-friend-button></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-if="banners && banners.length > 0" style="padding:0px">
+			<ng-include src="'app/partial/banners-pane.html'"></ng-include>
+		</div>
+		<!--
+	<div class="main-padding bord-bottom" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<div class="teams-selector">
+			<div class="selected" ng-click="openPopover($event)" ng-if="player.Teams.length > 1">
+				{{ 'group_title' | translate }}<span>{{selectedTeam.Title}}</span> <i class="ion-arrow-down-b"></i>
+			</div>
+			<div class="selected" ng-if="player.Teams.length == 1">
+				{{ 'group_title' | translate }}<span>{{selectedTeam.Title}}</span>
+			</div>
+		</div>
+		<h3 class="main-label">{{ 'games_title' | translate }}</h3>
+		<div class="team-games">
+			<div class="row team-games-title">
+				<div class="col">
+					<i ng-click="showSlide('prev')"
+					   ng-if="currGameType < games.length - 1"
+					   ng-class="{'ion-arrow-right-b' : isCurrentLangIsHebrew(), 'ion-arrow-left-b' : isCurrentLangIsEnglish()}">
+					</i>
+				</div>
+				<div class="col col-50"><h4>{{gamesTypes[currGameType]}}</h4></div>
+				<div class="col">
+					<i ng-click="showSlide('next')"
+					   ng-if="currGameType > 0"
+					   ng-class="{'ion-arrow-right-b' : isCurrentLangIsEnglish(), 'ion-arrow-left-b' : isCurrentLangIsHebrew()}"></i>
+				</div>
+			</div>
+			<ion-slide-box show-pager="false" delegate-handle="teams-viewer"
+						   on-slide-changed="slideHasChanged($index)" active-slide="currGameType">
+				<ion-slide ng-repeat="g in games" ng-if="g">
+					<div class="date">
+						{{g.StartDate | date : 'HH:mm'}}
+						<span>,{{g.StartDate | date : 'dd.MM.yy'}}</span>
+					</div>
+					<div class="arena" ng-click="util.openWaze(g.AuditoriumAddress);$event.stopPropagation()" ng-show="g.Auditorium != undefined">{{g.Auditorium}}<a class="wazeicon"><img ng-show="game.AuditoriumAddress != undefined" ng-src="images/waze.png"/></a></div>
+					<div class="row teams">
+						<div class="col">{{g.HomeTeam}}</div>
+						<div class="col col-25"><var>{{g.HomeTeamScore}}:{{g.GuestTeamScore}}</var></div>
+						<div class="col">{{g.GuestTeam}}</div>
+					</div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+	</div>
+	-->
+	<app-player-stats info="playerRankPoints" ng-if="playerRankPoints != null && user.Role == 'players'">
+		</app-player-stats>
+		<ng-include src="'app/partial/player-game-history.html?2'"></ng-include>
+		
+		<div ng-if="fansArr.length">
+			<div class="main-padding rtl">
+				<h3 class="main-label">{{ 'text_friends' | translate }}</h3>
+			</div>
+
+			<ng-include src="'app/partial/fans-pane.html?1'"></ng-include>
+		</div>
+
+	</ion-content>
+</ion-view>
+
+<script id="teams-popover.html" type="text/ng-template">
+	<ion-popover-view class="teams-ddl">
+		<h4 ng-click="popover.hide()">
+			<i class="ion-arrow-up-b"></i> {{selectedTeam.Title}}
+		</h4>
+		<div class="list" ng-repeat="item in player.Teams">
+			<a class="item" ng-click="teamSelect(item);popover.hide()">{{item.Title}}</a>
+		</div>
+	</ion-popover-view>
+</script>

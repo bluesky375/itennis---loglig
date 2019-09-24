@@ -1,0 +1,43 @@
+<ion-view class="training-page">
+
+    <div class="header-first-raw">
+        <a class="header-icon menu_icon" menu-toggle="right"></a>
+        <h2 class="header-title">
+            <span>{{'main_nav_training' | translate}}</span>
+        </h2>
+        <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    </div>
+
+    <ion-content class="has-main-header padding items-box">
+
+            <div style="margin-top: -11px">
+                    <table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+                        <tbody>
+                        <tr class="header">
+                            <th><h1>{{"training_table_title" | translate}}</h1></th>
+                            <th><h1>{{"training_table_date" | translate}}</h1></th>
+                            <th><h1>{{"training_table_time" | translate}}</h1></th>
+                            <th><h1>{{"training_table_gymnasium" | translate}}</h1></th>
+                            <th></th>
+                        </tr>
+                        <tr class="tbl-row" ng-class="{'active':true}">
+                            <td class="first">אימון כושר</td>
+                            <td >20.8.2016</td>
+                            <td >10:00</td>
+                            <td >כפר סבא</td>
+                            <td class="last"></td>
+                        </tr>
+                        <tr class="tbl-row">
+                            <td class="first">אימון אירובי</td>
+                            <td>21.8.2016</td>
+                            <td>09:30</td>
+                            <td>רעננה</td>
+                            <td class="last"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+    </ion-content>
+</ion-view>

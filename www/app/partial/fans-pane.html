@@ -1,0 +1,16 @@
+
+<ion-slide-box ng-repeat="fansList in fansArr" class="friends-list" show-pager="false" delegate-handle="fans-viewer" auto-play="true">
+	<ion-slide>
+		<div class="row">
+			<div class="col col-20" ng-repeat="m in fansList">
+				<div class="fan-item" ng-click="util.showUser(m)">
+					<div class="item-image img-circle-on">
+						<img actual-src="{{util.userImage(m)}}" ng-src="images/fan-default.jpg"/>
+					</div>
+				</div>
+				<i ng-show="util.isLoggedIn()" user="m" app-friend-button ng-if="m.Id != util.User.Id"></i>
+				<span class="rtl">{{m.UserName || m.FullName}}</span>
+			</div>
+		</div>
+	</ion-slide>
+</ion-slide-box>

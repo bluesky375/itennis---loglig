@@ -1,0 +1,82 @@
+<div class="page-image">
+	<div ng-if="team.Image" class="item-image">
+		<img ng-src="{{util.teamImage(team.Image)}}"/>
+	</div>
+</div>
+<!-- 
+<div class="header-dropdown-team" ng-if="leagues.options" ng-hide="hideTeams">
+
+	<div class="selected popover-only-arrow" ng-click="openPopover($event);" ng-if="leagues.options.length > 1">
+		<i class="ion-arrow-down-b"></i>
+	</div>
+	<div class="loglic-select" ui-sref="app.league({leagueId: leagues.leagueDefault.Id})">
+		{{leagues.leagueDefault.Title}}
+	</div>
+</div> 
+-->
+
+<div ng-class="league-info-without-part-sep" ng-if="game != null">
+	<div class="league-info">
+		<div class="leagures-subtitle" ng-click="showSlide(4)">{{'text_to_standings ' | translate }}</div>
+	</div>
+</div>
+
+<app-team-stats info="team" ng-if="team != null" ng-click="showSlide(4)"></app-team-stats>
+
+<app-next-game game="game" info="game" ng-if="game != null"></app-next-game>
+
+<div ng-class="league-info-part-sep" ng-if="team != null">
+	<div class="league-info">
+		<div class="leagures-subtitle">{{'text_about_team' | translate}}</div>
+	<div class="row" >
+		<ion-textarea class="league_textarea">{{team.Description}}</ion-textarea>
+	</div>
+	</div>
+</div>
+
+<div class="row" ng-if="banners && banners.length > 0" style="padding:0px">
+  <ng-include src="'app/partial/banners-pane.html'"></ng-include>
+</div>
+
+<div class="going-game" ng-if="uploadableToGallery || imageGallery.length > 0">
+    <div>
+        <img ng-if="uploadableToGallery" class="camera-btn" src="images/PNGADD_photo_BTN_ACTIVE.png" ng-click="openCameraPopover($event)" />
+      	<div class="main-label ng-binding" style="float: right" ng-click="showSlide(5)">{{ 'fan_edit_gallery' | translate }}</div>
+        <div class="cl"></div>
+    </div>
+
+	<ng-include src="'app/partial/gallery-pane.html'"></ng-include>
+</div>
+
+<div class="team-users" ng-class="{'rtl' : isCurrentLangIsHebrew()}" ng-if="topPlayer != null || topFan!= null">
+	<div class="row">
+		<div class="col" ng-show="topPlayer">
+			<div class="first">
+				<div class="main-label" ng-click="showSlide(3)">
+					<span>{{ 'teams_players' | translate }}</span>
+					<i ng-if="isCurrentLangIsHebrew()" class="ion-arrow-left-b"></i>
+					<i ng-if="isCurrentLangIsEnglish()" class="ion-arrow-right-b"></i>
+				</div>
+				<div class="team-users-item" ui-sref="app.player({playerId: topPlayer.Id, leagueId: lId})">
+					<div class="item-image img-circle-on">
+						<img actual-src="{{util.fanImage(topPlayer.Image)}}" ng-src="images/fan-default.jpg"/>
+					</div>
+					<h4>{{topPlayer.FullName}}</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col" ng-show="topFan">
+			<div class="main-label" ng-click="showSlide(1)">
+				<span>{{ 'teams_fans' | translate }}</span> ({{teamFans.length}})
+				<i ng-if="isCurrentLangIsHebrew()" class="ion-arrow-left-b"></i>
+				<i ng-if="isCurrentLangIsEnglish()" class="ion-arrow-right-b"></i>
+			</div>
+			<div class="team-users-item" ui-sref="app.fanPage({fanId: topFan.Id})">
+				<div class="item-image img-circle">
+					<img actual-src="{{util.fanImage(topFan.Image)}}" ng-src="images/fan-default.jpg"/>
+				</div>
+				<h4>{{topFan.UserName}}</h4>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<ion-view cache-view="false" class="content">
+
+	<app-user-header ng-if="user.Role!='workers'" team-changed="teamChanged(team)"></app-user-header>
+	<referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+
+	<ion-content class="fan-content" ng-class="{'main-content-top':user.Role=='workers'}">
+		<div class="tabsWrap">
+			<a class="Tabs" ng-click="showSlide(0)" ng-class="{selected: navIndex == 0}">
+				<div class="tabsText">
+                    <span ng-if="friendsAndFansAll.Friends.length > 0">
+												{{'text_friends' | translate}} ({{friendsAndFansAll.Friends.length}})
+                    </span>
+                    <span ng-if="!(friendsAndFansAll.Friends.length > 0)">
+												{{'no_friends_yet' | translate}}
+                    </span>
+				</div>
+			</a>
+			<!-- need for assaf
+			<a class="Tabs" ng-click="showSlide(1)" ng-class="{selected: navIndex == 1}">
+				<div class="tabsText">
+                    <span ng-if="friendsAndFansAll.TeamFans.length > 0">
+												{{'team_fans' | translate}} ( {{friendsAndFansAll.TeamFans.length}} )
+                    </span>
+                    <span ng-if="!(friendsAndFansAll.TeamFans.length > 0)">
+                        {{'no_fans_yet' | translate}}
+                    </span>
+				</div>
+			</a>
+			-->
+		</div>
+
+		<div ng-show="navIndex==0">
+			<ng-include src="'app/fan/inc-fan-friends.html?1'"></ng-include>
+		</div>
+		<div ng-show="navIndex==1">
+			<ng-include src="'app/fan/inc-fan-fans.html?1'"></ng-include>
+		</div>
+
+	</ion-content>
+</ion-view>

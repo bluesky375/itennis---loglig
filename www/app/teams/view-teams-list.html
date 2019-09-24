@@ -1,0 +1,26 @@
+<ion-view view-title="{{ 'teams_list' | translate }}">
+
+	<ion-header-bar class="bar-subheader">
+		<button class="button button-full button-positive">{{ 'leagues_select' | translate }}</button>
+	</ion-header-bar>
+
+	<ion-content class="padding has-subheader">
+
+		<!--<h3 ng-show="progress">Please wait...</h3>-->
+		<div class="list has-bottom">
+			<!--<ion-item class="item-checkbox" ng-repeat="team in allTeams" ng-click="select(team)">
+				<label class="checkbox"><input type="checkbox" ng-model="team.checked"/></label>
+				{{team.Name}}
+			</ion-item>-->
+			<ion-checkbox ng-show="!progress" collection-repeat="team in allTeams"
+						  ng-model="team.checked" checked="team.checked" ng-click="select(team)">
+				{{team.Name}}
+			</ion-checkbox>
+		</div>
+	</ion-content>
+
+	<ion-footer-bar>
+		<button class="button button-full button-positive">{{ 'text_ok' | translate }}</button>
+	</ion-footer-bar>
+
+</ion-view>

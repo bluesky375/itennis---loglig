@@ -1,0 +1,670 @@
+/* =================================================================================*/
+
+.league-content {
+    top: 108px;
+    border-top: 1px solid #000;
+    padding-top: 0;
+}
+
+/* =================================================================================*/
+
+.league-nav {
+    text-align: center;
+    padding-top: 7px;
+}
+
+.league-nav a {
+    display: inline-block;
+    margin: 0 8px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.league-nav a.l-tables {
+    width: 30px;
+    background-image: url(../images/icon-tables.png);
+}
+
+.league-nav a.l-tables.active {
+    width: 30px;
+    background-image: url(../images/icon-tables-on.png);
+}
+
+/** add : pedro : info images*/
+.league-nav a.l-info {
+    width: 33px;
+    background-image: url(../images/icon-info.png);
+}
+
+.league-nav a.l-info.active {
+    width: 33px;
+    background-image: url(../images/icon-info-on.png);
+}
+
+.league-nav a.l-player {
+    width: 33px;
+    background-image: url(../images/icon-player.png);
+}
+
+.league-nav a.l-player.active {
+    width: 33px;
+    background-image: url(../images/icon-player-on.png);
+}
+
+.league-nav a.l-leaders {
+    width: 31px;
+    background-image: url(../images/icon-leaders.png);
+}
+
+.league-nav a.l-leaders.active {
+    background-image: url(../images/icon-leaders-on.png);
+}
+
+.league-nav a.l-games {
+    width: 36px;
+    background-image: url(../images/icon-games.png);
+}
+
+.league-nav a.l-games.active {
+    background-image: url(../images/icon-games-on.png);
+}
+
+.league-nav a.l-fans {
+    width: 33px;
+    background-image: url(../images/icon-fans.png);
+}
+
+.league-nav a.l-fans.active {
+    background-image: url(../images/icon-fans-on.png);
+}
+
+.league-nav a.l-gallery {
+    width: 33px;
+    background-image: url(../images/icon-gallery.png);
+}
+
+.league-nav a.l-gallery.active {
+    background-image: url(../images/icon-gallery-on.png);
+}
+
+.league-nav a.l-staff {
+    width: 30px;
+    background-image: url(../images/icon-staff.png);
+}
+
+.league-nav a.l-staff.active {
+    background-image: url(../images/icon-staff-on.png);
+}
+
+.league-nav .inline {
+    padding-top: 20px;
+    position: relative;
+    width:19%;
+}
+.league-nav .inline > span {
+    position: absolute;
+    font-size: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* ================================================================ */
+
+.league-tabs .nav-tabs {
+    width: 100%;
+}
+
+.league-tabs .nav-tabs ul {
+    height: 30px;
+}
+
+.league-tabs .nav-tabs li {
+    float: right;
+    padding: 0 15px;
+}
+
+.league-tabs .nav-tabs li span {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.league-tabs .nav-tabs .active {
+    background-color: #E6E7E9;
+    color: #000;
+}
+
+.league-tabs .nav-tabs .active span {
+    border-bottom: 1px solid #3E4C5D;
+}
+
+.league-tabs .tabs-view {
+    background-color: #E6E7E9;
+}
+
+.league-tabs .tab-box-item {
+    padding: 10px 5px;
+    border-bottom: 1px solid #000;
+}
+
+.league-tabs .tabs-view .date {
+    text-align: center;
+}
+
+.league-tabs .tabs-view .set {
+    text-align: left;
+}
+
+.league-tabs .tabs-view .teams {
+    padding-top: 5px;
+}
+
+.league-tabs .tabs-view .teams .one {
+    text-align: right;
+}
+
+.league-tabs .tabs-view .teams .two {
+    text-align: left;
+}
+
+.league-tabs .tabs-view .teams .main-vs {
+    margin: 0 auto;
+}
+
+.league-tabs .tabs-view .teams .res {
+    text-align: center;
+    font-size: 20px;
+    color: #009edb;
+    white-space: nowrap;
+    height: 35px;
+    line-height: 35px;
+}
+
+/* ===================================================================== */
+
+.league-top-nav {
+    background-color: #E6E7E9;
+}
+
+.league-top-nav .col {
+    padding: 0;
+    margin: 0;
+}
+
+.league-top-nav h4 {
+    color: #000;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.league-top-nav .cycle span,
+.league-top-nav .cycle i {
+    color: #3E4C5D;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.league-top-nav .cycle i {
+    font-size: 20px;
+}
+
+/* ===================================================================== */
+
+.top-team {
+    background: #E6E7E9;
+    border-bottom: 1px solid #000;
+}
+
+.top-team .main-label {
+    margin-bottom: 14px;
+}
+
+.top-team-res {
+    width: 100%;
+}
+
+/*.top-team-res td {
+    text-align: right;
+    direction: rtl;
+}*/
+
+.top-team-res h4 {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.top-team-res .thumb {
+    width: 80px;
+    padding-right: 20px;
+}
+
+.top-team .img-circle {
+    width: 44px;
+    height: 44px;
+}
+
+.top-team-res .last {
+    width: 70px;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #009edb;
+}
+
+/* ============================================================== */
+
+.league-res-table {
+    padding-top: 14px;
+}
+
+.league-res-table h4 {
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+.league-res-table .main-label {
+    margin: 0 15px 10px;
+    color: #009edb;
+}
+
+.rank-table {
+    width: 100%;
+    margin-bottom: 10px;
+        font-size: 90%;
+}
+.rank-table .header th {
+    border: 1px solid #B2B2B2;
+    padding: 5px 3px;
+    text-align: center;
+}
+
+.rank-table .header th.rigth {
+    text-align: right;
+}
+
+.rank-table .tbl-row.active {
+    color: #009edb;
+}
+
+.rank-table .tbl-row td {
+    padding: 13px 3px;
+    vertical-align: top;
+    border: 1px solid #B2B2B2;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.rank-table .tbl-row .first {
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.rank-table tr .last {
+    width: 30px;
+}
+
+.rank-table .thumb {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.rank-table td.name {
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+.league-table {
+    width: 100%;
+    margin-bottom: 10px;
+		font-size: 90%;
+}
+
+.league-table .header1 th {
+    border-bottom: 1px solid #000;
+    padding: 5px 3px;
+    text-align: center;
+}
+
+.league-table .header th {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px 3px;
+    text-align: center;
+}
+
+.league-table .header th.rigth {
+    text-align: right;
+}
+
+.league-table .tbl-row.active {
+    color: #009edb;
+}
+
+.league-table .tbl-row td {
+    padding: 13px 3px;
+    vertical-align: top;
+    border-bottom: 1px solid #B2B2B2;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: break-word;         / All browsers since IE 5.5+ /
+    overflow-wrap: break-word; 
+    max-width: 0;    
+}
+
+.league-table .tbl-row .first {
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.league-table tr .last {
+    width: 30px;
+}
+
+.league-table .thumb {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.league-table td.name {
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+.league-info {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* =========================================================== */
+
+.ranked-teams {
+    padding-top: 5px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.ranked-teams span {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.ranked-teams .main-label {
+    margin-right: 15px;
+}
+
+.ranked-teams h4 {
+    font-size: 18px;
+    line-height: 19px;
+    color: #009edb;
+}
+
+.ranked-teams .item-image {
+    margin: 0 auto;
+    margin-bottom: 14px;
+}
+
+.ranked-teams .item-box {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ranked-teams .item-box.mid {
+    border-left: 1px solid #CDCDCD;
+    border-right: 1px solid #CDCDCD;
+}
+
+.ranked-teams .top {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ranked-teams .top span,
+.ranked-teams .top i {
+    display: inline-block;
+}
+
+.ranked-teams .top i {
+    width: 40px;
+    color: #B2B2B2;
+}
+
+/* ============================================================ */
+
+.team-users {
+    background: #D2D3D5;
+    border-bottom: 1px solid #000;
+}
+
+.team-users .row, .team-users .col {
+    margin: 0;
+    padding: 0;
+}
+
+.team-users .first {
+    /*border-left: 1px solid #000;*/
+}
+
+.team-users .main-label {
+    display: block;
+    margin: 0 15px;
+    padding-top: 14px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.team-users .main-label i {
+    color: #009edb;
+    vertical-align: middle;
+}
+
+.team-users .item-image {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+
+.team-users-item {
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+.team-view .league-content .PlayGame {
+    /*border-bottom: none;*/
+}
+
+/* ======================================================== */
+
+.team-fans .f-list, .team-fans .f {
+    background-color: #fff;
+}
+
+.staff-box {
+    border-bottom: 1px solid #000;
+}
+
+.playes-list {
+    border-bottom: 1px solid #000;
+}
+
+.playes-list .main-label {
+    margin-bottom: 14px;
+}
+
+.playes-list ul li {
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.playes-list li.last-row {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* ====================================================================== */
+
+.player-cont .player-box {
+    background: #E8E9EB;
+    padding: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.player-box {
+    overflow: hidden;
+}
+
+.player-box .desc {
+    /*width: 150px;*/
+    float: right;
+    margin-right: 10px;
+    color: #595959;
+    white-space: nowrap;
+}
+
+.player-box .name-style {
+    margin-top: 15px;
+}
+
+.player-box h4 {
+    color: #000;
+}
+
+.player-box .desc span {
+    display: block;
+}
+
+.player-box .item-image {
+    width: 65px;
+    height: 65px;
+    float: right;
+}
+
+.player-box .icon-shirt {
+    width: 55px;
+    height: 45px;
+    background: url(../images/shirt.png) no-repeat 0 0;
+    background-size: contain;
+    float: left;
+    text-align: center;
+}
+
+.player-box .icon-shirt var {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: bold;
+    color: #444;
+    font-style: normal;
+    margin-top: 15px;
+}
+
+.player-box .icons {
+    clear: both;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.player-box .icons a {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.player-box.icons .m-icon-message {
+    margin-left: 16px;
+}
+
+.player-box .icon-desk {
+    width: 42px;
+    height: 45px;
+    background: url(../images/desc.png) no-repeat 0 0;
+    background-size: contain;
+    float: left;
+    margin-left: 8px;
+}
+
+.player-box .last {
+    float: left;
+    width: 85px;
+}
+
+.league-details .ion-arrow-right-b:before,
+.league-details .ion-arrow-left-b:before {
+    font-size: 20px;
+}
+
+.league-about-structure-detail {
+    margin-top: 6px;
+    border-bottom: 1px inset #434343;
+}
+
+.team-view .loglic-select {
+    display: inline-block;
+    width: 80%;
+}
+
+.team-view .header-dropdown-team {
+    float: right;
+    width: 50%;
+    border-bottom: 1px solid black;
+    margin: 0 20px 5px 0;
+}
+
+.loglic-select {
+    float: right;
+    margin: 10px 0 5px 0;
+    direction: rtl;
+}
+
+.popover-only-arrow {
+    display: inline-block;
+    margin-top: 12px;
+    width: 20%;
+    padding: 0 5px;
+}
+
+.popover-only-arrow i.ion-arrow-down-b {
+    color: #009edb;
+}
+
+.pane, .view {
+    overflow-y: auto;
+}
+
+.x_panel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0px 17px;
+    display: inline-block;
+    background: #fff;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease;
+    overflow: auto;
+}
+
+.gallery-view .row {
+    height: 33vw !important;
+}

@@ -1,0 +1,41 @@
+<div>
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<div class="header-icon header-logo" ui-sref="app.fan">
+			<img ng-src="{{userImage}}"/>
+		</div>
+		<div class="header-icon" ng-class="mpage?'msg-icon-on':'msg-icon'" ui-sref="app.msgs">
+			<i class="new-msgs" ng-show="newMessages > 0">{{newMessages}}</i>
+		</div>
+		<div class="header-icon" ng-class="fpage?'friends-icon-on':'friends-icon'" ui-sref="app.fanFriends"></div>
+		<div class="header-icon" ng-class="npage?'alerts-icon-on':'alerts-icon'" ui-sref="app.notifications">
+			<i class="new-msgs" ng-show="newNotes > 0">{{newNotes}}</i>
+		</div>		
+	    <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+  	</div>
+  	 	
+	<div class="header-second-raw">
+		<div class="user-name" ui-sref="app.fan">
+			{{displayName}}
+		</div>
+		<div class="header-dropdown" ng-if="userTeams" ng-hide="hideTeams">
+			<div class="selected" ng-click="openPopover($event)" ng-if="userTeams.length > 1">
+				<i class="ion-arrow-down-b"></i> {{selectedTeam.Title}} <span class="league-title">{{selectedTeam.LeagueTitle}}</span> 
+			</div>
+			<div class="selected" ng-if="userTeams.length < 2">
+				{{selectedTeam.Title}} <span class="league-title">{{selectedTeam.LeagueTitle}}</span>
+			</div>
+		</div>
+	</div>
+
+	<script id="teams-popover.html" type="text/ng-template">
+		<ion-popover-view class="teams-ddl">
+			<h4 ng-click="popover.hide()">
+				<i class="ion-arrow-up-b"></i> {{selectedTeam.Title}}
+			</h4>
+			<div class="list" ng-repeat="item in userTeams">
+				<a class="item" ng-click="teamSelect(item);popover.hide()">{{item.Title}}</a>
+			</div>
+		</ion-popover-view>
+	</script>
+</div>

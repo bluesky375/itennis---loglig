@@ -1,0 +1,35 @@
+<div class="image-descrtiption-container">
+    <img class="union-top-image" ng-src="{{util.clubDetailImage(club.info.image)}}">
+    <div class="header-description">
+        <span>{{club.info.aboutclub}}</span>
+    </div>
+    <div class="bottom-border"></div>
+</div>
+
+<div class="union-info">
+    <img class="union-top-image" ng-src="{{util.clubDetailImage(club.info.index)}}">
+    <div class="header-description">
+         <span>{{club.info.description}}</span>
+   </div>
+    <div class="bottom-border"></div>
+</div>
+
+<div class="union-contact-details">
+    <h3 class="main-label">{{"contact_details" | translate}}</h3>
+    <div class="union-address">
+        <h4>{{club.info.address}}</h4>
+        <h4>{{club.info.phone}}</h4>
+        <h4>{{club.info.email}}</h4>
+    </div>
+
+    <div class="bottom-border"></div>
+</div>
+
+<div class="union-fans-details">
+    <h3 class="main-label">{{"player_count" | translate}}</h3>
+    <div class="footer-union">
+        <img ng-src="{{util.clubImage(club.info.logo)}}"/>
+        <h1 class="union-name-footer" style="display:flex;align-items:center;">{{club.info.clubname}}</h1>
+        <h1 class="fans-count">{{playersCount}}</h1>
+    </div>
+</div>

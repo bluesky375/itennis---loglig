@@ -1,0 +1,6 @@
+New Question
+1.1: how to get club name ?
+6.1: how to get Link?
+7.1: how to get initialTime? 
+2.1 Competition/Main, Competition/Schedule, Game page:not find player image.
+ 

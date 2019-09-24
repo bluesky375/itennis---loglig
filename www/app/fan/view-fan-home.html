@@ -1,0 +1,94 @@
+<ion-view cache-view="false" class="content">
+	<app-user-header team-changed="teamChanged(team)"></app-user-header>
+	<ion-content class="fan-content">
+
+		<div id="messagesContainer" ng-if="message.content != null">
+			<i class="ion-close" ng-click="hideMessages()"></i>
+			<span>{{message.content}}</span>
+		</div>
+
+		<div>
+			<!-- show my club information-->
+			<div class="fan-club-info-box" ng-class="{'fan-club-info-border': game != null}">
+				<div class="rtl main-padding" >
+					<span class="main-label">{{ 'text_my_club' | translate }}</span>
+				</div>
+				<div ng-repeat="clubinfo in clubInfos" style="margin-top: 10px;">
+
+					<div ui-sref="app.club({clubId: clubinfo.id})" style="display:flex;align-items:center;justify-content:space-between;margin-bottom: 10px;
+					margin-left: 10px;margin-right: 10px;">
+						<a class="logo">
+							<img actual-src="{{util.clubImage(clubinfo.logo)}}" ng-src="images/league-default.png" style="max-width:50px;max-height:50px;margin-right:0px;"/>
+						</a>
+						<div class="item-cont" style="display:inline-block;">
+							<h4 style="display:inline-block;margin: 10px;">{{clubinfo.name}}</h4>
+							<p class="subtitle" style="display:inline-block;">
+								{{clubinfo.totalPlayers}} {{"text_players" | translate}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--
+		<div class="row rtl top-teams" ng-if="rankedTeams">
+			<div class="col" ng-repeat="t in rankedTeams">
+				<div class="item-box" ng-click="openTeam(t.Id)" ng-class="{active: currTeamId == t.Id}">
+					<div class="item-image img-circle">
+						<img actual-src="{{util.teamImage(t.Logo)}}" ng-src="images/league-default.png" teamsimage-onload/>
+					</div>
+					<h4>{{t.Title}}</h4>
+					<span>! {{'text_position' | translate}} {{t.Position}}</span>
+				</div>
+			</div>
+		</div>
+		-->
+		<app-team-stats info="team" ng-if="team != null && user.Role != 'players'"></app-team-stats>
+		<app-player-stats info="playerRankPoints" ng-if="playerRankPoints != null && user.Role == 'players'">
+		</app-player-stats>
+		<ng-include src="'app/leagues/inc-league-games.html?3'"></ng-include>
+		<!-- need of assaf
+		<ng-include src="'app/partial/last-game.html?2'"></ng-include>
+		-->
+		<ng-include src="'app/partial/player-game-history.html?2'"></ng-include>
+
+		<!--<div class="YourMsg">
+			<p class="RightHeader">ההודעות שלך</p>
+			<a class="BtnNewMsg"></a>
+			<div class="cl"></div>
+			<div class="BoxMsg">
+				<div class="RightSide">
+					<img src="images/Friends/2.jpg" alt="name" />
+				</div>
+				<div class="LeftSide">
+					<p class="Date">
+						17:56 דני מכלוף
+					</p>
+					<p class="Txt">
+						טקסטת עוד טקסט ועוד טקסט טקסט טקסט
+						טקסטת
+					</p>
+				</div>
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div class="YourMsg">
+			<p class="RightHeader">ההודעות שלך</p>
+			<div class="cl"></div>
+			<div class="BoxMsg">
+				<div class="RightSide">
+					<img src="images/Friends/2.jpg" alt="name" />
+				</div>
+				<div class="LeftSide">
+					<p class="Date">
+						17:56 דני מכלוף
+					</p>
+					<img src="images/Friends/2.jpg" alt="name" />
+				</div>
+			</div>
+
+			<div class="cl"></div>
+		</div>-->
+	</ion-content>
+</ion-view>

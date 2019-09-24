@@ -1,0 +1,52 @@
+<ion-view cache-view="false" class="content">
+ 
+    <div class="header-first-raw">
+        <a class="header-icon menu_icon" menu-toggle="right"></a>
+        <div class="header-icon header-logo" ng-click="showSlide(0)">
+            <img actual-src="{{util.clubImage(club.info.logo)}}" ng-src="images/league-default.png"/>
+        </div>
+        <h2 class="header-title" ng-click="showSlide(0)">
+            <span>{{club.info.clubname}}</span>
+        </h2>
+        <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+        <a ng-show="navIndex == 2 || navIndex == 3" class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+        <div ng-show="isSearchVisible" class="search-bar">
+              <input type="text" ng-model="searchQuery.FullName" placeholder="{{ 'text_search' | translate }}">
+        </div>
+    </div>
+  
+    <div class="league-nav rtl" >
+        <div class="inline">
+            <span>{{'iconbar_about' | translate}}</span>
+            <a class="l-info" ng-click="showSlide(0)" ng-class="{active: navIndex == 0}"></a>
+        </div>
+        <div class="inline">
+            <span>{{'iconbar_teams' | translate}}</span>
+            <a class="l-player" ng-click="showSlide(1)" ng-class="{active: navIndex == 1}"></a>
+        </div>
+<!-- 9/19 for assaf        
+        <div class="inline">
+            <span>{{'iconbar_fans' | translate}}</span>
+            <a class="l-fans" ng-click="showSlide(2)" ng-class="{active: navIndex == 2}"></a>
+        </div>
+    -->
+        <div class="inline">
+            <span>{{'iconbar_players' | translate}}</span>
+            <a class="l-staff" ng-click="showSlide(3)" ng-class="{active: navIndex == 3}"></a>
+        </div>
+    </div>
+    <div class="league-content">
+        <div ng-show="navIndex == 0">
+            <ng-include src="'app/club/inc-club-info.html'"></ng-include>
+        </div>
+        <div ng-show="navIndex == 1">
+            <ng-include src="'app/club/inc-club-team.html'"></ng-include>
+        </div>
+        <div ng-show="navIndex == 2">
+            <ng-include src="'app/club/inc-club-fans.html'"></ng-include>
+        </div>
+        <div ng-show="navIndex == 3">
+            <ng-include src="'app/club/inc-club-players.html'"></ng-include>
+        </div>
+    </div>
+</ion-view>

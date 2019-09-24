@@ -1,0 +1,24 @@
+<ion-view class="rules-page" ng-controller="rulesCtrl as rCtrl">
+
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<h2 class="header-title">
+			<span>{{ 'main_nav_youth_competitions' | translate }}</span>
+		</h2>      
+		<a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    </div>
+
+	<ion-content class="has-main-header padding items-box">
+
+		<p ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+			<span ng-if="isCurrentLangIsHebrew()">
+				<span>&nbsp;להורדת התקנון</span>
+				<span style="text-decoration: underline;" ng-click="openRules()">לחץ כאן</span>
+			</span>
+			<span ng-if="isCurrentLangIsEnglish()">
+				<span>In order to download this file,&nbsp;</span>
+				<span style="text-decoration: underline;" ng-click="openRules()"">click here</span>
+			</span>
+		</p>
+	</ion-content>
+</ion-view>

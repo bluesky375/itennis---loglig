@@ -1,0 +1,56 @@
+<div>
+	<div class="tab-box-item"
+		 ng-repeat="g in gamesList | orderBy: orderType">
+		 <!-- game -->
+		<div class="row" ng-if="g.type == 'game'">
+			<div class="col">
+				{{g.item.HouseName}}
+			</div>
+			<div class="col-35 game-date-time date" ui-sref="app.game({gameId: g.item.GameId, gameType: g.item.gameType})">
+				<span><b>{{g.item.StartDate | date : 'dd.MM.yy'}} ,</b></span><span>{{g.item.StartDate | date : 'HH:mm'}}</span>
+				<span ng-if="g.item.TimeInitial.length>0">{{g.item.TimeInitial}}</span><br>
+				<span class="game-auditorium" ng-click="util.openWaze(g.item.AuditoriumAddress);$event.stopPropagation()" ng-show="g.item.Auditorium != undefined">{{g.item.Auditorium}}<a class="wazeicon"><img ng-show="g.item.Auditorium != undefined" ng-src="images/waze.png"/></a></span>
+			</div>
+
+			<div class="col">
+				<!--<div ng-show="!g.PlayOffType" class="col set">{{g.CycleNumber + 1}} {{ 'text_cycle' | translate }}</div>-->
+				<div ng-show="g.item.PlayOffType" class="col set">{{g.item.PlayOffType}}</div>
+				<div ng-show="g.item.MaxPlayoffPos && g.item.MinPlayoffPos" class="col set">{{ 'text_places' | translate }} {{g.item.MaxPlayoffPos}} - {{g.item.MinPlayoffPos}}</div>
+			</div>
+		</div>
+		<div class="row teams" ng-if="g.type == 'game'">
+			<div class="col col-center">
+				<h4 ng-click="showDetail(g.item.HomeTeamId, g.item.LeagueId, g.item.gameType);$event.stopPropagation()" class="one game-box-team-name"><span ng-if= "g.item.HomeTeamPair.length>0"> / {{g.item.HomeTeamPair}} </span> {{g.item.HomeTeam}} </h4>
+			</div>
+			<div class="col col-20">
+				<div ng-if="gameStat == 'next'" class="main-vs" ui-sref="app.game({gameId: g.item.GameId, gameType: g.item.gameType})">VS</div>
+				<div ng-if="gameStat == 'prev'" class="res" ui-sref="app.game({gameId: g.item.GameId, gameType: g.item.gameType})">{{g.item.GuestTeamScore}}:{{g.item.HomeTeamScore}} </div>
+			</div>
+			<div class="col col-center">
+				<h4 ng-click="showDetail(g.item.GuestTeamId, g.item.LeagueId, g.item.gameType);$event.stopPropagation()" class="two game-box-team-name"><span ng-if = "g.item.GuestTeamPair.length>0">{{g.item.GuestTeamPair}} / </span>{{g.item.GuestTeam}}</h4>
+			</div>
+		</div>
+		<!-- event -->
+		<div  class="row" ng-if="g.type == 'event'">
+			<div class="col">
+				{{ 'event' | translate }}
+			</div>
+			<div class="col-35 game-date-time date" >
+				<span><b>{{g.dateOrder | date : 'dd.MM.yy'}} ,</b></span><span>{{g.dateOrder | date : 'HH:mm'}}</span><br>
+				<span class="game-auditorium">{{g.place}}</span>
+			</div>
+			<div class="col">
+			</div>
+		</div>
+		<div  class="row" ng-if="g.type == 'event'">
+			<div class="col col-center">
+				<div class="col set"  style="text-align: center">{{g.title}}</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="rtl main-padding" ng-show="!gamesList">
+		{{ 'games_no_games' | translate }}
+	</div>
+
+</div>

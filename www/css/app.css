@@ -1,0 +1,1059 @@
+@font-face {
+    font-family: "Open Sans Hebrew";
+    src: url("../fonts/OpenSansHebrew-Regular.ttf") format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Open Sans Hebrew";
+    src: url("../fonts/OpenSansHebrew-Bold.ttf") format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Open Sans Hebrew";
+    src: url("../fonts/OpenSansHebrew-Italic.ttf") format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans Hebrew";
+    src: url("../fonts/OpenSansHebrew-BoldItalic.ttf") format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans Hebrew";
+    src: url("../fonts/OpenSansHebrew-Light.ttf") format('opentype');
+    /*font-weight: lighter;*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans Hebrew";
+    font-weight: normal;
+    color: #000;
+    background: #fff;
+    font-size: 16px;
+}
+
+.ios-bar {
+    display: none;
+    background: #009edb;
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.platform-ios .ios-bar {
+    display: block;
+    z-index: 1000;
+}
+
+.platform-ios .main-content {
+    margin-top: 20px;
+    height: calc(100% - 20px);
+}
+
+input, input::-webkit-input-placeholder, select, textarea, button {
+    font-family: "Open Sans Hebrew";
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, ul, ol, li, div, span {
+    font-family: "Open Sans Hebrew";
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #364557;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ion-arrow-down-b,
+.ion-arrow-up-b,
+.ion-arrow-right-b,
+.ion-arrow-left-b {
+    color: #9AA2AB;
+    font-size: 16px;
+}
+
+.bord-bottom {
+    border-bottom: 1px solid #000;
+}
+
+.bord-top {
+    border-top: 1px solid #000;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.main-vs {
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+    color: #C3C6CB;
+    font-size: 16px;
+    text-align: center !important;
+    background-size: cover;
+    border: 1px solid #C3C6CB;
+    border-radius: 50%;
+    display: table;
+    margin: 0 auto;
+}
+
+.main-padding {
+    padding: 14px 15px;
+}
+
+.main-label {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+.img-circle {
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.img-circle-on {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #009edb;
+    padding: 3px;
+}
+
+.img-circle-on img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    height: 57px;
+
+    border-radius: 50%;
+}
+
+.m-icon-friend {
+    display: block;
+    width: 25px;
+    height: 24px;
+    background: url(../images/friend.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.m-icon-friend-on {
+    display: block;
+    width: 25px;
+    height: 24px;
+    background: url(../images/friend-on.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.m-icon-message {
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../images/message.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.m-icon-message-off {
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../images/blank.gif) no-repeat 0 0;
+    background-size: contain;
+}
+
+.page-image {
+    overflow: hidden;
+}
+
+.going-btn {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 80px;
+    height: 30px;
+    line-height: 28px;
+    background-color: #009edb;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #009edb;
+}
+
+.going-btn.active {
+    background: #fff;
+    color: #009edb;
+}
+
+/* =========================================================================== */
+
+.button.button-positive {
+    float: left;
+    background-color: #009edb;
+    border-color: #009edb;
+}
+
+.button.button-cancel {
+    float: right;
+    color: #fff;
+    background-color: grey;
+}
+
+.button.button-positive.active, .button.button-positive.activated {
+    background-color: #009edb;
+}
+
+.defaultBorder {
+    border: 1px solid #000000;
+}
+
+.defaultAlertPopup {
+    direction: rtl;
+}
+
+.mainBgColor {
+    background-color: #009edb;
+}
+
+.mainColor {
+    color: #009edb;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.defaultTextSize {
+    font-size: 16px;
+}
+
+.defaultInput {
+    margin-top: 12px;
+    height: 38px;
+}
+
+/*.item.item-input {
+    margin-top: 12px;
+    height: 38px;
+}*/
+
+.spinner {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 300;
+}
+
+.spinnerBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.spinnerSpinner {
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.spinnerSpinner svg {
+    width: 80px;
+    height: 80px;
+    stroke: #009edb;
+}
+
+.noBackground {
+    background-color: transparent;
+    border: none;
+}
+
+/*.alignCenter {
+    align-self: center;
+}*/
+
+.alignLeft {
+    position: absolute;
+    left: 0px;
+}
+
+.alignRight {
+    position: absolute;
+    right: 0px;
+}
+
+.matchParentHeight {
+    top: 0px;
+    height: 100%;
+    width: auto;
+}
+
+.matchParentWidth {
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.mainHeader {
+    height: 40px;
+    background: #fff;
+}
+
+.mainHeader .logo {
+    width: 68px;
+    height: 31px;
+    background: url(../images/logo.png) no-repeat 0 0;
+    background-size: contain;
+    position: absolute;
+    top: 6px;
+    left: 15px;
+}
+
+.mainHeader.mainHeader, .mainHeader.bar {
+    border: none;
+}
+
+.mainHeader h1 {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.has-main-header {
+    top: 43px;
+    border-top: 1px solid #000;
+}
+
+.main-notification-header {
+    top: 43px;
+}
+
+.cl {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    height: 0px;
+}
+
+/* page header */
+
+.header-first-raw {
+    height: 47px;
+    width: 100%;
+    text-align: center;
+    display: inline-table;
+}
+.header-first-raw-competition {
+    height: 57px;
+    width: 100%;
+    text-align: center;
+    display: inline-table;
+}
+
+.one-row-header {
+    height: 50px;
+    width: 100%;
+    /*background-color: #4cd964;*/
+    text-align: center;
+}
+
+#one-row-header-display-name {
+    float: right;
+    font-size: 18px;
+}
+
+.header-first-raw .header-title {
+    height: 47px;
+    display: table;
+    float: right;
+    margin-top: 3px;
+}
+
+.header-first-raw .header-title span {
+    display: table-cell;
+    font-size: 18px;
+    /*line-height: 20px;*/
+    width: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: right;
+}
+.header-first-raw-competition .header-title {
+    height: 57px;
+    margin-top: 3px;
+}
+
+.header-first-raw-competition .header-title span {
+    
+    font-size: 18px;
+    /*line-height: 20px;*/
+    width: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.leagues-list .header-title {
+    display: inline-block;
+    float: none;
+    text-align: center;
+    height: auto;
+    margin-top: 10px;
+}
+
+.leagues-list .header-title span {
+    text-align: center;
+}
+
+.header-icon {
+    display: block;
+    float: right;
+    width: 42px;
+    height: 42px;
+    margin-right: 5px;
+}
+
+.referee-friends {
+    float: left;
+}
+
+.referee-header-icon {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 5px;
+}
+
+.referee-header-icon.ion-android-search {
+    margin-top: 10px;
+    font-size: 27px;
+}
+
+
+.menu_icon {
+    background-image: url("../images/header/HEADER-MENU-BTN@3x.png");
+    background-size: 100% 100%;
+}
+
+.header-logo {
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.header-logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    float: right;
+    margin-top: 2px;
+}
+
+.msg-icon {
+    background-image: url("../images/header/HEADER-ICONS-MSGSnormal@3x.png");
+    background-size: 100% 100%;
+}
+
+.msg-icon-on {
+    background-image: url("../images/header/HEADER-ICONS-MSGSon_press@3x.png");
+    background-size: 100% 100%;
+}
+
+.new-msgs {
+    display: inline-block;
+    background-color: #009edb;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    float: right;
+    margin: 4px 4px 0 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 0 3px;
+    text-align: center;
+}
+
+/** pedro add : msg-media-pos, msg-media-close-pos style */
+.msg-media-pos {
+    position: relative;
+}
+.msg-media-close-pos  {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+}
+
+.friends-icon {
+    background-image: url("../images/header/HEADER-ICONS-Friendsnormal@3x.png");
+    background-size: 100% 100%;
+}
+
+.friends-icon-on {
+    background-image: url("../images/header/HEADER-ICONS-Friendson_press@3x.png");
+    background-size: 100% 100%;
+}
+
+.alerts-icon {
+    background-image: url("../images/header/HEADER-ICONS-ALERTSnormal@3x.png");
+    background-size: 100% 100%;
+}
+
+.alerts-icon-on {
+    background-image: url("../images/header/HEADER-ICONS-ALERTSon_press@3x.png");
+    background-size: 100% 100%;
+}
+
+.training-icon {
+    background-image: url("../images/header/running3.png");
+    background-size: 100% 100%;
+}
+
+.search-icon {
+    background-image: url("../images/header/HEADER-SEARCH-BTN@3x.png");
+    background-size: 100% 100%;
+    float: left;
+}
+
+.back-icon {
+    background-image: url("../images/header/HEADER-BACK-BTN@3x.png");
+    background-size: 100% 100%;
+    float: left;
+    margin-right: 0px;
+}
+
+.header-second-raw {
+    height: 32px;
+    padding: 10px;
+    line-height: 32px;
+}
+
+.header-second-raw .user-name {
+    width: 140px;
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.header-dropdown {
+    /*background-image: url("../images/header/header-choose-team-dropdown-btn_normal@3x.png");*/
+    float: left;
+    width: 50%;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.header-dropdown .selected i {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.header-dropdown:active {
+    /*background-image: url("../images/header/header-choose-team-dropdown-btn_close@3x.png");*/
+}
+
+.header-dropdown .selected {
+    height: 30px;
+    overflow: hidden;
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.teams-ddl {
+    height: auto !important;
+}
+
+.teams-ddl h4 {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    text-align: right;
+    /*background-image: url("../images/header/header-choose-team-dropdown-btn_close@3x.png");*/
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.teams-ddl h4 i {
+    float: left;
+    margin-left: 5px;
+}
+
+.teams-ddl ion-header-bar {
+    position: relative;
+}
+
+.teams-ddl ion-content {
+    top: 0;
+    position: relative;
+}
+
+.teams-ddl .list {
+    margin: 0;
+    height: 35px;
+    background: #fff;
+}
+
+.teams-ddl .list p {
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+}
+
+.float-right {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    float: right;
+}
+
+/* ============================================================================================ */
+
+.side-menu .bar.bar-assertive {
+    background-color: #009edb;
+    border-color: #009edb;
+}
+
+.side-menu .bar .title {
+    text-align: right;
+    padding-right: 15px;
+    font-size: 18px;
+}
+
+.side-menu .list {
+}
+
+.side-menu .item {
+    text-align: right;
+    padding: 15px 25px;
+    border-color: #000;
+    background-color: #DEDEDE;
+    color: #000;
+    font-size: 17px;
+}
+
+.side-menu a.item-content {
+    color: #000;
+    background-color: #DEDEDE;
+    padding: 0;
+}
+
+.button.facebook {
+    background-color: #3d5a98;
+    text-align: right;
+}
+
+/* ======================================================= */
+
+.signupPage #register-later {
+    position: relative;
+    padding-top: 15px;
+}
+
+.keyboard-open #register-later {
+    display: none;
+}
+
+#register-later {
+    position: fixed;
+    width: 100%;
+    bottom: 18px;
+    left: 0;
+    text-align: center;
+}
+
+#register-later a {
+    color: #364557;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* ======================================================== */
+
+.tabsWrap {
+    text-align: right;
+}
+.rtl .tabsWrap {
+    direction: rtl;
+}
+
+.Tabs {
+    display: inline-block;
+    height: 35px;
+    padding: 10px 15px 0 15px;
+}
+
+.Tabs .tabsText {
+    white-space: nowrap;
+}
+
+.Tabs.selected {
+    background-color: #E6E7E9;
+}
+
+.Tabs.selected .tabsText {
+    border-bottom: solid 1px;
+    padding-bottom: 5px;
+}
+
+.TabsContent {
+    background-color: #E6E7E9;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.diplay-block {
+    display: block;
+}
+
+/* =========================================================== */
+
+.signin-alert {
+}
+
+.signin-alert .popup {
+    width: 90%;
+    border-radius: 3px;
+}
+
+.signin-alert .popup-head {
+    padding: 10px 0 7px 0;
+    border-bottom: 1px solid #656668;
+    margin: 0 15px;
+}
+
+.signin-alert .popup-head h3 {
+    font-size: 16px;
+}
+
+.signin-alert .popup-body {
+    direction: rtl;
+    text-align: right;
+    margin: 0 5px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.signin-alert .popup-buttons {
+    padding: 15px;
+    min-height: 30px;
+}
+
+.signin-alert .button {
+    height: 30px;
+    min-height: 30px;
+    border-radius: 0px;
+    border: none;
+    color: white;
+    margin-right: 14px;
+}
+
+.signin-alert .button.button-default {
+    background-color: #656668;
+}
+
+.signin-alert .button.btn-login {
+    background-color: #364558;
+}
+
+.hidden-element {
+    visibility: hidden;
+}
+
+.splash-logo {
+    background: url(../images/SPLASH-LOGO.jpg) no-repeat center center;
+    /*width: 228px;
+    height: 227px;*/
+    width: 30%;
+    height: 70px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: contain;
+}
+
+.splash-logo-gif {
+    background: url(../images/kadursal.jpg) no-repeat center;
+    width: 320px;
+    height: 65%;
+    margin: 0 auto;
+}
+.btn-choose-lang{
+    margin: 0;
+    padding: 0 10px;
+    background: none;
+    border: none;
+    border-left: 1px solid #ddd;
+    outline: none;
+    color: #009edb;
+}
+.btn-choose-lang[disabled]{
+    color: #aaa;
+}
+.btn-choose-lang:last-child{
+    border-left: none;
+}
+.is-eng .btn-choose-lang:last-child{
+    border-left: 1px solid #ddd;
+}
+.is-eng .btn-choose-lang:first-child{
+    border-left: none;
+}
+.rules-page .header-title{
+    display: inline-block;
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+    white-space: nowrap;
+}
+.rules-page .header-title span{
+    width: auto;
+    line-height: 1.2;
+    text-align: center;
+}
+.rules-page .search-icon{
+    visibility: hidden;
+}
+.search-bar{
+    position: relative;
+    z-index: 101;
+
+    border: 1px solid #000;
+    background: #fff;
+
+    clear: both;
+}
+.search-bar input{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.radial-progress .inset,
+.radial-progress #blackRadialBorder{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.col-25 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-35 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 35%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 35%;
+    -ms-flex: 0 0 35%;
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+
+.col-80 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 80%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 80%;
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
+
+}
+.game-date-time {
+    font-size: 18px;
+    text-align: center;
+}
+
+.teams-game-box {
+    text-align: center;
+}
+
+.game-box-teams {
+    position: relative;
+}
+.teams-game-box div {
+    text-align: center;
+}
+.game-auditorium {
+    font-size: 15px;
+    font-weight: 500;
+    color: #585858;
+}
+
+
+.game-box-team-name {
+    color: #009edb;
+}
+
+.fan-team-box,
+.slider {
+    direction: ltr;
+}
+
+/* fix scrolling issue for iOS */
+.overflow-scroll {
+    -webkit-overflow-scrolling: auto;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+ion-nav-bar {
+	display: block;
+    direction: initial;
+}
+
+.menu_icon {
+    display: block !important;
+}
+
+.right-buttons {
+    display: flex !important;
+    align-items: center;
+}
+
+.bar-header {
+    border-bottom: 1px solid black;
+}
+
+.none-border .bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+.bar .title + .button:last-child, .bar > .button + .button:last-child, .bar > .button.pull-right, .bar .buttons.pull-right, .bar .title + .buttons 
+{
+    top: 0;
+}
+
+.header-first-raw {
+    padding: 0;
+}
+
+.button-clear.button-clear {
+    color: black;
+}
+
+.league-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.galleria{
+    max-width: 700px;
+    height: 400px;
+    background: #000
+}
+
+.league_textarea {
+    min-height: 20px;
+}
+
+.main-content-top {
+    top: 51px !important;
+}
+
+.main-content-no-top {
+    top: 0px !important;
+    border-top: 0px !important;
+}
+
+.banner-scale {
+    width: 100%;
+}
+
+.force-float-right {
+    float: right !important;
+}
+
+.force-float-left {
+    float: left !important;
+}
+
+.border-no-top {
+    border-top: none !important;
+}

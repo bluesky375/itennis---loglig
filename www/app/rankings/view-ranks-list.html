@@ -1,0 +1,62 @@
+<ion-view class="leagues-list">
+  <!-- Include Header -->
+  <div class="header-first-raw">
+    <a class="header-icon menu_icon" menu-toggle="right"></a>
+    <h2 class="header-title">
+      <span>{{'main_nav_rankings' | translate}}</span>
+    </h2>
+    <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    <a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+    <div ng-show="isSearchVisible" class="search-bar">
+      <input type="text" ng-model="searchQuery.FullName" placeholder="{{ 'text_search' | translate }}">
+    </div>
+  </div>
+
+  <ion-content class="has-main-header">
+    <div class="competition-menu" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+      <div class="league-info  popup-box" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+         <div ng-class="{'text-right' : isCurrentLangIsHebrew()}" ng-if="categoryNameList.length > 0">
+          {{ 'text_ages' | translate }}
+          <button ng-click="openCategoryPopover($event)" class="normal-dropbtn">
+            {{selectedCategory.age_name}}
+            <i class="ion-arrow-down-b"> </i>
+          </button>
+        </div>    
+      </div>  
+
+      <div ng-if="unionRanks.length > 0">
+        <table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+          <thead>
+            <tr class="header">
+              <th class="table-header-middle" style="width:40px">{{ 'text_rank' | translate }}</th>
+              <th class="table-header-middle">{{ 'text_name' | translate }}</th>
+              <th class="table-header-middle">{{ 'text_club' | translate }}</th>
+              <th style="width:60px">{{ 'text_average_points' | translate }}</th>
+              <th style="width:70px">{{ 'text_points_average' | translate }}</th>
+              <th style="width:50px">{{ 'text_full_points' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tbl-row" ng-repeat="cr in unionRanks | filter:searchQuery" ng-click="toggleSelect(cr.UserId)" ng-class="{active: routeRankSelIndex == cr.UserId}">
+              <td class>{{$index+1}}</td>
+              <td >{{cr.FullName}}</td>
+              <td >{{cr.TrainingTeam}}</td>
+              <td >{{cr.AveragePoints}}</td>
+              <td >{{cr.PointsToAverage}}</td>
+              <td >{{cr.TotalPoints}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+
+    <script id="dropdown.html" type="text/ng-template">
+      <ion-popover-view class="teams-ddl">
+        <div class="list" ng-repeat="name in categoryNameList">
+          <a class="item" ng-click="categorySelect(name);popover.hide()">{{name.age_name}}</a>
+        </div>
+        </ion-popover-view>
+    </script>
+
+  </ion-content>
+</ion-view>

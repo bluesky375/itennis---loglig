@@ -1,0 +1,60 @@
+﻿<ion-view class="loginPage">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<ion-content class="has-main-header padding" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+
+		<div class="list">
+
+			<form name="loginForm" novalidate>
+
+				<!--<button class="button button-full" ng-click="login('1026603444042447')">Fb log</button>-->
+				<button class="button facebook button-full" ng-click="facebookLogin()">
+					<img class="matchParentHeight alignLeft" src="images/REG-FACEBOOK-LOGO@3x.png"/>
+					<span>{{"button_login_with_facebook" | translate}}</span>
+				</button>
+				<div class="facebookImage"></div>
+
+				<p id="orLabel">{{"text_or" | translate}}:</p>
+
+				<label class="item item-input defaultInput">
+					<input class="loginInput" placeholder='{{"input_login_username" | translate}}'
+						   ng-model="user.username" name="username" type="text"
+						   ng-required="true" ng-minlength="1" ng-maxlength="50"/>
+				</label>
+
+				<label class="item item-input defaultInput">
+					<input class="loginInput" placeholder='{{"input_login_password" | translate}}'
+						   ng-model="user.password" name="password" type="password" ng-required="true"
+						   ng-minlength="1" ng-maxlength="100"/>
+				</label>
+
+				<button class="button button-full button-positive" ng-click="login()">
+					{{"button_login_confirm" | translate}}
+					<img class="imageIcon" src="images/smile.png"/>
+				</button>
+
+
+				<div id="forgotUsername">
+					<p ng-click="showPopup()">{{'text_forgot_username_password' | translate}}</p>
+				</div>
+
+				<hr/>
+
+				<p id="notRegisteredLabel">{{'text_not_registered_question' | translate}}</p>
+			</form>
+
+			<button class="button button-full button-clear clearOrange" ui-sref="app.signupFan">
+				{{"button_goto_registration" | translate}}
+			</button>
+		</div>
+
+	</ion-content>
+	<!-- remove assaf
+	<div id="register-later">
+		<a ui-sref="app.leaguesList">{{"button_register_later" | translate}}</a>
+	</div>
+	-->
+</ion-view>
+

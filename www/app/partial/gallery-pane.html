@@ -1,0 +1,21 @@
+<ion-slide-box ng-if="imageGallery.length" class="friends-list" show-pager="false" delegate-handle="gallery-viewer"
+               auto-play="true">
+	<ion-slide ng-repeat="images in imageGallery">
+    <ion-gallery ion-gallery-items="images" refresh-callback="refreshCallback()"
+                 ion-gallery-toggle="false"></ion-gallery>
+		<div style="padding-top:0" class="row">
+			<div class="col col-33" ng-repeat="m in images">
+				<div style="padding-top:0" class="row" >
+          <div class="col col-25"></div>
+					<div ng-click="util.showUser(m.User)" class="item-image img-circle-on">
+						<img style="height:auto" actual-src="{{util.userImage(m.User)}}" ng-src="images/fan-default.jpg"/>
+					</div>
+          <div class="col col-25"></div>
+        </div>
+        <div ng-click="util.showUser(m.User)" style="text-align: center">
+            <span style="margin:0 !important;">{{m.Created | date: 'dd.MM.yy'}},{{m.User.Name}}</span>
+        </div>
+			</div>
+		</div>
+	</ion-slide>
+</ion-slide-box>

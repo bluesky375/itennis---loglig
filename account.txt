@@ -1,0 +1,17 @@
+Tennis: account 
+//upcoming
+039565213 seasonid:1131 clubid:1214 teamid:13061 
+027990324 seasonid:1116 clubid:21 teamid:1225 //true
+
+//problem 1. get clubinfo
+333172526
+
+
+123abc12
+
+//upcoming games
+015415409//clubinfo with one
+331258350//clubinfo with one
+023924566
+
+//

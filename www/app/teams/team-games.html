@@ -1,0 +1,49 @@
+<div class="league-top-nav">
+	<div class="cycle row" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<i class="col " ng-click="showCycle('pref')"
+		   ng-class="{'hidden-element' : indexPossition <= 0,
+				   'ion-arrow-right-b' : isCurrentLangIsHebrew(),
+				   'ion-arrow-left-b' : isCurrentLangIsEnglish()}"></i>
+		<span class="col col-67">{{ 'text_cycle' | translate }} {{cycleNumber + 1}}</span>
+		<i class="col" ng-click="showCycle('next')"
+		   ng-class="{'hidden-element' : indexPossition >= arrLenCecles - 1,
+				   'ion-arrow-left-b' : isCurrentLangIsHebrew(),
+				   'ion-arrow-right-b' : isCurrentLangIsEnglish()}"></i>
+	</div>
+</div>
+<ion-slide-box class="games-slider" gn-if="nextGames.length" on-slide-changed="gamesSlideChanged($index)"
+			   delegate-handle="games-viewer" show-pager="false">
+	<ion-slide ng-repeat="item in allGames track by item.GameId">
+		<app-next-game  game="game" info="item" is-scroll="true"></app-next-game>
+	</ion-slide>
+</ion-slide-box>
+
+<div class="going-game league-info-part-sep" ng-if="fansCount > 0">
+	<div class="rtl">
+		<div class="main-label rtl">
+			<span>מגיעים למשחק {{fansCount}} חברים</span>
+		</div>
+	</div>
+	<ng-include src="'app/partial/fans-pane.html?1'"></ng-include>
+</div>
+
+<div class="league-tabs">
+	<div class="nav-tabs">
+		<ul>
+			<li ng-click="setNextGames()" ng-class="{active: gamesTab == 0}" ng-if="nextGames.length>0">
+				<span>{{ 'games_upcoming' | translate }}</span>
+			</li>
+			<li ng-click="setLastGames()" ng-class="{active: gamesTab == 1}" ng-if="lastGames.length>0">
+				<span>{{ 'games_ended' | translate }}</span>
+			</li>
+		</ul>
+		<div class="tabs-view rtl">
+			<div class="tab-box" ng-show="gamesTab == 0">
+				<app-game-box info="nextGames" stat="'next'" type="'dateOrder'"></app-game-box>
+			</div>
+			<div class="tab-box" ng-show="gamesTab == 1">
+				<app-game-box info="lastGames" stat="'prev'" type="'-dateOrder'"></app-game-box>
+			</div>
+		</div>
+	</div>
+</div>

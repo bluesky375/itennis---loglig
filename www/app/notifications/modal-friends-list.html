@@ -1,0 +1,312 @@
+<ion-view cache-view="false" class="content">
+  <app-user-header ng-if="user.Role!='workers'" team-changed="teamChanged(team)"></app-user-header>
+  <referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+  <ion-content class="fan-content" ng-class="{'main-content-top':user.Role=='workers'}">
+        <div id="sendView" class="padding">
+<!--            
+          <div ng-if="userJobRole == 'fans'">
+            <div class="row no-padding ltr">
+              <div class="col-6">
+                <ion-item class="friend-label item-accordion" ng-click="friendSelectAll()()" >
+                  <p ng-class="isFriendSelectAll ? 'teamChecked' : 'teamUnchecked'"</p>
+                </ion-item>               
+              </div>
+              <div class="col-44" style="width: inherit;">
+                <ion-item class="friend-label item-accordion" ng-click="friendSelectAll()()" >
+                  <p ng-class="isFriendSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                     <span class="item-no-border-text force-float-left">{{'text_select_all_friends' | translate}}</span>
+                  </p>
+                </ion-item>               
+              </div>
+              <div class="col-50">
+                <ion-item ng-class="isCurrentLangIsEnglish() ? 'friend-list-button' : 'friend-list-heb-button rtl'" 
+                          ng-click="toggleFriends()">
+                    <div class="leagueRow">
+                        <p class="leagueTitleUnchecked"
+                           ng-class="{teamsHidden: !isFriendsShown, teamsShown: isFriendsShown, leagueTitleChecked:sendUnionUsers.length > 0}">
+                            <span ng-class="!isFriendsShown ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_list_of_recipients' | translate}}</span>
+                            <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : !isFriendsShown && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : !isFriendsShown && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : isFriendsShown
+                                              }">
+                            </i></span>
+                        </p>
+                    </div>
+                </ion-item>
+                <ion-item class="f-item-no-border item-accordion rtl"
+                      ng-repeat="friend in Friends"
+                      ng-if="isFriendsShown && friend.UserRole == 'fans'"
+                      ng-model="friend.checked"
+                      ng-click="selectFriend(friend)">
+                  <p ng-class="friend.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                  <p ng-class="friend.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                    <span class="item-no-border-text">{{friend.UserName}}</span>
+                  </p>
+                </ion-item>
+              </div>
+            </div>
+          </div>
+ -->
+        
+          <div class ="rtl">
+            <ion-list class ="rtl" >
+              <div>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="userSelectAll()"
+                            ng-if="GameName.length > 0 && (userJobRole == 'leaguemgr' || userJobRole == 'clubmgr' || userJobRole == 'unionmgr')" >
+                      <p ng-class="isUserSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isUserSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{GameName}}</span>
+                      </p>
+                  </ion-item>
+                  <p></p>
+                  <p></p>
+              </div>
+
+              <div ng-if="ClubOfficials.length > 0 && userJobRole == 'unionmgr'">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleWorkers(3)"
+                            ng-class="{active: toggleIndex == 3, ltr: isCurrentLangIsHebrew()}"
+                            >
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: toggleIndex != 3, teamsShown: toggleIndex == 3, leagueTitleChecked:sendClubUsers.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : toggleIndex != 3 && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : toggleIndex != 3 && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : toggleIndex == 3
+                                              }">
+                                </i></span>
+                              <span ng-class="toggleIndex != 3 ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_clubofficials' | translate}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="clubofficialsSelectAll()"
+                            ng-if="toggleIndex == 3 && ClubOfficials.length > 0" >
+                      <p ng-class="isClubofficialsSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isClubofficialsSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>                    
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="worker in ClubOfficials"
+                            ng-if="toggleIndex == 3"
+                            ng-model="worker.checked"
+                            ng-click="selectWorker(3, worker)">
+                      <p ng-class="worker.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="worker.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{worker.UserName}}</span>
+                      </p>
+                  </ion-item>
+                  <p></p>
+                  <p></p>
+              </div>
+
+              <div ng-if="LeagueOfficials.length > 0 && userJobRole == 'unionmgr'">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleWorkers(2)"
+                            ng-class="{active: toggleIndex == 2, ltr: isCurrentLangIsHebrew()}">
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: toggleIndex != 2, teamsShown: toggleIndex == 2, leagueTitleChecked:sendLeagueUsers.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : toggleIndex != 2 && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : toggleIndex != 2 && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : toggleIndex == 2
+                                              }">
+                              </i></span>
+                              <span ng-class="toggleIndex != 2 ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_leagueofficials' | translate}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="leagueOfficialsSelectAll()"
+                            ng-if="toggleIndex == 2 && LeagueOfficials.length > 0" >
+                      <p ng-class="isLeagueOfficialsSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isLeagueOfficialsSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="worker in LeagueOfficials"
+                            ng-if="toggleIndex == 2"
+                            ng-model="worker.checked"
+                            ng-click="selectWorker(2, worker)">
+                      <p ng-class="worker.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="worker.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                        <span class="item-no-border-text">{{worker.UserName}}</span>
+                      </p>
+                  </ion-item>
+                  <p></p>
+                  <p></p>
+              </div>
+
+              <div ng-if="TeamOfficials.length > 0 && (userJobRole == 'leaguemgr' || userJobRole == 'clubmgr' || userJobRole == 'unionmgr')">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleWorkers(4)"
+                            ng-class="{active: toggleIndex == 4, ltr: isCurrentLangIsHebrew()}">
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: toggleIndex != 4, teamsShown: toggleIndex == 4, leagueTitleChecked:sendTeamUsers.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : toggleIndex != 4 && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : toggleIndex != 4 && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : toggleIndex == 4
+                                              }">
+                                </i></span>
+                              <span ng-class="toggleIndex != 4 ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_team_managers' | translate}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="teamOfficialsSelectAll()"
+                            ng-if="toggleIndex == 4 && TeamOfficials.length > 0" >
+                      <p ng-class="isTeamOfficialsSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isTeamOfficialsSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="worker in TeamOfficials"
+                            ng-if="toggleIndex == 4"
+                            ng-model="worker.checked"
+                            ng-click="selectWorker(4, worker)">
+                      <p ng-class="worker.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="worker.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'"></span>
+                          <span class="item-no-border-text">{{worker.UserName}}
+                      </p>
+                  </ion-item>
+              </div>
+
+              <div ng-if="Teams.length > 0 && userJobRole == 'clubmgr'">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleWorkers(5)"
+                            ng-class="{active: toggleIndex == 5, ltr: isCurrentLangIsHebrew()}">
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: toggleIndex != 5, teamsShown: toggleIndex == 5, leagueTitleChecked:sendTeams.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : toggleIndex != 5 && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : toggleIndex != 5 && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : toggleIndex == 5
+                                              }">
+                              </i></span>
+                              <span ng-class="toggleIndex != 5 ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_select_teams' | translate}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="teamsSelectAll()"
+                            ng-if="toggleIndex == 5 && Teams.length > 0" >
+                      <p ng-class="isTeamsSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isTeamsSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="worker in Teams"
+                            ng-if="toggleIndex == 5"
+                            ng-model="worker.checked"
+                            ng-click="selectWorker(5, worker)">
+                      <p ng-class="worker.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="worker.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'"></span>
+                          <span class="item-no-border-text">{{worker.UserName}}
+                      </p>
+                  </ion-item>
+              </div>
+
+              <div ng-if="TeamUsers.length > 0 && (userJobRole == 'players' || userJobRole == 'teammgr')" ng-repeat="TeamUser in TeamUsers">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleWorkers(TeamUser.TeamId)"
+                            ng-class="{active: toggleIndex == TeamUser.TeamId, ltr: isCurrentLangIsHebrew()}">
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: toggleIndex != TeamUser.TeamId, teamsShown: toggleIndex == TeamUser.TeamId, leagueTitleChecked:sendTeamUsers.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : toggleIndex != TeamUser.TeamId && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : toggleIndex != TeamUser.TeamId && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : toggleIndex == TeamUser.TeamId
+                                              }">
+                              </i></span>
+                              <span ng-class="toggleIndex != TeamUser.TeamId ? 'list-text-Unchecked' : 'list-text-checked'">{{TeamUser.TeamName}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="selectAllUsersForTeam(TeamUser.TeamId)"
+                            ng-if="toggleIndex == TeamUser.TeamId && TeamUsers.length > 0" >
+                      <p ng-class="TeamUser.IsSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="TeamUser.IsSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                          <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="User in TeamUser.Users"
+                            ng-if="toggleIndex == TeamUser.TeamId"
+                            ng-model="User.checked"
+                            ng-click="selectWorker(TeamUser.TeamId, User)">
+                      <p ng-class="User.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="User.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'"></span>
+                          <span class="item-no-border-text">{{User.UserName}}
+                      </p>
+                  </ion-item>
+                  <p></p>
+                  <p></p>
+              </div>
+
+              <div ng-if="Friends.length>  0">
+                  <ion-item class="list-no-border item-stable"
+                            ng-click="toggleFriends()"
+                            ng-class="{active: isFriendsShown, ltr: isCurrentLangIsHebrew()}">
+                      <div class="leagueRow">
+                          <p class="leagueTitleUnchecked"
+                             ng-class="{teamsHidden: !isFriendsShown, teamsShown: isFriendsShown, leagueTitleChecked:sendFriends.length > 0}">
+                              <span><i ng-class="{'ion-arrow-right-b list-arrow-no-color' : !isFriendsShown && isCurrentLangIsEnglish(), 
+                                                'ion-arrow-left-b list-arrow-no-color' : !isFriendsShown && !isCurrentLangIsEnglish(), 
+                                                'ion-arrow-down-b list-arrow-color' : isFriendsShown
+                                              }">
+                              </i></span>
+                              <span ng-class="!isFriendsShown ? 'list-text-Unchecked' : 'list-text-checked'">{{'text_friends' | translate}}</span>
+                          </p>
+                      </div>
+                  </ion-item>
+                  
+                  <!-- Pedro : add : friend select all checkbox -->
+                  <ion-item class="item-no-border item-accordion"
+                            ng-click="friendSelectAll()"
+                            ng-if="isFriendsShown && Friends.length > 0" >
+                      <p ng-class="isFriendSelectAll ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="isFriendSelectAll ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                        <span class="item-no-border-text">{{'text_select_all' | translate}}</span>
+                      </p>
+                  </ion-item>
+                  <!-- Pedro : Modify : don`t display friend if they are players/officials.
+                  <ion-item class="item-accordion"
+                            ng-repeat="friend in Friends"
+                            ng-if="isFriendsShown"
+                            ng-model="friend.checked"
+                            ng-click="selectFriend(friend)">
+
+                    && friend.UserRole == 'fans'         
+                   -->  
+                  <ion-item class="item-no-border item-accordion"
+                            ng-repeat="friend in Friends"
+                            ng-if="isFriendsShown"
+                            ng-model="friend.checked"
+                            ng-click="selectFriend(friend)">
+                      <p ng-class="friend.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+                      <p ng-class="friend.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+                        <span class="item-no-border-text">{{friend.UserName}}</span>
+                      </p>
+                  </ion-item>
+              </div>
+
+          </ion-list>
+          </div>
+
+          <div>
+            <p class="sender-style">{{receiveStr}}</p>   
+          </div>
+
+			<button ng-click="forwardMsg();" ng-disabled="receiveStr==''" class="button button-positive">{{'dialog_box_forgot_btn_positive' | translate }}</button>
+			<button ng-click="closeModal();" class="button button-cancel">{{'dialog_box_forgot_btn_cancel' | translate }}</button>
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,60 @@
+<div class="main-padding" ng-if="!standings" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+	<h4>{{ 'text_no_data' | translate }}</h4>
+</div>
+<div ng-if="standings" class="league-res-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+	<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}" ng-if="team.SectionName != 'Soccer'">
+		<thead>
+			<tr class="header">
+				<th></th>
+				<th>{{ 'text_team' | translate }}</th>
+				<th>{{ 'text_games' | translate }}</th>
+				<th>{{ 'text_wins' | translate }}</th>
+				<th>{{ 'text_loses' | translate }}</th>
+				<th>{{ 'text_goals' | translate }}</th>
+				<th>{{ 'text_ratio' | translate }}</th>
+				<th class="last">{{ 'text_points' | translate }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="tbl-row" ng-repeat="t in standings" ng-click="openTeamfromStanding(t);" ng-class='{active: $first}'>
+				<td class="first">{{t.Rank}}</td>
+				<td class="name">{{t.Team}}</td>
+				<td>{{t.Games}}</td>
+				<td>{{t.Wins}}</td>
+				<td>{{t.Lost}}</td>
+				<td>{{t.Papf}}</td>
+				<td dir="ltr"	 class="nowrap">{{t.PlusMinusField}}</td>
+				<td class="last">{{t.Pts}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}" ng-if="team.SectionName == 'Soccer'">
+		<thead>
+		<tr class="header">
+			<th></th>
+			<th>{{ 'text_team' | translate }}</th>
+			<th>{{ 'text_games' | translate }}</th>
+			<th>{{ 'text_wins' | translate }}</th>
+			<th>{{ 'text_tie' | translate }}</th>
+			<th>{{ 'text_loses' | translate }}</th>
+			<th>{{ 'text_soccer_goals' | translate }}</th>
+			<th>{{ 'text_diff' | translate }}</th>
+			<th class="last">{{ 'text_points' | translate }}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="tbl-row" ng-repeat="t in standings" ng-class='{active: $first}'>
+			<td class="first">{{t.Rank}}</td>
+			<td class="name">{{t.Team}}</td>
+			<td>{{t.Games}}</td>
+			<td>{{t.Wins}}</td>
+			<td>{{t.Home}}</td>
+			<td>{{t.Lost}}</td>
+			<td>{{t.Papf}}</td>
+			<td>{{t.Road}}</td>
+			<td class="last">{{t.Pts}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>

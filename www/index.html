@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="LogligApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/flipclock/flipclock.css" rel="stylesheet"/>
+    <link href="lib/radial-stat/radial-percentage.css" rel="stylesheet"/>
+    <link href="lib/ion-gallery/ion-gallery.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+    <link href="css/login.css" rel="stylesheet"/>
+    <link href="css/signup.css" rel="stylesheet"/>
+    <link href="css/leagues.css" rel="stylesheet"/>
+    <link href="css/leagueDetails.css" rel="stylesheet"/>
+    <link href="css/fanPage.css" rel="stylesheet"/>
+    <link href="css/refereePage.css" rel="stylesheet"/>
+    <link href="css/game.css" rel="stylesheet"/>
+    <link href="css/notifications.css" rel="stylesheet"/>
+    <link href="css/union.css" rel="stylesheet"/>
+    <link href="css/competition.css" rel="stylesheet"/>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="scripts/less.min.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="ios-bar"></div>
+    <div id="fb-root"></div>
+
+    <div ng-controller="AppController" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+      <ion-nav-view></ion-nav-view>
+    </div>
+
+    <!--<div class="bar bar-header bar-assertive" ng-controller="errorCtrl" ng-show="activeError" style="z-index: 1000">
+        <h1 class="title">Error: {{error}}</h1>
+        <button class="button icon ion-close-round" ng-click="dismissError()"></button>
+    </div>-->
+
+    <div class="spinner">
+      <ion-spinner icon="android" class="spinnerSpinner"></ion-spinner>
+      <div class="spinnerBackground"></div>
+    </div>
+
+    <!-- Other Library/Framework references -->
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="lib/flipclock/flipclock.min.js"></script>
+    <script src="lib/ion-gallery/ion-gallery.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/videogular/videogular.min.js"></script>
+    <script src="lib/videogular-poster/vg-poster.min.js"></script>
+    <script src="scripts/ui-script.js"></script>
+
+    <!-- NG Cordova (should be included before Cordova) -->
+    <script src="scripts/ng-cordova.min.js"></script>
+
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- App references -->
+    <script src="scripts/index.js"></script>
+
+    <!-- Angular Translate -->
+    <script src="scripts/angular-translate.min.js"></script>
+
+    <!-- App Constants -->
+    <script src="app/appConstants.js"></script>
+
+    <!-- Localization -->
+    <script src="app/global/localization.js"></script>
+
+    <!-- Gobal Services -->
+    <script src="app/global/appService.js"></script>
+    <script src="app/global/apiService.js"></script>
+    <script src="app/global/pushRegistrationService.js"></script>
+    <script src="app/global/userManagmentService.js"></script>
+    <script src="app/global/leaguesService.js"></script>
+    <script src="app/global/refereeService.js"></script>
+    <script src="app/global/unionService.js"></script>
+    <script src="app/global/teamsService.js"></script>
+    <script src="app/global/multimediaService.js"></script>
+    <script src="app/global/authorizationService.js"></script>
+    <script src="app/global/appUtilsService.js"></script>
+    <script src="app/global/clubsService.js"></script>
+    <script src="app/events/eventService.js"></script>
+
+    <!-- Local Services -->
+    <script src="app/competition/competitionService.js"></script>
+    <script src="app/fan/fanManageService.js"></script>
+    <script src="app/player/playerService.js"></script>
+    <script src="app/notifications/notificationsService.js"></script>
+    <script src="app/eilat-tournament/eilatTournamentService.js"></script>
+    <script src="app/rules/rulesService.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/global/controllers.js"></script>
+    <script src="app/global/appController.js"></script>
+    <script src="app/splash/splashController.js"></script>
+    <script src="app/signup/fbSignupConfirmController.js"></script>
+    <script src="app/login/roleChooserController.js"></script>
+    <script src="app/login/loginController.js"></script>
+    <script src="app/login/forgotPasswordController.js"></script>
+    <script src="app/login/userLoginController.js"></script>
+    <script src="app/onboarding/onboardingController.js"></script>
+    <script src="app/teams/modalTeamsController.js"></script>
+    <script src="app/teams/trainingTeamController.js"></script>
+    <script src="app/teams/clubTeamController.js"></script>
+    <script src="app/teams/leagueTeamController.js"></script>
+    <script src="app/signup/signupController.js"></script>
+    <script src="app/teams/teamsController.js"></script>
+    <script src="app/teams/teamController.js"></script>
+    <script src="app/multimedia/multimediaController.js"></script>
+    <script src="app/fan/fanHomeController.js"></script>
+    <script src="app/fan/fanFriendsFansController.js"></script>
+    <script src="app/fan/fanEditController.js"></script>
+    <script src="app/fan/fanPageController.js"></script>
+    <script src="app/notifications/msgsController.js"></script>
+    <script src="app/leagues/leaguesController.js"></script>
+    <script src="app/leagues/leagueController.js"></script>
+    <script src="app/game/gameController.js"></script>
+    <script src="app/game/historyController.js"></script>
+    <script src="app/player/playerController.js"></script>
+    <script src="app/notifications/notificationsController.js"></script>
+    <script src="app/login/termsOfUseController.js"></script>
+    <script src="app/eilat-tournament/eilatTournamentController.js"></script>
+    <script src="app/rules/rulesController.js"></script>
+    <script src="app/referee/refereeHomeController.js"></script>
+    <script src="app/referee/refereeUpdateGameResultsController.js"></script>
+    <script src="app/union/union-home-controller.js"></script>
+    <script src="app/notifications/msgsSendController.js"></script>
+    <script src="app/notifications/replySendController.js"></script>
+    <script src="app/club/clubsController.js"></script>
+    <script src="app/club/club-home-controller.js"></script>
+    <script src="app/competition/competitionsController.js"></script>
+    <script src="app/rankings/ranksController.js"></script>
+    <script src="app/events/eventsController.js"></script>
+    <script src="app/event/eventController.js"></script>
+    
+    <!-- App -->
+    <script src="app/app.js"></script>
+
+    <!-- Router -->
+    <script src="app/appRouterConfig.js"></script>
+
+    <!-- Directives -->
+    <script src="app/global/directives.js"></script>
+    <script src="app/directives/single-click.js"></script>
+    <script src="app/directives/open-url.js"></script>
+    <script src="app/directives/referee-user-header.js"></script>
+
+    <!-- Filters -->
+    <script src="app/global/appFilters.js"></script>
+    <script src="lib/ionic-native/ionic.native.min.js"></script>
+  </body>
+</html>

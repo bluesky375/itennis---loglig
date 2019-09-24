@@ -1,0 +1,227 @@
+﻿/************************************/
+/* Role Chooser Page                  */
+/************************************/
+
+.roleChooserPage #whoAreYouLabel {
+    margin-top: 18px;
+    color: #000000;
+    font-size: 22px;
+    text-align: right;
+}
+
+.roleChooserPage .scroll {
+    height: 100%;
+}
+
+/* Input placeholder color --> */
+.loginPage .loginInput::-webkit-input-placeholder {
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+}
+
+.loginPage .loginInput:-moz-placeholder { /* Firefox 18- */
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+}
+
+.loginPage .loginInput::-moz-placeholder { /* Firefox 19+ */
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+}
+
+.loginPage .loginInput:-ms-input-placeholder {
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+}
+
+/* <-- Input placeholder color */
+
+.loginPage input {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #000000;
+    font-size: 16px;
+    padding: 5px 15px 0 15px;
+}
+
+.loginPage #orLabel {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.loginPage #forgotUsername {
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+.loginPage #forgotUsername > p {
+    text-align: center;
+    color: #364557;
+    text-decoration: underline;
+}
+
+.loginPage #passwordHint > p {
+    text-align: center;
+    color: #364557;
+    font-size: 18px;
+}
+
+.loginPage #notRegisteredLabel {
+    text-align: right;
+    color: #000000;
+}
+
+.loginPage input {
+    margin-bottom: 12px;
+    height: 38px;
+    padding-top: 7px;
+    font-size: 16px;
+}
+
+.loginPage #tearmsOfUseRowWorker {
+    margin: 10px 10px 0px 0;
+    text-align: right;
+}
+
+.loginPage #tearmsOfUseRowWorker .checkbox {
+    margin-left: 5px;
+}
+
+.roleChooserPage .button {
+    margin-top: 26px;
+}
+
+.loginPage .button,
+.roleChooserPage .button {
+    height: 44px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.loginPage .button.clearOrange,
+.roleChooserPage .button.clearOrange {
+    color: #009edb;
+    border: 1px solid #009edb;
+    background-color: #ffffff;
+}
+
+.loginPage .imageIcon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    margin-top: -11px;
+    margin-right: 14px;
+}
+
+.loginPage #sideMenu {
+    display: table;
+    background-color: red;
+}
+
+.loginPage #sideMenu > span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.loginPage #sideMenu > i {
+    background-color: blue;
+}
+
+.loginPage hr {
+    color: #000000;
+    stroke-width: 1px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.loginPage .scroll {
+    height: 100%;
+}
+
+/*forgot password*/
+.popup-container.dialog-box-forgot .popup {
+    width: 95%;
+    border-radius: 5px;
+}
+
+.popup-container.dialog-box-forgot .ion-close {
+    position: absolute;
+    color: #009edb;
+    left: 12px;
+    top: 11px;
+}
+
+.popup-container.dialog-box-forgot .popup .popup-head {
+    padding: 10px 10px 0 10px;
+}
+
+.popup-container.dialog-box-forgot .popup .popup-title {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.popup-container.dialog-box-forgot .popup .popup-sub-title {
+    padding-top: 15px;
+    font-size: 16px;
+}
+.popup-container.dialog-box-forgot.rtl .popup .popup-sub-title {
+    text-align: right;
+}
+
+.popup-container.dialog-box-forgot .popup .forgot-password-input {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 0 6px;
+}
+
+.popup-container.dialog-box-forgot .popup .popup-buttons {
+    display: block;
+}
+
+.popup-container.dialog-box-forgot .popup .button {
+    color: #FFF;
+    border-radius: 2px;
+    height: 30px;
+    min-height: 30px;
+    width: 80px;
+    min-width: 80px;
+    flex: initial;
+}
+
+.popup-container.dialog-box-forgot .popup .button-default {
+    background-color: #000;
+    float: right;
+}
+
+.popup-container.dialog-box-forgot .popup .button-positive {
+    float: left;
+}
+
+.popup-container.dialog-box-forgot .popup .error-username {
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+		display: block;
+}
+
+.popup-container.dialog-box-forgot .popup .error-username-input {
+    border-color: red;
+}
+
+.popup-container.alert-forgot .popup-body {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.popup-container.alert-forgot .popup .popup-buttons .button-default {
+    float: left;
+}

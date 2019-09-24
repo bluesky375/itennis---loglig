@@ -1,0 +1,251 @@
+.referee-game-results-button {
+    font-size: 30px;
+    color: #009edb;
+    left:5%;
+    position: absolute !important;
+
+}
+
+.game-box-team-score {
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.close-x {
+    float: left;
+    font-size: 16px;
+    font-weight: 900;
+    color: #009edb;
+    background-color: transparent;
+    border: none;
+}
+
+.update-game-results-header {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.update-score-title {
+    text-align: center;
+    align-self: center;
+}
+
+.thick-bottom-border {
+    margin: 6px;
+    border-bottom: 2px solid #a4a4a4;
+}
+
+.game-quarters-list div {
+    float: right;
+
+}
+
+.game-quarters-list button {
+    margin-top: 32px;
+    height: 31px;
+    float: right;
+    width: 55px;
+    font-size: 15px;
+    padding: 0px;
+}
+
+.set-score-game-quarter div {
+    width: 40%;
+}
+
+.set-score-game-quarter {
+    background-color: transparent;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    height: 130px;
+    display: block;
+
+}
+
+.set-team-score-container input {
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid #a4a4a4;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 90%;
+    padding: 5px;
+}
+
+.set-team-score-container label {
+    margin-top: 20px;
+    vertical-align: top;
+}
+
+.referee-set-score-bottom-border {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.add-quarter {
+    font-size: 40px;
+    color: #009edb;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+
+}
+
+.add-quarter span {
+    font-size: 18px;
+    line-height: 40px;
+    text-align: left;
+    vertical-align: 20%;
+}
+
+.technical-victory-container {
+    height: 120px;
+    padding: 10px;
+    /*background-color: rgba(140, 4, 4, 0.18);*/
+}
+.technical-victory-title {
+    font-size: 18px;
+    text-align: center;
+    vertical-align: 10%;
+    color: #112433;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.technical-victory-team {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    margin-bottom: 2% !important;
+    width: 40%  !important;
+    height: 50px !important;
+    font-size: 15px !important;
+    color: #009edb !important;
+    /*background-color: #d3d300 !important;*/
+    /*background-color:  #112433 !important;*/
+}
+
+.quarter-title {
+    margin-top: -20px;
+    font-weight: 600;
+    display: block;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.quarter-hometeam-score-input {
+    background-color: white;
+    color: greenyellow;
+    border: 2px solid red;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.quarter-guestteam-score-input {
+    background-color: white;
+    border: groove;
+}
+
+.golden-checkbox-container {
+    width: 60% !important;
+    height: 40px;
+    padding-top: 4%;
+}
+
+.golden-checkbox-container span {
+    position: relative;
+    bottom: 0%;
+    /*float: right;*/
+}
+
+.golden-checkbox-container input {
+    /*float: right;*/
+    width: 10%;
+    background-color: purple;
+    position: relative;
+    bottom: 5%;
+    vertical-align: middle;
+    /*text-align: right;*/
+
+}
+
+.referee-save-score {
+    background-color: #009edb;
+    color: white;
+    height: 30px;
+    float: left;
+    margin-top: 5px !important;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.referee-cancel-score {
+    background-color: #112433;
+    color: white;
+    height: 30px;
+    margin-top: -5px !important;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.referee-cancel-score:disabled {
+    background-color: white;
+    color: white;
+    height: 30px;
+    margin-top: -5px !important;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.referee-edit-score {
+    background-color: transparent;
+    color: #112433;
+    height: 30px;
+    float: left;
+
+    /*border: none;*/
+    box-shadow: none;
+    border-radius: 3px;
+}
+.referee-edit-score.fill {
+    background-color: #112433;
+    border-color: #112433;
+    color: white;
+}
+
+.final-save {
+    margin-left: 10px;
+    margin-top: 10px !important;
+}
+
+.referee-cancel-set-score {
+    margin-top: 10px !important;
+    background-color: #112433;
+    width: 15%;
+    margin-right: 25px;
+    color: white;
+    height: 31px;
+    float: right;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.referee-set-score-save-cancel {
+    margin-top: 15px;
+    height: 60px;
+}
+

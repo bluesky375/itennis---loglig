@@ -1,0 +1,30 @@
+<ion-view class="leagues-list">
+
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<h2 class="header-title">
+			<span>{{ 'main_nav_eilat_tournament' | translate }}</span>
+		</h2>
+		<a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+		<div ng-show="isSearchVisible" class="search-bar" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+			<input type="text" ng-model="searchQuery.Title" placeholder="{{ 'text_search' | translate }}">
+		</div>
+	</div>
+
+	<ion-content class="has-main-header padding items-box">
+
+		<div ng-repeat="item in eilatTornamentList | filter:searchQuery" class="list-item"  ui-sref="app.league({leagueId: item.Id})">
+			<a class="logo">
+				<img ng-src="{{util.leagueImage(item.Logo)}}"/>
+			</a>
+			<div class="item-cont">
+				<h4>{{item.Title}}</h4>
+				<p>{{item.Descr}}</p>
+				<p class="subtitle rtl">
+					{{item.TotalTeams}} {{"text_teams" | translate}}, {{item.TotalFans}} {{"text_fans" | translate}}
+				</p>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

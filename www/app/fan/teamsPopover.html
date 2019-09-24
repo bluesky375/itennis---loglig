@@ -1,0 +1,8 @@
+<ion-popover-view class="teams-ddl">
+	<h4 ng-click="popover.hide()">
+		{{selectedTeam.Title}}
+	</h4>
+	<div class="list" ng-repeat="item in user.Teams">
+		<a class="item" ng-click="changedTeam(item)">{{item.Title}}</a>
+	</div>
+</ion-popover-view>

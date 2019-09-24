@@ -1,0 +1,74 @@
+{
+  "teamId": 1,
+  "place": 7,
+  "ratio": "2:3",
+  "succsessLevel": 59,
+  "nextGame": {
+    "gameId": 22,
+    "status": "closetodate",
+    "startDate": "2015-11-10T20:40:00",
+    "timeLeft": 15,
+    "homeTeam": "קבוצה תל אביב",
+    "homeScore": 34,
+    "homeTeamLogo": "images/Player/home.jpg",
+    "guestTeam": "הפועל כפר סבא",
+    "guestScore": 48,
+    "guestTeamLogo": "images/Player/away.jpg",
+    "auditorium": "היכל הספורט כפר סבא",
+    "isGoing": 0,
+    "friendsGoing": 27,
+    "fansGoing": 320,
+    "fansList": [
+      {
+        "name": "אבנר בעלשםארוךמשהו",
+        "image": "images/Friends/1.jpg",
+        "userid": 21
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/2.jpg",
+        "userid": 22
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/3.jpg",
+        "userid": 23
+      },
+      {
+        "name": "בעלשםארוךמשהו אבנר",
+        "image": "images/Friends/4.jpg",
+        "userid": 223
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/5.jpg",
+        "userid": 1
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/1.jpg",
+        "userid": 323
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/2.jpg",
+        "userid": 4
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/3.jpg",
+        "userid": 5
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/4.jpg",
+        "userid": 6
+      },
+      {
+        "name": "יוסי",
+        "image": "images/Friends/5.jpg",
+        "userid": 7
+      }
+    ]
+  }
+}

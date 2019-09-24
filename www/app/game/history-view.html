@@ -1,0 +1,55 @@
+<ion-view class="game-list history-list">
+
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+	</div>
+
+	<ion-content class="has-main-header items-box">
+		<div class="history-games" ng-if="History.length > 0">
+			<div class="row">
+                <span class="label-left col-40">
+                    {{History.length}} {{ 'history_incounters' | translate }}
+                </span>
+				<div class="col-60">
+                    <span class="main-label">
+                        {{ 'history_games' | translate }}
+                    </span>
+					<img class="hec-img" src="images/REG-CHOOSE-TEAMS-ICON@3x.png"/>
+				</div>
+			</div>
+			<div class="group-row" ng-repeat="story in History | orderBy:'-StartDate'">
+				<span class="text-right" ui-sref="app.game({gameId: story.GameId, gameType: story.gameType})"><b>{{story.LeagueName}}</b> {{story.StartDate | date:"dd.MM.yyyy"}}</span>
+				<div class="row">
+					<div class=" col col-40" ui-sref="app.team({teamId: story.GuestTeamId, leagueId: story.LeagueId})">
+						<div class="row">
+							<div class="col">
+								<span class="group-name-history inline-block col-center">{{story.GuestTeam}}</span>
+							</div>
+							<div class="col">
+								<div class=" item-image img-circle inline-block">
+									<img actual-src="{{util.teamImage(story.GuestTeamLogo)}}" ng-src="images/league-default.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col col-20 col-center">
+						<span class="diplay-block text-center group-name">{{getCurrentLanguage()==='iw'?story.HomeTeamScore:story.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?story.GuestTeamScore:story.HomeTeamScore}}</span>
+					</div>
+					<div class="col col-40" ui-sref="app.team({teamId: story.HomeTeamId, leagueId: story.LeagueId})">
+						<div class="row">
+							<div class="col">
+								<div class="item-image img-circle inline-block">
+									<img actual-src="{{util.teamImage(story.HomeTeamLogo)}}" ng-src="images/league-default.png"/>
+								</div>
+							</div>
+							<div class="col">
+								<span class="group-name-history inline-block col-center">{{story.HomeTeam}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

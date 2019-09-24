@@ -1,0 +1,61 @@
+<div class="staff-list" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+
+	<div class="playes-list main-padding">
+		<h4 class="main-label">{{ 'text_prof_staff' | translate }}</h4>
+
+		<ul>
+			<li ng-repeat="p in jobsList | filter:searchQuery" ng-class="{'last-row': $last}">
+				<div class="player-box">
+					<div class="item-image img-circle-on">
+						<img actual-src="{{ util.fanImage(p.Image) }}" ng-src="images/fan-default.jpg"/>
+					</div>
+					<div class="desc">
+						<h4>{{ p.FullName }}</h4>
+						<span>{{ 'player_role' | translate }} {{p.JobName }}</span>
+					</div>
+					<div class="last">
+						<div class="icon-desk"></div>
+						<div class="icons" ng-if="util.isLoggedIn()">
+							<a class="m-icon-message" user="p" app-message-button></a>
+							<a user="p" app-friend-button></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="playes-list main-padding">
+		<h4 class="main-label">{{ 'teams_players' | translate }}</h4>
+		<ul>
+			<li ng-repeat="p in playersList | filter:searchQuery" ng-class="{'last-row': $last}">
+				<div class="player-box">
+					<div class="item-image img-circle-on" ui-sref="app.player({playerId: p.Id, leagueId: lId,Height:p.Age})">
+						<img actual-src="{{ util.fanImage(p.Image) }}" ng-src="images/fan-default.jpg"/>
+					</div>
+					<div class="desc" ui-sref="app.player({playerId: p.Id, leagueId: lId,Height:p.Age})">
+						<h4>{{ p.FullName }}</h4>
+						<!-- need for Assaf 9/19
+						<span ng-if="isCurrentLangIsHebrew()">{{p.PositionTitle }} {{ 'player_role' | translate }} </span>
+						<span ng-if="isCurrentLangIsEnglish()">{{ 'player_role' | translate }} {{p.PositionTitle }}</span>
+						<span >{{ 'player_handicap_level' | translate }} {{ p.FinalHandicapLevel}}</span>
+						-->
+                        <span>{{p.PositionTitle}}</span>
+                        <span>{{ 'player_age' | translate }}  {{ (p.Age ) }} {{ 'player_age_unit' | translate }}</span>
+					</div>
+					<div class="last">
+						<!-- need for Assaf 9/19
+						<div class="icon-shirt">
+							<var>{{ p.ShirtNumber }}</var>
+						</div>
+						-->
+						<div class="icons" ng-if="util.isLoggedIn() && util.User.Id != p.Id">
+							<a class="m-icon-message" user="p" app-message-button></a>
+							<a user="p" app-friend-button></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

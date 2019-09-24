@@ -1,0 +1,115 @@
+<div class="signUpLeaguesListPage modal" style="padding: 15px;">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<!--<ion-header-bar class="bar-subheader">
+		<button class="button button-full icon-left ion-arrow-down-b">{{leageFilter}}</button>
+	</ion-header-bar>-->
+	<!--<ion-content class="padding has-subheader">-->
+
+
+	<ion-content class="padding has-main-header">
+		<div class="list has-bottom" ng-show="!progress">
+			<ion-list>
+				<div class="item-stable" ng-repeat="club in allClubs track by club.Id">
+					<ion-item class="leagueRow"
+							  ng-click="toggleGroup(club)"
+							  ng-class="{active: isGroupShown(club)}">
+							<p id="leagueTitle" class="leagueTitleUnchecked"
+							   ng-class="{teamsHidden: !isGroupShown(club), teamsShown: isGroupShown(club), leagueTitleChecked:club.checked}">
+								{{club.Title}}
+							</p>
+					</ion-item>
+
+					<div class="item-accordion leagueRow"
+						 ng-repeat="team in club.Teams track by team.TeamId"
+						 ng-if="isGroupShown(club)"
+						 ng-model="team.checked"
+						 ng-click="selectTeam(team, club)">
+						<p ng-class="team.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+						<p id="teamTitle" ng-class="team.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+							{{team.Title}}
+						</p>
+					</div>
+
+				</div>
+			</ion-list>
+		</div>
+
+		<!--<div class="list has-bottom" ng-show="!progress">
+
+			<ion-list>
+				<div ng-repeat="league in allLeagues">
+					<ion-item class="item-stable"
+							  ng-click="toggleGroup(league)"
+							  ng-class="{active: isGroupShown(league)}">
+						<div class="leagueRow">
+						 <p id="leagueTitle" class="leagueTitleUnchecked" ng-class="{teamsHidden: !isGroupShown(league), teamsShown: isGroupShown(league), leagueTitleChecked:league.checked}">{{league.Name}}</p>
+						</div>
+
+
+
+					</ion-item>
+
+					<div class="item-accordion"
+						   ng-repeat="team in league.Teams"
+						   ng-if="isGroupShown(league)"
+						   ng-model="team.checked"
+						   ng-click="selectTeam(team, league)">
+						<p ng-class="team.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+						<p id="teamTitle" ng-class="team.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+							{{team.Title}}
+						</p>
+					</div>
+
+				</div>
+			</ion-list>
+	   </div>-->
+
+
+	</ion-content>
+
+	<!--
+
+
+	 <ion-content class="padding has-header">
+
+		 <div class="list has-bottom" ng-show="!progress">
+
+			 <div ng-repeat="league in allLeagues">
+				 <div class="item item-divider">{{league.Name}}</div>
+
+				 <ion-checkbox ng-repeat="team in league.Teams"
+							   ng-model="team.checked" checked="team.checked" ng-click="selectTeam(team)">
+					 {{team.Title}}
+				 </ion-checkbox>
+			 </div>
+
+			 <!--<div ng-repeat-start="league in allLeagues">
+				 <div class="item item-divider">{{league.Name}}</div>
+				 </div>
+				 <ion-checkbox ng-repeat="team in league.Teams"
+							   ng-model="team.checked" checked="team.checked" ng-click="selectTeam(team)">
+					 {{team.Title}}
+				 </ion-checkbox>
+			 <div ng-repeat-end></div>-->
+	<!--<ion-checkbox ng-show="!progress" collection-repeat="team in allTeams"
+				  ng-model="team.checked" checked="team.checked" ng-click="selectTeam(team)">
+		{{team.Name}}
+	</ion-checkbox>
+</div>
+
+
+</ion-content>
+
+-->
+
+
+	<ion-footer-bar>
+		<button class="button button-full button-positive" ng-click="confirmTeamsSelection()">{{"button_ok" |
+			translate}}
+		</button>
+	</ion-footer-bar>
+
+</div>

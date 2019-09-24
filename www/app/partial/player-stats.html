@@ -1,0 +1,17 @@
+<div ng-repeat="playerRankPoint in playerRankPoints">
+	<span class="force-float-right playerAge">{{playerRankPoint.AgeName}}</span>
+	<div class="circles-container row" >
+		<div class="col">
+			<div class="team-place">
+				<var>{{playerRankPoint.Rank}}</var>
+			</div>
+			<p>{{ 'fan_player_Rank' | translate }}</p>
+		</div>
+		<div class="col">
+			<div class="team-place">
+				<var>{{playerRankPoint.Points}}</var>
+			</div>
+			<p>{{ 'fan_player_points' | translate }}</p>
+		</div>
+	</div>
+</div>

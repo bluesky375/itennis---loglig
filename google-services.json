@@ -1,0 +1,445 @@
+{
+  "project_info": {
+    "project_number": "352609738091",
+    "firebase_url": "https://loglig-c9501.firebaseio.com",
+    "project_id": "loglig-c9501",
+    "storage_bucket": "loglig-c9501.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:38f337039077f2e9",
+        "android_client_info": {
+          "package_name": "com.GRaps.Loglig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:7ed00b55af6b06c9",
+        "android_client_info": {
+          "package_name": "com.loglig.basketball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:87596df53923b2b0",
+        "android_client_info": {
+          "package_name": "com.loglig.basketball.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:3db25e791ac0b7d2",
+        "android_client_info": {
+          "package_name": "com.loglig.clubs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:23308d007e6e0570",
+        "android_client_info": {
+          "package_name": "com.loglig.clubs.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:2d48def7c1748abf",
+        "android_client_info": {
+          "package_name": "com.loglig.gymnastics.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:c610ceb668abc643",
+        "android_client_info": {
+          "package_name": "com.loglig.karate.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:5c1f38268f9b8604",
+        "android_client_info": {
+          "package_name": "com.loglig.netball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:be5449caa35df557",
+        "android_client_info": {
+          "package_name": "com.loglig.netball.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:e3a9797d2a45080b",
+        "android_client_info": {
+          "package_name": "com.loglig.tennis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:e6cf1023884ed251",
+        "android_client_info": {
+          "package_name": "com.loglig.tennis.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:a74eb52defafcda5",
+        "android_client_info": {
+          "package_name": "com.loglig.waterpolo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:13aeae5e36242015",
+        "android_client_info": {
+          "package_name": "com.loglig.waterpolo.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352609738091:android:fdd855e9bf44c07c",
+        "android_client_info": {
+          "package_name": "com.yit.Loglig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352609738091-jokur12h9tpdpths2vkq5jidfqvacrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9z1eAxovKaoWPNQ3FESkfYNXSJYggQyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,76 @@
+<ion-view class="fan-page">
+
+	<div class="header-first-raw">
+      <a class="header-icon menu_icon" menu-toggle="right"></a>
+      <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    </div>
+
+	<ion-content class="has-main-header">
+
+		<div class="fan-page-user rtl">
+			<div class="row">
+				<div class="col col-25">
+					<div class="item-image img-circle">
+						<img actual-src="{{util.fanImage(fan.Image)}}" ng-src="images/fan-default.jpg"/>
+					</div>
+				</div>
+				<div class="col col-center">
+					<h2>{{fan.UserName}}</h2>
+				</div>
+				<div class="col col-center">
+					<i ng-show="util.isLoggedIn()" ng-if="myName != fan.UserName" user="fan" app-friend-button></i>
+				</div>
+			</div>
+		</div>
+
+		<!--
+			// temp remove : Cheng Li.
+			<ion-slide ng-repeat="team in fan.Teams" ui-sref="app.team({teamId: team.TeamId, leagueId: team.LeagueId})">
+		-->
+		<div class="main-padding" ng-if="fan.Teams.length">
+			<div class="rtl">
+				<h4 class="main-label">{{"fan_title" | translate}}</h4>
+			</div>
+			<div class="fan-team-box">
+				<div class="row">
+					<div class="col col-center" ng-click="slidePrev()">
+						<i class="ion-arrow-left-b"></i>
+					</div>
+					<div class="col col-75 cont">
+						<ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)"
+									   active-slide="activeSlide">
+							<ion-slide ng-repeat="team in fan.Teams">
+								<div class="item-image img-circle">
+									<img actual-src="{{util.teamImage(team.Logo)}}" ng-src="images/league-default.png"/>
+								</div>
+								<h4>{{team.Title}}</h4>
+								<span>{{team.League}}</span>
+							</ion-slide>
+						</ion-slide-box>
+					</div>
+					<div class="col col-center" ng-click="slideNext()">
+						<i class="ion-arrow-right-b"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <div class="row" ng-if="banners && banners.length > 0" style="padding:0px">
+      <ng-include src="'app/partial/banners-pane.html'"></ng-include>
+    </div>
+
+		<app-team-stats info="currentTeam" ng-if="currentTeam"></app-team-stats>
+
+		<div gn-if="util.isLoggedIn()" class="friends-box rtl">
+			<h2 class="main-label">
+				<span>{{fan.NumberOfFriends}}</span>{{"text_friend" | translate}};
+				<span ng-if="util.isLoggedIn()">
+					{{fan.NumberOfCommonFriends}} {{"text_mutual_friend" | translate}}
+                </span>
+			</h2>
+
+			<ng-include src="'app/partial/fans-pane.html'"></ng-include>
+		</div>
+
+	</ion-content>
+</ion-view>

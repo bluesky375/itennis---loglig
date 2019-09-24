@@ -1,0 +1,345 @@
+<ion-view class="game-list">
+
+  <div class="header-first-raw">
+    <a class="header-icon menu_icon" menu-toggle="right"></a>
+    <h2 class="header-title">
+      <div class="title-live" ng-if="game.Status == 'live'">
+        <span>LIVE</span>
+      </div>
+    </h2>
+    <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+  </div>
+
+  <ion-content class="has-main-header items-box">
+    <div class="row group-row" style="justify-content:center;" ng-if = "isCurrentLangIsHebrew()">
+      <div class="col col-35" ng-if="(game.gameType == 1 && game.GuestTeamPair.length>0)
+        ||game.gameType == 1 && game.HomeTeamPair.length>0" 
+        ng-click="showDetail(game.GuestTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image  gameImg img-circle" style="position:relative;left:-10px;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+            <img  actual-src="{{util.fanImage(game.GuestTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+          <div class="item-image thumb img-circle" ng-if="game.gameType == 1" style="position:relative;left:0px;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+            <img  actual-src="{{util.fanImage(game.GuestTeamLogoPair)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.GuestTeam}}<span ng-if = "game.GuestTeamPair">/ {{game.GuestTeamPair}}</span> </span>
+        <!-- <span class="group-name">{{gameInfo.SecondPairPlayerName}} / {{gameInfo.SecondPlayerName}}</span> -->
+      </div>
+      <div class="col col-35" ng-if="game.gameType == 0||(game.gameType ==1 && game.GuestTeamPair.length<=0 &&
+			game.HomeTeamPair.length<=0) " 
+        ng-click="showDetail(game.GuestTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image img-circle">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+              <img ng-if="game.gameType == 1" actual-src="{{util.fanImage(game.GuestTeamLogo)}}"
+							ng-src="images/player-default.jpg" />
+						<img ng-if="game.gameType == 0" actual-src="{{util.teamImage(game.GuestTeamLogo)}}"
+							ng-src="images/team-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.GuestTeam}}</span>
+      </div>
+      <div class="col col-30" style="padding-right:0px;margin-right:0px;padding-left:0px;margin-left:0px;max-width:100px;margin:0px;">
+        <span class="diplay-block text-center sets-number"
+          ng-if="game.Status == 'ended' || game.Status == 'live'">{{getCurrentLanguage()==='iw'?game.HomeTeamScore:game.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?game.GuestTeamScore:game.HomeTeamScore}}</span>
+        <span class="diplay-block text-center main-vs" ng-if="game.Status != 'ended' && game.Status != 'live'" style="margin-top:10px;">VS</span>
+        <span class="diplay-block text-center sets-numbers" ng-if="game.Status == 'ended' || game.Status == 'live'"
+          ng-repeat="set in sets | orderBy:'-SetNumber'">{{getCurrentLanguage()==='iw'?set.HomeTeamScore:set.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?set.GuestTeamScore:set.HomeTeamScore}}</span>
+      </div>
+      <div class="col col-35" ng-if="(game.gameType == 1 && game.GuestTeamPair.length>0)
+        ||game.gameType == 1 && game.HomeTeamPair.length>0" 
+        ng-click="showDetail(game.HomeTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image thumb img-circle" style="position:relative;left:0px;z-index: 3;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img actual-src="{{util.fanImage(game.HomeTeamLogoPair)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+          <div class="item-image thumb img-circle"  style="position:relative;left:10px;z-index: 2;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img  actual-src="{{util.fanImage(game.HomeTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.HomeTeamPair}} / {{game.HomeTeam}}</span>
+      </div>
+      <div class="col col-35" ng-if="game.gameType == 0||(game.gameType ==1 && game.GuestTeamPair.length<=0 &&
+			game.HomeTeamPair.length<=0) " 
+        ng-click="showDetail(game.HomeTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image img-circle">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img ng-if="game.gameType == 0" actual-src="{{util.teamImage(game.HomeTeamLogo)}}"
+              ng-src="images/team-default.jpg" />
+              <img ng-if="game.gameType == 1" actual-src="{{util.fanImage(game.HomeTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.HomeTeam}}</span>
+      </div>
+    </div>
+    <div class="row group-row" style="justify-content:center;
+    " ng-if = "!isCurrentLangIsHebrew()">
+      <div class="col col-35" ng-if="(game.gameType == 1 && game.GuestTeamPair.length>0)
+        ||game.gameType == 1 && game.HomeTeamPair.length>0" 
+        ng-click="showDetail(game.GuestTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image thumb img-circle" style="position:relative;left:-0px;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+            <img  actual-src="{{util.fanImage(game.GuestTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+          <div class="item-image img-circle thumb" ng-if="game.gameType == 1" style="position:relative;left:-10px;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+            <img  actual-src="{{util.fanImage(game.GuestTeamLogoPair)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.GuestTeam}}<span ng-if = "game.GuestTeamPair">/ {{game.GuestTeamPair}}</span> </span>
+        <!-- <span class="group-name">{{gameInfo.SecondPairPlayerName}} / {{gameInfo.SecondPlayerName}}</span> -->
+      </div>
+      <div class="col col-35" ng-if="game.gameType == 0||(game.gameType ==1 && game.GuestTeamPair.length<=0 &&
+			game.HomeTeamPair.length<=0) " 
+        ng-click="showDetail(game.GuestTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image img-circle">
+            <!-- <img actual-src="{{util.fanImage(game.GuestTeamLogo)}}" ng-src="images/player-default.jpg" /> -->
+              <img ng-if="game.gameType == 1" actual-src="{{util.fanImage(game.GuestTeamLogo)}}"
+							ng-src="images/player-default.jpg" />
+						<img ng-if="game.gameType == 0" actual-src="{{util.teamImage(game.GuestTeamLogo)}}"
+							ng-src="images/team-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.GuestTeam}}</span>
+      </div>
+      <div class="col col-30" style="padding-right:0px;margin-right:0px;padding-left:0px;margin-left:0px;max-width:100px;margin:0px;">
+        <span class="diplay-block text-center sets-number"
+          ng-if="game.Status == 'ended' || game.Status == 'live'">{{getCurrentLanguage()==='iw'?game.HomeTeamScore:game.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?game.GuestTeamScore:game.HomeTeamScore}}</span>
+        <span class="diplay-block text-center main-vs" ng-if="game.Status != 'ended' && game.Status != 'live'" style="margin-top:10px;">VS</span>
+        <span class="diplay-block text-center sets-numbers" ng-if="game.Status == 'ended' || game.Status == 'live'"
+          ng-repeat="set in sets | orderBy:'-SetNumber'">{{getCurrentLanguage()==='iw'?set.HomeTeamScore:set.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?set.GuestTeamScore:set.HomeTeamScore}}</span>
+      </div>
+      <div class="col col-35" ng-if="(game.gameType == 1 && game.GuestTeamPair.length>0)
+        ||game.gameType == 1 && game.HomeTeamPair.length>0" 
+        ng-click="showDetail(game.HomeTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image thumb img-circle" style="position:relative;left:0px;z-index: 3;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img actual-src="{{util.fanImage(game.HomeTeamLogoPair)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+          <div class="item-image thumb img-circle"  style="position:relative;left:-10px;z-index: 2;width: 50px;height: 50px;">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img  actual-src="{{util.fanImage(game.HomeTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.HomeTeamPair}} / {{game.HomeTeam}}</span>
+      </div>
+      <div class="col col-35" ng-if="game.gameType == 0||(game.gameType ==1 && game.GuestTeamPair.length<=0 &&
+			game.HomeTeamPair.length<=0) " 
+        ng-click="showDetail(game.HomeTeamId, game.LeagueId, game.gameType);$event.stopPropagation()">
+        <div class="row">
+          <div class="item-image img-circle">
+            <!-- <img actual-src="{{util.fanImage(game.HomeTeamLogo)}}" ng-src="images/player-default.jpg"/> -->
+            <img ng-if="game.gameType == 0" actual-src="{{util.teamImage(game.HomeTeamLogo)}}"
+              ng-src="images/team-default.jpg" />
+              <img ng-if="game.gameType == 1" actual-src="{{util.fanImage(game.HomeTeamLogo)}}"
+              ng-src="images/player-default.jpg" />
+          </div>
+        </div>
+        <span class="group-name">{{game.HomeTeam}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <span class="text-center-first color-white">{{game.StartDate | date:"H:mm"}} <b>{{game.StartDate |
+				date:",dd.MM.yy"}}</b></span>
+    </div>
+    <div class="row">
+      <span class="text-center color-white" ng-click="util.openWaze(game.AuditoriumAddress)"
+        ng-show="game.Auditorium != undefined">{{game.Auditorium}}<a class="wazeicon"><img
+            ng-show="game.AuditoriumAddress != undefined" ng-src="images/waze.png" /></a></span>
+    </div>
+
+    <!-- 
+      Tennis League
+    -->
+    <div class="GamesScore"
+      ng-if="game.TennisLeagueGamesScore != null && game.TennisLeagueGamesScore.length > 0 && ( game.HomeTeamScore!= 0 || game.GuestTeamScore!= 0 )">
+      <div class="row" ng-repeat="tennisGameScore in game.TennisLeagueGamesScore">
+        <div class="col col-30 col-center">
+          {{getCurrentLanguage()==='iw'?tennisGameScore.FirstPlayerName:tennisGameScore.SecondPlayerName}}
+          {{getCurrentLanguage()==='iw'?tennisGameScore.FirstPairPlayerName:tennisGameScore.SecondPairPlayerName}}</div>
+        <div class="col col-40 col-center">
+          <span ng-repeat="score in tennisGameScore.TennisLeagueGameScore"
+            ng-if="score.HomeScore > 0 || score.GuestScore > 0">
+            {{getCurrentLanguage()==='iw'?score.HomeScore:score.GuestScore}}:{{getCurrentLanguage()==='iw'?score.GuestScore:score.HomeScore}}
+          </span>
+        </div>
+        <div class="col col-30 col-center">
+          {{getCurrentLanguage()==='iw'?tennisGameScore.SecondPlayerName:tennisGameScore.FirstPlayerName}}
+          {{getCurrentLanguage()==='iw'?tennisGameScore.SecondPairPlayerName:tennisGameScore.FirstPairPlayerName}}</div>
+      </div>
+    </div>
+
+
+    <div class="going-game" ng-if="GoingFriends.length > 0">
+      <div class="rtl">
+        <div class="main-label" ng-switch on="util.isLoggedIn()">
+          <span class="color-white" ng-switch-when="true">
+            מגיעים למשחק {{GoingFriends.length}} חברים
+          </span>
+          <span class="color-white" ng-switch-default>
+            מגיעים למשחק {{GoingFriends.length + game.FansGoing}} אוהדים
+          </span>
+        </div>
+        <div class="cl"></div>
+      </div>
+
+      <ng-include src="'app/partial/fans-pane.html?1&leagueId=game.LeagueId'"></ng-include>
+    </div>
+    <div class="history-games" ng-if="History.length > 0 && game.gameType == 0">
+      <div class="row">
+        <span class="label-left col-40" ui-sref="app.history({gameId: game.GameId})">
+          {{History.length}} {{ 'history_incounters' | translate }}
+        </span>
+        <div class="col-60" ui-sref="app.history({gameId: game.GameId})">
+          <span class="main-label">
+            {{ 'history_games' | translate }}
+          </span>
+          <img class="hec-img" src="images/REG-CHOOSE-TEAMS-ICON@3x.png" />
+        </div>
+      </div>
+      <div class="row group-row first" ng-repeat="story in History | orderBy:'-StartDate | limitTo: 1'" ng-if="$first">
+        <div class="col text-center"
+          ng-click="showDetail(story.GuestTeamId, story.LeagueId, story.gameType);$event.stopPropagation()">
+          <div class="row-game">
+            <span class="group-name-history inline-block col-center">{{story.GuestTeam}}</span>
+          </div>
+        </div>
+        <div class="col col-25 col-center">
+          <span
+            class="diplay-block text-center group-name">{{getCurrentLanguage()==='iw'?story.HomeTeamScore:story.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?story.GuestTeamScore:story.HomeTeamScore}}</span>
+        </div>
+        <div class="col text-center"
+          ng-click="showDetail(story.HomeTeamId, story.LeagueId, story.gameType);$event.stopPropagation()">
+          <div class="row-game">
+            <span class="group-name-history inline-block col-center">{{story.HomeTeam}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="group-row" ng-repeat="story in History | orderBy:'-StartDate | limitTo: 4'" ng-if="!$first">
+        <span class="text-right"
+          ui-sref="app.game({gameId: story.GameId, gameType:story.gameType})"><b>{{story.LeagueName}}</b>
+          {{story.StartDate | date:"dd.MM.yyyy"}}</span>
+        <div class="row">
+          <div class="col text-center"
+            ng-click="showDetail(story.GuestTeamId, story.LeagueId, story.gameType);$event.stopPropagation()">
+            <div class="row">
+              <div class="col">
+                <span class="group-name-history inline-block col-center">{{story.GuestTeam}}</span>
+              </div>
+              <div class="col">
+                <div class=" item-image img-circle inline-block">
+                  <img actual-src="{{util.teamImage(story.GuestTeamLogo)}}" ng-src="images/league-default.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-25 col-center">
+            <span
+              class="diplay-block text-center group-name">{{getCurrentLanguage()==='iw'?story.HomeTeamScore:story.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?story.GuestTeamScore:story.HomeTeamScore}}</span>
+          </div>
+          <div class="col text-center"
+            ng-click="showDetail(story.HomeTeamId, story.LeagueId, story.gameType);$event.stopPropagation()">
+
+            <div class="row">
+              <div class="col">
+                <div class="item-image img-circle inline-block">
+                  <img actual-src="{{util.teamImage(story.HomeTeamLogo)}}" ng-src="images/league-default.png" />
+                </div>
+              </div>
+              <div class="col">
+                <span class="group-name-history inline-block col-center">{{story.HomeTeam}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="history-games" ng-if="History.length > 0 && game.gameType == 1">
+      <div class="row">
+        <span class="label-left col-40" ui-sref="app.history({gameId: game.GameId})">
+          {{History.length}} {{ 'history_incounters' | translate }}
+        </span>
+        <div class="col-60" ui-sref="app.history({gameId: game.GameId})">
+          <span class="main-label">
+            {{ 'history_games' | translate }}
+          </span>
+          <img class="hec-img" src="images/REG-CHOOSE-TEAMS-ICON@3x.png" />
+        </div>
+      </div>
+      <div class="row group-row first" ng-repeat="story in History | orderBy:'-StartDate | limitTo: 1'" ng-if="$first">
+        <div class="col text-center"
+          ng-click="showDetail(story.GuestTeamId, story.LeagueId, game.gameType);$event.stopPropagation()">
+          <div class="row-game">
+            <span class="group-name-history inline-block col-center"><span ng-if = "story.GuestTeamPair">{{story.GuestTeamPair}} / </span>{{story.GuestTeam}}</span>
+          </div>
+        </div>
+        <div class="col col-25 col-center">
+          <span
+            class="diplay-block text-center group-name">{{getCurrentLanguage()==='iw'?story.HomeTeamScore:story.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?story.GuestTeamScore:story.HomeTeamScore}}</span>
+        </div>
+        <div class="col text-center"
+          ng-click="showDetail(story.HomeTeamId, story.LeagueId, game.gameType);$event.stopPropagation()">
+          <div class="row-game">
+            <span class="group-name-history inline-block col-center">{{story.HomeTeam}} <span ng-if="story.HomeTeamPair">/ {{story.HomeTeamPair}}</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="group-row" ng-repeat="story in History | orderBy:'-StartDate | limitTo: 4'" ng-if="!$first">
+        <span class="text-right"
+          ui-sref="app.game({gameId: story.GameId, gameType:story.gameType})"><b>{{story.LeagueName}}</b>
+          {{story.StartDate | date:"dd.MM.yyyy"}}</span>
+        <div class="row">
+          <div class="col text-center"
+            ng-click="showDetail(story.GuestTeamId, story.LeagueId, game.gameType);$event.stopPropagation()">
+            <div class="row">
+              <div class="col">
+                <span class="group-name-history inline-block col-center"><span ng-if = "story.GuestTeamPair">{{story.GuestTeamPair}} / </span>{{story.GuestTeam}}</span>
+              </div>
+              <div class="col">
+                <div class=" item-image img-circle inline-block">
+                  <img actual-src="{{util.fanImage(story.GuestTeamLogo)}}" ng-src="images/player-default.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-25 col-center">
+            <span
+              class="diplay-block text-center group-name">{{getCurrentLanguage()==='iw'?story.HomeTeamScore:story.GuestTeamScore}}:{{getCurrentLanguage()==='iw'?story.GuestTeamScore:story.HomeTeamScore}}</span>
+          </div>
+          <div class="col text-center"
+            ng-click="showDetail(story.HomeTeamId, story.LeagueId, game.gameType);$event.stopPropagation()">
+
+            <div class="row">
+              <div class="col">
+                <div class="item-image img-circle inline-block">
+                  <img actual-src="{{util.fanImage(story.HomeTeamLogo)}}" ng-src="images/player-default.jpg" />
+                </div>
+              </div>
+              <div class="col">
+                <span class="group-name-history inline-block col-center"><span ng-if = "story.HomeTeamPair">{{story.HomeTeamPair}} / </span>{{story.HomeTeam}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

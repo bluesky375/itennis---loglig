@@ -1,0 +1,40 @@
+<ion-view class="leagues-list">
+    <!-- Include Header -->
+    <div class="header-first-raw">
+      <a class="header-icon menu_icon" menu-toggle="right"></a>
+      <h2 class="header-title">
+        <span>{{'main_nav_events_list' | translate}}</span>
+      </h2>
+      <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+      <!-- <a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+      <div ng-show="isSearchVisible" class="search-bar">
+        <input type="text" ng-model="searchQuery.Title" placeholder="{{ 'text_search' | translate }}">
+      </div> -->
+    </div>
+  
+    <ion-content class="has-main-header padding items-box">
+      <div ng-repeat="item in events | filter:searchQuery track by $index" class="list-item" ui-sref="app.event({eventId: item.Id})">
+        <div class="item-cont" style="margin-right:0px;text-align:justify" ng-class="{'rtl':isCurrentLangIsHebrew()}">
+            <h2  style="font-weight: bold;font-size:16px;">{{item.Name}}</h2>
+            <h2  style="font-size:16px;">{{item.Place}}</h2>
+            <h2  style="font-size:16px;">{{item.Date}}</h2>
+            <div ng-if="item.Description && truncating[$index]" style="font-size:14px;margin-top:3px;height:45px;overflow:hidden"  
+             ng-click="clickShowMore($index);">
+              <div ng-if="truncating && item.Description.length > limit" style="height:45px;">
+                {{item.Description | limitTo: limit}}
+              </div>
+              <span ion-button ng-if="!isCurrentLangIsHebrew()" style="font-size:24px;float:right;position:relative;top:-28px;background-color:white;height:26px;">...</span>
+              <span ion-button ng-if="isCurrentLangIsHebrew()" style="font-size:24px;float:left;position:relative;top:-28px;background-color:white;height:26px;">...</span>
+            </div>
+            <div ng-if="item.Description && !truncating[$index]" style="font-size:14px;margin-top:3px;overflow:hidden"  ng-click="clickShowMore($index);$event.stopPropagation();">
+              <h2 style="font-size:14px;">{{item.Description}}</h2>
+            </div>
+            <a class="eventlogo">
+              <img actual-src="{{util.eventImage(item.Logo)}}" ng-src="images/event-default.png" />
+            </a>
+        </div>
+      </div>
+  
+    </ion-content>
+  </ion-view>
+  

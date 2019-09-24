@@ -1,0 +1,107 @@
+<div class="page-image">
+	<div ng-if="league.Image" class="item-image">
+		<!-- <img ng-src="{{util.leagueImage(league.Image)}}"/> -->
+		<img ng-src="{{util.leagueImage(league.Image)}}" />
+	</div>
+</div>
+<div ng-if="league.Type > 0"
+	ng-class="{'going-btn-left' : isCurrentLangIsHebrew(), 'going-btn-right' : isCurrentLangIsEnglish()}">
+	<a class="going-btn" ng-click="setRegister()">
+		&nbsp;&nbsp;{{"text_register" | translate}}&nbsp;&nbsp;
+	</a>
+</div>
+<div class="league-info leagures-title-top-padding">
+	<div>{{ 'end_registration_date' | translate }}:&nbsp;{{league.EndRegistrationDate | date:"dd.MM.yyyy"}}</div>
+	<div ng-if="team != undefined">{{ 'maximumAge' | translate }}:&nbsp;{{team.MaximumAge | date:"dd.MM.yyyy"}}</div>
+	<div ng-if="team != undefined">{{ 'minimumAge' | translate }}:&nbsp;{{team.MinimumAge | date:"dd.MM.yyyy"}}</div>
+	<div ng-if="team != undefined">{{ 'Gender' | translate }}:&nbsp;{{team.Gender}}</div>
+	<div ng-if="team != undefined">{{ 'Region' | translate }}:&nbsp;{{team.Region}}</div>
+	<div ng-if="team != undefined">{{ 'PlaceForQualification' | translate }}:&nbsp;{{team.PlaceForQualification}}</div>
+	<div ng-if="team != undefined">
+		{{ 'QualificationStartDate' | translate }}:&nbsp;{{levelDateSetting.QualificationStartDate | date:"dd.MM.yyyy"}}
+	</div>
+	<div ng-if="team != undefined">
+		{{ 'QualificationEndDate' | translate }}:&nbsp;{{levelDateSetting.QualificationEndDate | date:"dd.MM.yyyy"}}
+	</div>
+	<div ng-if="team != undefined">{{ 'PlaceForFinal' | translate }}:&nbsp;{{team.PlaceForFinal}}</div>
+	<div ng-if="team != undefined">
+		{{ 'FinalsStartDate' | translate }}:&nbsp;{{levelDateSetting.FinalStartDate | date:"dd.MM.yyyy"}}</div>
+	<div ng-if="team != undefined">
+		{{ 'FinalsEndDate' | translate }}:&nbsp;{{levelDateSetting.FinalEndDate | date:"dd.MM.yyyy"}}</div>
+</div>
+<div ng-if="league.Type > 0"
+	ng-class="{'going-btn-left' : isCurrentLangIsHebrew(), 'going-btn-right' : isCurrentLangIsEnglish()}" style="position:relative">
+	<a class="going-btn" ng-click="setGameBracket()">
+		&nbsp;&nbsp;{{"text_game_bracket" | translate}}&nbsp;&nbsp;
+	</a>
+</div>
+<app-next-game info="game" game="game" ng-if="game!=null"></app-next-game>
+
+<div ng-class="game?'league-info-without-part-sep':'league-info-part-sep'">
+	<div class="league-info">
+		<div class="leagures-subtitle">{{aboutLabel}}</div>
+		<div class="row">
+			<ion-textarea class="league_textarea">{{league.AboutLeague}}</ion-textarea>
+		</div>
+	</div>
+</div>
+
+<div>
+	<div class="league-info">
+		<div class="leagures-subtitle">{{structureLabel}}</div>
+		<div class="row">
+			<ion-textarea class="league_textarea">{{league.LeagueStructure}}</ion-textarea>
+		</div>
+	</div>
+</div>
+
+
+<!-- Pedro
+<div class="going-game" ng-if="uploadableToGallery || imageGallery.length > 0">
+	<div>
+		<img ng-if="uploadableToGallery" class="camera-btn" src="images/PNGADD_photo_BTN_ACTIVE.png" ng-click="openCameraPopover($event)" />
+    <div class="main-label ng-binding" style="float: right" ng-click="showSlide(3)">{{ 'fan_edit_gallery' | translate }}</div>
+		<div class="cl"></div>
+	</div>
+
+	<ng-include src="'app/partial/gallery-pane.html'"></ng-include>
+</div>
+
+<div class="row" ng-if="banner != undefined" style="padding:0px">
+  <ng-include src="'app/partial/banners-pane.html'"></ng-include>
+</div>
+
+<div class="ranked-teams" ng-if="topGroups">
+	<div class="row" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<div class="col">
+			<div class="main-label">{{ 'text_table' | translate }}</div>
+		</div>
+		<div class="col col-50 top">
+			<i ng-class="{'ion-arrow-right-b' : isCurrentLangIsHebrew(), 'ion-arrow-left-b' : isCurrentLangIsEnglish()}"
+			   ng-if="topGroups.length > 1" ng-click="showGroup('next')"></i>
+			<span>{{currGroup.Title}}</span>
+			<i ng-class="{'ion-arrow-left-b' : isCurrentLangIsHebrew(), 'ion-arrow-right-b' : isCurrentLangIsEnglish()}"
+			   ng-if="topGroups.length > 1" ng-click="showGroup('prev')"></i>
+		</div>
+		<div class="col"></div>
+	</div>
+	<ion-slide-box show-pager="false" ng-if="topGroups" active-slide="currGroupIndex"
+				   on-slide-changed="slideHasChanged($index)">
+		<ion-slide ng-repeat="group in topGroups">
+			<div class="row" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+				<div class="col" ng-repeat="t in group.Teams | orderBy: 'PositionNumber' | limitTo: 3">
+					<div class="item-box" ng-click="openTeam(t.Id)">
+						<span ng-if="$index==0">{{ 'text_first_place' | translate }}</span>
+						<span ng-if="$index==1">{{ 'text_second_place' | translate }}</span>
+						<span ng-if="$index==2">{{ 'text_third_place' | translate }}</span>
+						<div class="item-image img-circle">
+							<img actual-src="{{util.teamImage(t.Logo)}}" ng-src="images/league-default.png" teamsimage-onload/>
+						</div>
+						<h4>{{t.Title}}</h4>
+					</div>
+				</div>
+			</div>
+		</ion-slide>
+	</ion-slide-box>
+</div>
+-->

@@ -1,0 +1,186 @@
+.game-list .header-first-raw {
+    background-color: #009edb;
+}
+
+.game-list .title-live {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFF;
+    width: 50px;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.game-list .has-main-header {
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-size: cover;
+    background-image: url(../images/game_bk.jpg);
+}
+
+.game-list .group-row .item-image {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 6px auto;
+}
+
+.game-list .history-games .group-row .item-image {
+    width: 40px;
+    height: 40px;
+}
+
+.game-list .row-game {
+    padding: 5px;
+    overflow: overlay;
+}
+
+.game-list .col-30 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+    text-align: center;
+}
+
+.game-list .col-35 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 35%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 35%;
+    -ms-flex: 0 0 35%;
+    flex: 0 0 35%;
+    max-width: 35%;
+    text-align: center;
+}
+
+.game-list .col-40 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 40%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+}
+
+.game-list .col-60 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 60%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+    text-align: center;
+}
+
+.game-list .text-center-first {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.game-list .text-center {
+    margin: 0 auto;
+}
+
+.game-list .hec-img {
+    height: 15px;
+    margin-top: 15px;
+}
+
+.game-list .group-name {
+    font-size: 18px;
+    color: #009edb;
+}
+
+.game-list .sets-numbers,
+.game-list .sets-number {
+    color: #FFF;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 25px;
+}
+
+.game-list .sets-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.game-list .color-white {
+    color: #FFF;
+}
+
+.game-list .going-game .slider-slide .row span {
+    color: #FFF;
+}
+
+.game-list .going-game {
+    border-color: #ccc;
+}
+
+.game-list .history-games .group-row {
+    border-bottom: 1px solid #ccc;
+}
+
+.game-list .history-games .group-row .text-right {
+    color: #364557;
+    float: right;
+    padding: 10px 15px 0 0;
+}
+
+.game-list .history-games .group-row .col-25 .group-name {
+    font-weight: bold;
+}
+
+.game-list .history-games .group-row.first .col-25 .group-name {
+    font-size: 20px;
+}
+
+.game-list .history-games .group-name-history {
+    font-size: 16px;
+    color: #FFF;
+}
+
+.game-list .history-games .group-row.first .group-name-history {
+    font-size: 18px;
+    color: #EEE;
+}
+
+.game-list .history-games .main-label {
+    float: right;
+    color: #FFF;
+    padding: 12px 0px 6px 0;
+    margin-right: 15px;
+}
+
+.game-list .history-games .label-left {
+    font-size: 18px;
+    color: #FFF;
+    margin-left: 15px;
+    padding: 12px 0px 6px 0;
+    text-align: left;
+}
+
+.game-list .has-main-header .main-vs {
+    margin-top: 25px;
+}
+
+.rank-table-teamname {
+    width: 70px;
+}
+
+.GamesScore {
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    direction: ltr;
+}
+.gameImg{
+    width:50px;
+    height: 50px;
+}

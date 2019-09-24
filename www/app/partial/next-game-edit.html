@@ -1,0 +1,96 @@
+<div class="PlayGame">
+	<div class="text-center">{{game.LeagueName}}</div>
+	<div class="row">
+		<div class="col">
+			{{game.HouseName}}
+		</div>
+		<div class="col-60 game-date-time date" ui-sref="app.game({gameId: game.GameId, gameType: game.gameType})">
+			<span><b>{{game.StartDate | date : 'dd.MM.yy'}} ,</b></span><span>{{game.StartDate | date : 'HH:mm'}}</span><br>
+			<span class="game-auditorium" ng-click="util.openWaze(game.AuditoriumAddress);$event.stopPropagation()" ng-show="game.Auditorium != undefined">{{game.Auditorium}}<a class="wazeicon"><img ng-show="game.AuditoriumAddress != undefined" ng-src="images/waze.png"/></a></span>
+		</div>
+
+		<div class="col">
+			<!--<div ng-show="!game.PlayOffType" class="col set">{{game.CycleNumber + 1}} {{ 'text_cycle' | translate }}</div>-->
+			<div ng-show="game.PlayOffType" class="col set">{{game.PlayOffType}}</div>
+			<div ng-show="game.MaxPlayoffPos && game.MinPlayoffPos" class="col set">{{ 'text_places' | translate }} {{game.MaxPlayoffPos}} - {{game.MinPlayoffPos}}</div>
+		</div>
+		<a class="referee-game-results-button icon ion-ios-plus-outline"
+			ng-if="util.User.Role == 'workers' && game.Status!= 'ended'"
+			ng-click="setScoreForGame(game);$event.stopPropagation()">
+		</a>
+	</div>
+	<div class="row teams teams-game-box">
+		<div class="col col-center">
+			<h4 ng-click="openTeam(game.HomeTeamId, game.LeagueId)" class="one game-box-team-name">{{game.HomeTeam}}</h4>
+		</div>
+		<div class="col col-20 game-box-teams">
+			<div ng-if="game.Status != 'live' && game.Status != 'ended'" class="main-vs" ui-sref="app.game({gameId: game.GameId, gameType: game.gameType})">VS</div>
+		</div>
+		<div class="col col-center">
+			<h4 ng-click="openTeam(game.GuestTeamId, game.LeagueId)" class="two game-box-team-name">{{game.GuestTeam}}</h4>
+		</div>
+	</div>
+	
+	<!--<div class="PlayGame" ng-class="{'live': 'LiveGame' }[game.Status]" ui-sref="app.game({gameId: game.GameId, gameType: game.gameType})">
+
+		<span class="main-label" ng-if="!isScroll" ui-sref="app.game({gameId: game.GameId, gameType: game.gameType})">
+			{{(game.Status == 'live' ? "text_live_now" : "text_upcomming") | translate}}
+		</span>
+		<a class="referee-game-results-button icon ion-ios-plus-outline"
+		   ng-if="util.User.Role == 'workers' && game.Status!= 'ended'"
+		   ng-click="setScoreForGame(game);$event.stopPropagation()">
+		</a>
+		<div class="Teams row">
+			<div class="col">
+				<a class="thumb img-circle"
+				   ng-click="showTeam(game.GuestTeamId, game.LeagueId);$event.stopPropagation()">
+					<img actual-src="{{util.teamImage(game.GuestTeamLogo)}}" ng-src="images/league-default.png"/>
+				</a>
+				<span ng-click="showTeam(game.GuestTeamId, game.LeagueId);$event.stopPropagation()">{{game.GuestTeam}}</span>
+			</div>
+
+			<div class="col" ng-class="game.Status != 'live' && game.Status != 'ended' ? 'vs' : 'vs-ended'">
+                <span class="Clock" ng-if="game.Status == 'live' || game.Status == 'ended'">
+                    {{game.GuestTeamScore}} : {{game.HomeTeamScore}}
+                </span>
+			</div>
+
+			<div class="col">
+				<a class="thumb img-circle"
+				   ng-click="showTeam(game.HomeTeamId, game.LeagueId);$event.stopPropagation()">
+					<img actual-src="{{util.teamImage(game.HomeTeamLogo)}}" ng-src="images/league-default.png"/>
+				</a>
+				<span ng-click="showTeam(game.HomeTeamId, game.LeagueId);$event.stopPropagation()">{{game.HomeTeam}}</span>
+			</div>
+
+			<div class="cl"></div>
+		</div>
+		<div class="InfoBox" ng-switch on="game.Status">
+
+            <span class="Clock">
+                {{game.StartDate | date: 'HH:mm'}}
+            </span>
+			<span class="Date">
+                ,{{game.StartDate | date: 'dd.MM.yy'}}
+            </span>
+			<span class="Stadium">{{game.Auditorium}}</span>
+			<div class="cl"></div>
+			<div class="TimerPl" ng-if="game.Status == 'closetodate'">
+				<div class="Timer" data-time="{{game.TimeLeft}}"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="going-game" ng-if="game.FansList.length > 0">
+		<div class="rtl">
+			<div class="main-label" ng-switch on="util.isLoggedIn()">
+				<span ng-switch-when="true">{{ 'text_coming_to_game' | translate }} : {{game.FriendsGoing}} {{ 'text_friends' | translate }}; {{game.FansGoing}} {{ 'text_fans' | translate }}</span>
+				<span ng-switch-default>{{ 'text_coming_to_game' | translate }} : {{game.FriendsGoing + game.FansGoing}} {{ 'text_fans' | translate }}</span>
+			</div>
+			<div class="cl"></div>
+		</div>
+
+		<ng-include src="'app/partial/fans-pane.html?1'"></ng-include>
+	</div>-->
+</div>

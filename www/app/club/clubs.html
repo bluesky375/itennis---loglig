@@ -1,0 +1,74 @@
+<ion-view class="leagues-list">
+  <!-- Include Header -->
+
+  <div class="header-first-raw">
+    <a class="header-icon menu_icon" menu-toggle="right"></a>
+    <h2 class="header-title" ng-if="areaStr === null || areaStr === undefined">
+      <span>{{'main_nav_all_clubs' | translate}}</span>
+    </h2>
+    <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    <!-- <a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+    <div ng-show="isSearchVisible" class="search-bar">
+      <input type="text" ng-model="searchQuery.name" placeholder="{{ 'text_search' | translate }}">
+    </div> -->
+  </div>
+
+  <ion-content class="has-main-header padding items-box">
+
+    <div class="list-item" ui-sref="app.clubDetailList({areaStr: 'area1' })">
+      <!-- <a class="logo">
+        <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+      </a> -->
+      <div class="item-cont1">
+        <h4>{{'area_North' | translate}}</h4>
+        <!-- <p class="subtitle">
+          {{item.totalPlayers}} {{"text_players" | translate}}
+        </p> -->
+      </div>
+    </div>
+    <div class="list-item" ui-sref="app.clubDetailList({areaStr: 'area2' })">
+      <!-- <a class="logo">
+        <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+      </a> -->
+      <div class="item-cont1">
+        <h4>{{'area_Sharon' | translate}}</h4>
+        <!-- <p class="subtitle">
+          {{item.totalPlayers}} {{"text_players" | translate}}
+        </p> -->
+      </div>
+    </div>
+    <div class="list-item" ui-sref="app.clubDetailList({areaStr: 'area3' })">
+      <!-- <a class="logo">
+        <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+      </a> -->
+      <div class="item-cont1">
+        <h4>{{'area_Center' | translate}}</h4>
+        <!-- <p class="subtitle">
+          {{item.totalPlayers}} {{"text_players" | translate}}
+        </p> -->
+      </div>
+    </div>
+    <div class="list-item" ui-sref="app.clubDetailList({areaStr: 'area4' })">
+      <!-- <a class="logo">
+        <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+      </a> -->
+      <div class="item-cont1">
+        <h4>{{'area_Jerusalem' | translate}}</h4>
+        <!-- <p class="subtitle">
+          {{item.totalPlayers}} {{"text_players" | translate}}
+        </p> -->
+      </div>
+    </div>
+    <div class="list-item" ui-sref="app.clubDetailList({areaStr: 'area5' })">
+      <!-- <a class="logo">
+        <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+      </a> -->
+      <div class="item-cont1">
+        <h4>{{'area_South' | translate}}</h4>
+        <!-- <p class="subtitle">
+          {{item.totalPlayers}} {{"text_players" | translate}}
+        </p> -->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

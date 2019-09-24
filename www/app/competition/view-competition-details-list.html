@@ -1,0 +1,30 @@
+<ion-view class="leagues-list">
+  <!-- Include Header -->
+  <div class="header-first-raw-competition">
+    <a class="header-icon menu_icon" menu-toggle="right"></a>
+    <h2 class="header-title">
+      <span ng-if="area == 'Youth'">{{'Youth_competitions' | translate}}</span>
+      <span ng-if="area == 'Daily'">{{'Daily_competitions' | translate}}</span>
+      <span ng-if="area == 'Senior'">{{'Senior_competitions' | translate}}</span>
+    </h2>
+    <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    <a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+    <div ng-show="isSearchVisible" class="search-bar">
+      <input type="text" ng-model="searchQuery" placeholder="{{ 'text_search' | translate }}">
+    </div>
+  </div>
+
+  <ion-content class="has-main-header padding items-box">
+    <div ng-repeat="item in competitions | filter:searchQuery track by $index" class="list-item" ui-sref="app.categorylist({competitionId: {{$index}},areaStr:area})">
+      <a class="logo">
+        <img actual-src="{{util.competitionImage(item.Logo)}}" ng-src="images/league-default.png" />
+      </a>
+      <div class="item-cont">
+        <h4>{{item.CompetitionTitle}}</h4>
+        <p class="subtitle">
+              {{item.categoriPlayersNum}} {{"text_players" | translate}}
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,1162 @@
+.fan-content {
+  top: 81px;
+  padding-top: 0px;
+  margin-top: 2px;
+  border-top: 1px inset #000;
+}
+
+.fan-content .item-accordion {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.fan-content #teamTitle {
+  font-size: 18px;
+  margin-right: 25px;
+}
+
+.fan-content .teamTitleUnchecked {
+  color: #000000;
+}
+
+.fan-content .teamTitleChecked {
+  color: #009edb;
+}
+
+.fan-content .teamChecked,
+.mainChecked {
+  display: block;
+  float: right;
+  background-image: url(../images/checkbox-active@3x.png);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+.fan-content .teamUnchecked,
+.mainUnchecked {
+  display: block;
+  float: right;
+  /*background-image: url(../images/checkbox-inactive@3x.png);*/
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.fan-content .teamChecked1,
+.mainChecked {
+  display: block;
+  background-image: url(../images/checkbox-active@3x.png);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+.fan-content .teamUnchecked1,
+.mainUnchecked {
+  display: block;
+  /*background-image: url(../images/checkbox-inactive@3x.png);*/
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.fan-content .f-item-no-border .teamUnchecked {
+  margin-right: 5px;
+}
+
+.fan-content .f-item-no-border .teamChecked {
+  margin-right: 5px;
+}
+/* Message container */
+#messagesContainer {
+  background-color: #009edb;
+  padding: 8px 15px;
+  border-bottom: 1px inset #434343;
+  overflow: hidden;
+}
+
+#messagesContainer .ion-close {
+  float: left;
+}
+
+#messagesContainer span {
+  color: white;
+  direction: rtl;
+  display: block;
+  font-size: 16px;
+}
+
+/* Circle Block */
+.circles-container {
+  border-bottom: 1px inset #434343;
+  height: 145px;
+}
+
+.circles-container.row {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.circles-container p {
+  text-align: center;
+}
+
+.circles-container .radial-progress .inset .percentage .numbers span {
+  width: 45px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-size: 16px;
+  color: #364557;
+  overflow: visible;
+  z-index: 100;
+  font-family: "Open Sans Hebrew";
+  font-weight: bold;
+}
+
+.middle-box {
+  border-left-width: 1px;
+  border-left-color: rgba(53, 68, 86, 0.2);
+  border-left-style: groove;
+  border-right-width: 1px;
+  border-right-color: rgba(53, 68, 86, 0.2);
+  border-right-style: groove;
+}
+
+.middle-box .team-place {
+  padding-top: 0;
+  text-align: left;
+}
+
+.team-place {
+  text-align: center;
+  height: 85px;
+  margin-bottom: 10px;
+}
+
+.team-place var {
+  font-style: normal;
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  padding-top: 18px;
+  border: 1px solid #364557;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+  color: #364557;
+  font-weight: bold;
+}
+
+/* ================================================================ */
+
+/*Play Game Box*/
+.PlayGame {
+  width: 100%;
+  text-align: right;
+  margin-top: 4px;
+  position: relative;
+  background-color: #fff;
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  border-bottom-color: #434343;
+  padding: 0 15px 10px 15px;
+  /*background-color: bisque;*/
+  /*height: 100%;*/
+}
+
+.PlayGame .RightHeader {
+  float: right;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  direction: rtl;
+}
+
+.PlayGame .Teams {
+  height: auto;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.TimerPl {
+  padding-top: 5px;
+}
+
+.TimerPl .Timer {
+  width: 135px;
+  margin: 0 auto;
+  height: 35px;
+  overflow: hidden;
+}
+
+.TimerPl .Timer .flip {
+  width: 16px;
+  height: 28px;
+  font-size: 18px;
+  border-radius: 0px;
+  margin: 0;
+}
+
+.TimerPl .Timer li {
+  width: 16px;
+  height: 28px;
+  line-height: 30px;
+}
+
+.TimerPl .Timer .flip-clock-label {
+  display: none;
+}
+
+.TimerPl .Timer .flip a div {
+  font-size: 18px;
+  border-radius: 0;
+}
+
+.TimerPl .Timer .flip-clock-divider {
+  width: 10px;
+  height: 43px;
+}
+
+.TimerPl .Timer .flip-clock-dot {
+  width: 3px;
+  height: 3px;
+  left: 3px;
+}
+
+.TimerPl .Timer .flip-clock-dot.top {
+  top: 17px;
+}
+
+.PlayGame .Teams div {
+  font-size: 18px;
+  color: #009edb;
+  text-align: center;
+  padding-top: 33px;
+}
+
+.PlayGame .Teams .vs-ended {
+  width: 50px;
+  padding-top: 65px;
+}
+
+.PlayGame .Teams .vs-ended .Clock {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.PlayGame .Teams .vs {
+  /*background: url(../images/Player/VS.gif) no-repeat center;*/
+  background: url(../images/Player/VS.gif) repeat-y center top;
+  /*background-size: contain;*/
+  background-size: 50px;
+  width: 50px;
+}
+
+.PlayGame .Teams .thumb {
+  margin: 0 auto 14px;
+
+  height: 85px;
+  width: 85px;
+}
+
+.PlayGame .Teams .thumb img {
+}
+
+.PlayGame .Teams .vs img {
+  width: 100%;
+  height: auto;
+}
+
+.PlayGame .InfoBox {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  line-height: 19px;
+  font-size: 17px;
+}
+
+.PlayGame .InfoBox .Date {
+  font-weight: bold;
+}
+
+.PlayGame .InfoBox .Stadium {
+  font-weight: lighter;
+  display: block;
+  text-align: center;
+}
+
+.PlayGame .going-btn {
+  float: left;
+}
+
+.PlayGame .main-label {
+  white-space: nowrap;
+}
+
+/*Live Game*/
+
+.LiveGame .main-label {
+  color: #009edb;
+}
+
+.LiveGame .Date {
+  display: none;
+}
+
+.LiveGame .LeftHeader {
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+}
+
+.LiveGame .InfoBox .Clock {
+  font-size: 20px;
+  color: #009edb;
+}
+
+.BoxBanner {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.BoxBanner img {
+  width: 100%;
+  height: auto;
+}
+
+/*Slider Going Game*/
+
+.games-slider {
+  height: 350px;
+  overflow: hidden;
+}
+
+.going-game {
+  margin-top: 14px;
+  border-bottom: 1px inset #434343;
+  padding-bottom: 5px;
+}
+
+.going-game .camera-btn {
+  float: left;
+  width: 40px;
+  margin: 0 15px;
+}
+
+.going-game span {
+  /* margin:15px 15px; */
+}
+
+.going-game .main-label {
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.friends-list .fan-item {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.friends-list .fan-item .item-image {
+  border-color: #e6e7e9;
+}
+
+.friends-list .row i {
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.friends-list .row {
+  direction: rtl;
+}
+
+.friends-list span {
+  height: 30px;
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  overflow: hidden;
+  word-wrap: normal;
+  font-size: 14px;
+}
+
+.friends-list .gallery-image {
+  width: 100%;
+  height: 25vmin;
+}
+
+/*Your Msg*/
+.YourMsg {
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  border-bottom-color: #009edb;
+  /*margin-top: 15px;*/
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  border-bottom-color: #434343;
+  /*padding-bottom: 10px;*/
+  position: relative;
+  padding: 15px;
+  background: #e6e7e9;
+}
+
+.YourMsg .RightHeader {
+  float: right;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  direction: rtl;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 1);
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  border-bottom-color: rgba(0, 0, 0, 1);
+  margin-bottom: 15px;
+}
+
+.YourMsg .BtnNewMsg {
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 45px;
+  height: 33px;
+  background: url(../images/newmsg.gif) no-repeat 0 0;
+  background-size: cover;
+}
+
+.YourMsg .RightSide {
+  float: right;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+  margin-left: 10px;
+  text-align: right;
+  direction: rtl;
+}
+
+.YourMsg .RightSide img {
+  width: 100%;
+  height: auto;
+}
+
+.YourMsg .LeftSide {
+  color: rgba(0, 0, 0, 1);
+  text-align: right;
+  direction: rtl;
+  overflow: auto;
+}
+
+.YourMsg .LeftSide .Date {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.YourMsg .LeftSide .Txt {
+  font-size: 15px;
+}
+
+.YourMsg .LeftSide img {
+  width: 100%;
+  height: auto;
+}
+
+/* ================================================================== */
+
+.teams-ddl.popover {
+  height: 170px;
+  border-radius: 0;
+  box-shadow: 3px 3px 5px #888888;
+}
+
+.teams-ddl.popover .list {
+  padding: 0;
+  margin: 0;
+  height: inherit;
+}
+
+.teams-ddl.popover .list a {
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+  text-indent: 10px;
+}
+
+/* ======================================================== */
+
+.last-game .team-box var {
+  font-size: 20px;
+  font-weight: bold;
+  color: #009edb;
+  display: block;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.last-game .team-box span {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+
+.last-game .date {
+  font-weight: bold;
+}
+
+/* ======================================================== */
+
+.f-list {
+  /*direction: rtl;*/
+  background-color: #e6e7e9;
+  white-space: normal;
+  border-style: none;
+}
+
+.f-img {
+  overflow: hidden;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+}
+
+.f-list .f-img {
+  width: 40px;
+  height: 40px;
+}
+
+.f-txt {
+  display: inline-block;
+  width: 55%;
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.f-name {
+  display: block;
+  font-size: 16px;
+}
+
+.f-team {
+  font-size: 14px;
+  color: #009edb;
+}
+
+.f-msg {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.f-active {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.f-not,
+.f-list i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.f {
+  border-bottom: solid 1px black;
+  background-color: #e6e7e9;
+  padding-bottom: 10px;
+}
+
+.f-pop {
+  /*direction: rtl;*/
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+.f-pop-txt {
+  display: inline-block;
+  width: 70%;
+  vertical-align: middle;
+}
+
+.f-pop-wrap .popup {
+  width: 90%;
+}
+
+.f-pop-wrap .popup-body {
+  padding: 15px;
+}
+
+.f-pop-wrap .popup-head {
+  display: none;
+}
+
+.f-pop-wrap .popup-buttons {
+  padding: 15px;
+  padding-top: 0;
+  min-height: inherit;
+}
+
+.f-pop-wrap .button {
+  height: 30px;
+  min-height: 30px;
+  border-radius: 0px;
+  border: none;
+}
+
+.f-pop-wrap .button.button-positive {
+  margin-left: 30%;
+}
+
+.f-pop-wrap .button.button-default {
+  background-color: #364557;
+  color: white;
+}
+
+.f-pop-wrap.rtl .button.button-positive {
+  margin-left: 0;
+  margin-right: 30%;
+}
+
+.f-pop-wrap.center .button.button-positive {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+/* ====================================================================== */
+
+.m-img {
+  position: absolute;
+  right: 0px;
+  top: 25px;
+  height: 45px;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+}
+
+.m-list {
+  direction: rtl;
+  background-color: white;
+  white-space: normal;
+  margin-right: 10px;
+}
+
+.m-list-inner {
+  direction: rtl;
+  background-color: white;
+  white-space: normal;
+  margin-right: 10px;
+  border: solid 1px;
+}
+
+.m-list-in-rep {
+  border: none;
+  width: 100%;
+  padding-left: 0;
+}
+
+.m-list {
+  border-right: none;
+}
+
+.m-list-inner {
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.m-outer {
+  background-color: #e6e7e9;
+}
+
+.m-txt {
+  padding: 10px 40px;
+}
+
+.m-cont-img {
+  width: 100%;
+}
+
+.m-content {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.m-btn {
+  width: 40px;
+  padding: 10px;
+  float: left;
+}
+
+.m-btns {
+  height: 60px;
+}
+
+.m-txt-btn {
+  width: 72px; /* Pedro : 75->72 for notification report button */
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 10px;
+  border: solid 1px;
+  margin: 10px 40px;
+}
+
+.m-inner-img {
+  top: 35px;
+  right: 25px;
+}
+
+/* ====================================================================== */
+
+.fan-page-user {
+  border-bottom: 1px solid #000;
+  padding: 5px;
+}
+
+.fan-page-user h2 {
+  font-weight: bold;
+}
+
+.fan-page-user .col i {
+  float: left;
+}
+
+.fan-page-user .col .item-image {
+  width: 65px;
+  height: 65px;
+}
+
+.fan-team-box {
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.fan-team-box .col {
+  text-align: center;
+}
+
+.fan-team-box .col.cont .item-image {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.fan-team-box .col h4 {
+  font-size: 18px;
+  color: #009edb;
+  font-weight: bold;
+}
+
+.friends-box {
+  padding: 15px 0;
+}
+
+.friends-box .main-label {
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+/* ======================================================================== */
+
+.teams-selector {
+  margin-bottom: 14px;
+}
+
+.teams-selector .selected {
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #888888;
+  padding-bottom: 14px;
+}
+
+.teams-selector .selected span {
+  color: #009edb;
+}
+
+.teams-selector .selected i {
+  margin-right: 5px;
+}
+
+.team-games {
+  padding-top: 14px;
+}
+
+.team-games .row {
+  text-align: center;
+}
+
+.team-games-title {
+  margin-bottom: 20px;
+}
+
+.team-games-title .col:first-child {
+  text-align: left;
+}
+
+.team-games-title .col:last-child {
+  text-align: right;
+}
+
+.team-games .date {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.team-games .date span {
+  font-weight: bold;
+}
+
+.team-games .arena {
+  text-align: center;
+}
+
+.team-games .teams {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.team-games .teams .col-25 {
+  color: #009edb;
+}
+
+.team-games .slider {
+  direction: ltr;
+}
+
+/* ============================================================== */
+
+.top-teams {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding: 14px 0;
+}
+
+.top-teams .item-image {
+  margin-bottom: 10px;
+}
+
+.top-teams .item-box span {
+  font-weight: bold;
+}
+
+.top-teams .active h4 {
+  color: #009edb;
+}
+
+.top-teams .col {
+  border-right: 1px solid #e6e7e9;
+}
+
+.top-teams .col:first-child {
+  border: none;
+}
+
+/*Fan Settings*/
+.fan-content .fan-groups-div {
+  overflow: hidden;
+  width: 100%;
+  padding: 1px;
+}
+
+.fan-content .fan-groups-div .fan-groups-li {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-right: 15px;
+  color: #009edb;
+  font-size: 18px;
+}
+
+.fan-content .fan-name-div .fan-name {
+  border: 1px solid #ddd;
+  width: calc(100% - 60px);
+  margin-top: 8px;
+  float: left;
+}
+
+.fan-content .fan-password-div .fan-text,
+.fan-content .fan-email-div .fan-text {
+  width: 95px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 18px;
+}
+
+.fan-content .fan-password-div .fan-pass-input,
+.fan-content .fan-email-div .fan-pass-input {
+  color: #009edb;
+}
+
+.fan-content .fan-password-div .fan-inputs-password {
+  width: calc(100% - 100px);
+  display: inline-block;
+}
+
+.fan-content .fan-email-div .fan-email-label {
+  width: calc(100% - 98px);
+  display: inline-block;
+  padding: 0 0 5px 0;
+}
+
+.fan-content .fan-password-div .defaultInput {
+  padding: 6px 0 5px 0;
+}
+
+.fan-content .fan-password-div input::-webkit-input-placeholder {
+  color: #009edb;
+}
+
+.fan-content .fan-password-div input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #009edb;
+  /*opacity:  1;*/
+}
+
+.fan-content .fan-password-div input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #009edb;
+  /*opacity:  1;*/
+}
+
+.fan-content .fan-password-div input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #009edb;
+}
+
+.fan-content .fan-checkbox-div {
+  margin: 10px -20px 12px 0;
+  width: calc(100% + 40px);
+  border-top: 1px solid #000;
+  background-color: #ddd;
+  padding: 14px 15px 22px 15px;
+}
+.fan-content .fan-checkbox-div.is-eng {
+  margin-left: -20px;
+}
+
+.fan-content .item-toggle {
+  background: none;
+  padding-left: 60px;
+  padding-right: 13px;
+}
+
+.fan-content .toggle-loglig {
+  left: 0;
+  right: inherit;
+}
+
+.toggle .track {
+  border: none;
+  box-shadow: 0px 1px 3px 0px #364558 inset;
+  /*border: solid 1px #888888;*/
+}
+
+.toggle.toggle-loglig input:checked + .track {
+  box-shadow: 0px 1px 3px 0px #009edb inset;
+  /*border-color: #009edb;*/
+  background-color: #fff;
+}
+
+.toggle .track .handle {
+  background-color: #364558;
+  width: 23px;
+  height: 23px;
+  top: 9px;
+  left: 9px;
+}
+
+.toggle input:checked + .track .handle {
+  background-color: #009edb;
+}
+
+.league-title {
+  color: #009edb;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.edit-avatar {
+  width: 44px;
+  float: right;
+  position: relative;
+}
+.edit-avatar:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../images/MSGS-PROFILE-IMAGE-PLUS@3x.png) no-repeat 50% 50%;
+  background-size: 44px;
+}
+
+.videoPlayer {
+  width: 100%;
+}
+
+.message-box {
+  margin-top: 10px;
+  width: 100%;
+  border: solid 1px grey;
+}
+
+.camera-buttons {
+  height: 60px;
+  text-align: center;
+}
+
+.camera-btn {
+  width: 40px;
+  margin: 10px;
+}
+
+.video-btn {
+  width: 40px;
+  margin: 10px;
+}
+
+.button-confirm {
+  margin: 10px 10px;
+}
+
+.playerAge {
+  padding: 10px;
+}
+
+.table-header-middle {
+  vertical-align: middle;
+}
+
+/** fan - club info
+/************************************/
+/* Leagues List                     */
+/************************************/
+.fan-club-info-box {
+}
+.fan-club-info-border {
+  border-bottom: 1px inset #434343;
+}
+
+.fan-club-info-box .popup-box {
+  padding: 10px;
+}
+
+.fan-club-info-box .list-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0 10px 0;
+  /*overflow: hidden;*/
+  position: relative;
+}
+
+.fan-club-info-box .item-cont {
+  margin-right: 50px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.fan-club-info-box .logo {
+  display: block;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+}
+
+.fan-club-info-box .logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.fan-club-info-box .item-cont h4 {
+  color: #009edb;
+  font-size: 18px;
+  margin-bottom: 0px;
+  direction: rtl;
+  min-height: 20px;
+  padding: 0 10px 0 10px;
+}
+
+.fan-club-info-box .item-cont .subtitle {
+  color: #000000;
+  text-align: center;
+}
+.eye-img {
+  /* display: inline-block; */
+  /* position: absolute; */
+
+  left: 15px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/eye.png);
+  background-size: cover;
+  border: 0px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.upload-img {
+  left: 15px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/upload.png);
+  background-size: cover;
+  border: 0px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.fan-medical-certification {
+  display: inline-block;
+  margin-top: 15px;
+}
+.avatar {
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4pt 10pt rgba(0, 0, 0, 1);
+}
+
+#upload {
+  display: none;
+}

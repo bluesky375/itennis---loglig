@@ -1,0 +1,15 @@
+<ion-list>
+	<ion-item class="f-list" ng-repeat="friend in friends">
+		<div class="f">
+			<img class="f-img" ng-src="{{util.userImage(friend)}}" ng-click="util.showUser(friend)"/>
+			<div class="f-txt" ng-click="util.showUser(friend)">
+				<span class="f-name">{{friend.UserName != undefined ? friend.UserName : friend.FullName}}</span>
+				<div ng-repeat="team in friend.Teams" class="f-team">{{team.Title}}</div>
+			</div>
+			<i user="friend" class="f-msg m-icon-message" app-message-button></i>
+			<i user="friend" app-friend-button></i>
+		</div>
+	</ion-item>
+</ion-list>
+<ion-infinite-scroll immediate-check="false" ng-if="active0 && !end0" on-infinite="loadMore()"
+					 distance="5%"></ion-infinite-scroll>

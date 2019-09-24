@@ -1,0 +1,68 @@
+<ion-view class="league-details">
+
+	<div class="header-first-raw">
+		<a class="header-icon menu_icon" menu-toggle="right"></a>
+		<div class="header-icon header-logo">
+			<img actual-src="{{util.leagueImage(league.Logo)}}" ng-src="images/league-default.png"/>
+		</div>
+		<h2 class="header-title" ng-click="showSlide(0)">
+			<span>{{league.Title}}</span>
+		</h2>
+		<a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    </div>
+
+	<div class="league-nav rtl">
+		<!--<a class="l-leaders" ng-click="showSlide(0)" ng-class="{active: navIndex == 0}"></a>-->
+		<div class="inline">
+			<span>{{'iconbar_about' | translate}}</span>
+			<a class="l-info" ng-click="showSlide(0)" ng-class="{active: navIndex == 0}"></a>
+		</div>
+		<div class="inline">
+			<span>{{'iconbar_schedule' | translate}}</span>
+			<a class="l-games" ng-click="showSlide(1)" ng-class="{active: navIndex == 1}"></a>
+		</div>
+		<div class="inline">
+			<span>{{'iconbar_standings' | translate}}</span>
+			<a class="l-tables" ng-click="showTennisSlide()" ng-class="{active: navIndex == 2 || navIndex == 4}"></a>
+		</div>
+		<div class="inline" ng-show="league.Type > 0">
+            <span>{{'iconbar_players' | translate}}</span>
+			<a class="l-staff" ng-click="showSlide(3)" ng-class="{active: navIndex == 3}"></a>
+		</div>
+
+		<!-- 
+		<div class="inline">
+			<span>{{'fan_edit_gallery' | translate}}</span>
+			<a class="l-gallery" ng-click="showSlide(3)" ng-class="{active: navIndex == 3}"></a>
+		</div>
+		-->
+	</div>
+
+	<div class="league-content x_panel" id="textcont" style="top: 5px;">
+		<script id="dropdown.html" type="text/ng-template">
+			<ion-popover-view class="teams-ddl">
+				<div class="list" ng-repeat="name in categoryNameList">
+					<a class="item" ng-click="categorySelect(name);popover.hide()">{{name.Name}}</a>
+				</div>
+				</ion-popover-view>
+		</script>
+		<div ng-show="navIndex == 0">
+			<ng-include src="'app/leagues/inc-league-info.html?3'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 1">
+			<ng-include src="'app/leagues/inc-league-games.html?3'"></ng-include>
+		</div>
+		<div ng-show="navIndex == 2">
+			<ng-include src="'app/leagues/inc-league-table.html?5'"></ng-include>
+		</div>
+		
+		<div ng-show="navIndex == 3">
+			<ng-include src="'app/leagues/inc-league-team-staff.html?5'"></ng-include>
+		</div>
+
+		<div ng-show="navIndex == 4">
+			<ng-include src="'app/leagues/inc-league-rank-table.html?5'"></ng-include>
+		</div>
+	</div>
+
+</ion-view>

@@ -1,0 +1,59 @@
+<ion-view cache-view="false" class="content">
+
+    <div class="header-first-raw">
+      <a class="header-icon menu_icon" menu-toggle="right"></a>
+      <div class="header-icon header-logo">
+          <img actual-src="{{unionImage}}" ng-src="images/league-default.png"/>
+      </div>
+      <h2 class="header-title">
+        <span>{{displayName}}</span>
+      </h2>      
+      <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+    </div>
+
+    <ion-content class="fan-content">
+      <ng-include src="'app/partial/banners-pane.html'" ng-if="banner != undefined"></ng-include>
+
+      <div class="image-descrtiption-container">
+          <img class="union-top-image" src={{util.unionImage(union.PrimaryImage)}}>
+          <div class="header-description">
+              <span>{{union.Description}}</span>
+          </div>
+          <div class="bottom-border"></div>
+      </div>
+
+      <div class="union-info">
+          <img class="center-image" src={{util.unionImage(union.IndexImage)}}>
+          <div class="header-description">
+              <span>{{union.AssociationIndexInfo}}</span>
+          </div>
+          <div class="bottom-border"></div>
+      </div>
+
+      <div class="union-contact-details">
+          <h3 class="main-label">{{"contact_details" | translate}}</h3>
+
+          <div class="union-address">
+          <h4 class="union-name">{{union.Name}}</h4>
+          <h4>{{union.Address}}</h4>
+          <h4>{{union.Phone}}</h4>
+          <!--<h4>{{union.Fax}}</h4>-->
+          <h4>{{union.Email}}</h4>
+          </div>
+          <!-- Cheng: need for assaf 9-1-8
+          <div class="bottom-border"></div>
+          -->
+      </div>
+      <!-- Cheng: need for assaf 9-1-8
+      <div class="union-fans-details">
+          <h3 class="main-label">{{"fans_sum" | translate}}</h3>
+          <div class="footer-union">
+              <img ng-src="{{util.unionImage(union.Logo)}}"/>
+              <h1 class="union-name-footer">{{union.Name}}</h1>
+              <h1 class="fans-count">{{fansCount}}</h1>
+          </div>
+      </div>
+      -->
+
+    </ion-content>
+</ion-view>

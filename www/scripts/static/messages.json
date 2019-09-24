@@ -1,0 +1,57 @@
+{
+  "Messages": [
+    {
+      "id": 9,
+      "content": "חצי שעה למשחק ! מתרגש ?",
+      "img": "http://www.exite.co.il/userfiles/images/681936C0-CFF7-092F-FE74-03A3841DC84D%20-%20Copy.jpg",
+      "video": "",
+      "sender": 300,
+      "date": "05/10/2015",
+      "time": "10:38",
+      "senderName": "דני מכלוף",
+      "nested": [
+        {
+          "id": 10,
+          "content": "אחי, ת'בא למשחק?",
+          "img": "",
+          "video": "",
+          "sender": 300,
+          "date": "05/10/2015",
+          "time": "10:39",
+          "senderName": "דני מכלוף"
+        },
+        {
+          "id": 11,
+          "content": "אחי , תענה לי",
+          "img": "",
+          "video": "",
+          "sender": 300,
+          "date": "05/10/2015",
+          "time": "10:40",
+          "senderName": "דני מכלוף"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "content": "סתם הודעה למילוי",
+      "img": "",
+      "video": "",
+      "sender": 302,
+      "date": "23/07/2015",
+      "time": "14:29",
+      "senderName": "שם כלשהו",
+      "nested": []
+    },
+    {
+      "id": 6,
+      "content": "סתם הודעה למילוי",
+      "img": "",
+      "video": "",
+      "sender": 302,
+      "date": "23/07/2015",
+      "time": "14:29",
+      "senderName": "שם כלשהו"
+    }
+  ]
+}

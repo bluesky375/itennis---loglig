@@ -1,0 +1,62 @@
+<ion-view cache-view="false" class="content">
+	<app-user-header ng-if="user.Role!='workers'" team-changed="teamChanged(team)"></app-user-header>
+	<referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+
+	<div ui-sref="app.sendmsgs" ng-class="{'btn-new-msg-right' : isCurrentLangIsHebrew(), 'btn-new-msg-left' : isCurrentLangIsEnglish()}"> 
+
+		<img style="width: 50px;height: 40px " src="images/NEW-MSG.png" ng-click="openNewMessage();" />
+	</div>
+
+	<ion-content class="fan-content" ng-class="{'main-content-top':user.Role=='workers'}">
+		<ion-list>
+			<ion-item class="m-list" ng-if="message.sameSenderId < 0 || messages[message.sameSenderId].bShowAllSameSender" ng-repeat="message in messages">
+				<div class="receive" ng-click="showFullMessage(message);">
+					<span><b>{{message.receivesStr}}</b></span>
+				</div>
+				<div class="m" ng-click="showHideAllSubuMessage(message)">
+					<div class="m-outer">
+						<img class="m-img" ng-src="{{util.fanImage(message.SenderImage)}}"/>
+						<div class="m-txt">
+							<span class="m-datetime-name">{{message.SendDate | date: 'HH:mm'}}, {{message.SendDate | date: 'dd.MM.yy'}} {{message.SenderName}}</span>
+						</div>
+						<div class="m-txt">
+							<span class="m-content">{{message.Message}}</span>
+							<a href="{{util.uploadMedia(message.img)}}" data-fancybox data-caption="">
+								<img ng-show="message.img"  class="m-cont-img" src="{{util.uploadMedia(message.img)}}"/>
+							</a>	
+              				<videogular ng-show="message.video != null" vg-theme="themeurl" vg-poster="poster">
+                  				<vg-media vg-src="message.video" vg-native-controls="true">
+                  				</vg-media>
+                			</videogular>
+						</div>
+
+						<div class="m-btns">
+							<div class="m-txt-btn" ng-click="report(message)">{{'notifications_report' | translate}}</div>
+							<img ng-click="deleteMessage(message);" class="m-btn" src="images/del.png"/>
+							<img ng-click="shareMessage(message);" class="m-btn" src="images/fw.png"/>
+							<img ng-click="replyMessage(message);" class="m-btn" src="images/replay.gif"/>
+						</div>
+					</div>
+					<ion-item class="m-list-in-rep" ng-if="message.bShowAllSubMessage" ng-repeat="inner_message in message.Childs">
+						<div class="m-list-inner">
+							<img class="m-img m-inner-img" ng-src="{{util.fanImage(inner_message.SenderImage)}}"/>
+							<div class="m-txt">
+								<span class="m-datetime-name">{{inner_message.SendDate | date: 'HH:mm'}}, {{inner_message.SendDate | date: 'dd.MM.yy'}} {{inner_message.SenderName}}</span>
+							</div>
+							<div class="m-txt">
+								<span class="m-content">{{inner_message.Message}}</span>
+								<a href="{{util.uploadMedia(inner_message.img)}}" data-fancybox data-caption="">
+									<img ng-show="inner_message.img != null"  class="m-cont-img" src="{{util.uploadMedia(inner_message.img)}}"/>
+								</a>
+								<videogular ng-show="inner_message.video != null" vg-theme="themeurl" vg-poster="poster">
+				                  <vg-media vg-src="inner_message.video" vg-native-controls="true">
+				                  </vg-media>
+				                </videogular>
+							</div>
+						</div>
+					</ion-item>
+				</div>
+			</ion-item>
+		</ion-list>		
+	</ion-content>
+</ion-view>

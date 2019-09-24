@@ -1,0 +1,13 @@
+<div class="header-first-raw">
+	<a class="header-icon menu_icon" menu-toggle="right"></a>
+	<div class="header-icon header-logo" ng-click="showSlide(0)">
+		<img ng-src="{{util.teamImage(team.Logo)}}" alt=""/>
+	</div>
+	<h2 class="header-title" ng-click="showSlide(0)">
+		<span>{{team.Title}}</span>
+	</h2>
+	<a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+	<div ng-show="isSearchVisible" class="search-bar" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<input type="text" ng-model="searchQuery" placeholder="{{ 'text_search' | translate }}">
+	</div>
+</div>

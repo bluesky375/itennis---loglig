@@ -1,0 +1,28 @@
+<div ng-if="tennisLeagueGameModel.length > 0">
+  <div class="rtl main-padding">
+    <span class="main-label">{{ 'history_games' | translate }}</span>
+  </div>
+  <table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+    <thead>
+      <tr class="header">
+        <th class="table-header-middle">{{ 'text_com_name' | translate }}</th>
+        <th class="table-header-middle">{{ 'text_dateofgame' | translate }}</th>
+        <th class="table-header-middle" style="width:20px">{{ 'text_win_loss' | translate }}</th>
+        <th class="table-header-middle">{{ 'text_opponent_player' | translate }}</th>
+        <th class="table-header-middle">{{ 'text_partner_name' | translate }}</th>
+        <th class="table-header-middle">{{ 'text_result' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tbl-row" ng-repeat="cr in tennisLeagueGameModel">
+        <td >{{cr.CompetitionName}}</td>
+        <td >{{cr.DateOfGame | date:"H:mm"}} {{cr.DateOfGame | date:"dd.MM.yy"}}</td>
+        <td >{{cr.ResultType}}</td>
+        <td >{{cr.OpponentName}}</td>
+        <td >{{cr.PartnerName}}</td>
+        <td >{{cr.ResultScore}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>  

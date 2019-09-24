@@ -1,0 +1,337 @@
+/************************************/
+/* Signup Page (Fan & Player)       */
+/************************************/
+
+/* Input placeholder color --> */
+.signupPage input::-webkit-input-placeholder {
+    color: #000000;
+    text-indent: 15px;
+}
+
+.signupPage input:-moz-placeholder { /* Firefox 18- */
+    color: #000000;
+    text-indent: 15px;
+}
+
+.signupPage input::-moz-placeholder { /* Firefox 19+ */
+    color: #000000;
+    text-indent: 15px;
+}
+
+.signupPage input:-ms-input-placeholder {
+    color: #000000;
+}
+
+/* <-- Input placeholder color */
+
+.signupPage input {
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+    line-height: 38px;
+    text-indent: 15px;
+}
+
+.signUpLeaguesListPage .button {
+    font-size: 22px;
+}
+
+.signupPage #teamsButton {
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 38px;
+    color: #000000;
+}
+
+
+.signupPage #teamsButton > img {
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    margin-left: 14px;
+}
+.signupPage #teamsButton.is-eng > img{
+    left: auto;
+    right: 10px;
+    margin-left: 0;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.signupPage #orLabel {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.signupPage #registerLater {
+    text-align: center;
+}
+
+.signupPage #registerLater > a {
+    color: #364557;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.signupPage .button {
+    height: 44px;
+    font-size: 22px;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+.signupPage button > img.icon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    margin-top: -11px;
+    margin-right: 14px;
+}
+
+.signupPage #confirmRegistration {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.signupPage input.checkbox {
+    float: right;
+    top: -7px;
+    margin-left: 15px;
+}
+
+.signupPage input[type=checkbox]:checked {
+}
+
+.signupPage #tearmsOfUseRow {
+    margin-top: 18px;
+    font-size: 16px;
+    text-align: right;
+}
+
+#tearmsOfUseRow span:first-child {
+    margin-left: 7px;
+}
+
+.signupPage .termsOfUseClass {
+    color: #000000;
+    font-size: 16px;
+}
+
+.signupPage #termsOfUseText {
+    color: #009edb;
+    text-decoration: underline;
+}
+
+.signupPage .teamResult {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: baseline;
+    color: #009edb;
+    font-size: 16px;
+}
+
+/************************************/
+/* Leagues & Teams List Modal Page  */
+/************************************/
+
+/*.signUpLeaguesListPage .ion-minus-circled:before {
+  content: "\f201"; }
+
+.signUpLeaguesListPage .ion-minus-round:before {
+  content: "\f202"; }*/
+
+/*.signUpLeaguesListPage .ion-minus:before {
+  content: "hello"; 
+
+}*/
+
+.signUpLeaguesListPage .item {
+    border-style: hidden;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.signUpLeaguesListPage .item.item-stable {
+    background-color: transparent;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.signUpLeaguesListPage .item-stable {
+    border-width: 0;
+    background-color: transparent;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+/*.signUpLeaguesListPage .item-stable > .item-content {
+    border-width: 0;    
+    margin: 0 0 0 0;
+}
+
+.signUpLeaguesListPage .item-stable > .item-content:active {
+    border-width: 0;    
+    margin: 0 0 0 0;
+}*/
+
+.signUpLeaguesListPage .leagueRow > p {
+    float: right;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 15px;
+    padding-top: 3px;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+}
+
+.signUpLeaguesListPage .leagueTitleUnchecked {
+    color: #000000;
+}
+
+.signUpLeaguesListPage .leagueTitleChecked {
+    color: #009edb;
+}
+
+.signUpLeaguesListPage .teamsShown {
+    background-image: url(../images/REG-DROPDOWN-OPEND-ICON@3x.png);
+    background-size: 8px 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.signUpLeaguesListPage .teamsHidden {
+    background-image: url(../images/REG-CHOOSE-TEAMS-ICON@3x.png);
+    background-size: 8px 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.signUpLeaguesListPage .item-accordion {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.signUpLeaguesListPage #teamTitle {
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.signUpLeaguesListPage .teamTitleUnchecked {
+    color: #000000;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.signUpLeaguesListPage .teamTitleChecked {
+    color: #009edb;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*.signUpLeaguesListPage .item-accordion > p {
+    font-size: 16px;
+    margin-right: 5px;        
+}*/
+
+.signUpLeaguesListPage .teamChecked, .mainChecked {
+    display: block;
+    float: right;
+    background-image: url(../images/checkbox-active@3x.png);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+.signUpLeaguesListPage .teamUnchecked, .mainUnchecked {
+    display: block;
+    float: right;
+    /*background-image: url(../images/checkbox-inactive@3x.png);*/
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+.signUpLeaguesListPage button {
+    height: 44px;
+    margin-top: 12px;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: #009edb;
+}
+
+.signUpLeaguesListPage .bar.bar-footer {
+    height: 71px;
+}
+
+.signUpLeaguesListPage .has-footer {
+    bottom: 71px;
+}
+
+/** Test */
+
+.signUpLeaguesListPage .list .item.item-accordion {
+    border: 0px;
+    margin-top: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 16px; 
+    background-color: white;
+}
+
+.signUpLeaguesListPage .list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.signUpLeaguesListPage .list .item.item-accordion.ng-hide-add,
+.signUpLeaguesListPage .list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+
+.signUpLeaguesListPage .button.button-icon.input-button {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    color: #bbb;
+}
+
+.signUpLeaguesListPage .item img {
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.signUpLeaguesListPage .list .my-item.item {
+    left: 0;
+    right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.signUpLeaguesListPage .dash-list a {
+    color: #333;
+    text-decoration: none;
+}

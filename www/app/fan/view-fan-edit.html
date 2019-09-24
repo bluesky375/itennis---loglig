@@ -1,0 +1,145 @@
+<ion-view cache-view="false" class="signupPage">
+
+	<app-user-header ng-if="user.Role!='workers'" team-changed="teamChanged(team)"></app-user-header>
+	<referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+
+	<ion-content class="padding fan-content" ng-controller="modalTeamsCtrl"
+		ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<div id="showView" class="padding" ng-show="!isEdit">
+			<!--<div style="width:140px;float:right;">שם משתמש אוהד: </div>-->
+			<script id="picture-dropdown.html" type="text/ng-template">
+				<ion-popover-view class="teams-ddl">
+					<div class="list">
+						<a class="item" ng-click="openCamera()">{{'fan_edit_camera' | translate}}</a>
+						<a class="item" ng-click="openGallery()">{{'fan_edit_gallery' | translate}}</a>
+					</div>
+				</ion-popover-view>
+			</script>
+			<div class="fan-name-div">
+				<input type="text" ng-model="userName" ng-readonly="{{user.Role=='players' || user.Role=='workers'}}"
+					name="fan-name" class="fan-name">
+				<div class="header-icon header-logo edit-avatar" ng-click="openPopover($event)">
+					<img ng-if="!details.imageFile" ng-src="{{util.fanImage(userImage)}}" alt="" />
+					<img ng-if="details.imageFile" ng-src="{{details.imageFile}}" alt="" />
+				</div>
+			</div>
+			<div class="fan-groups-div" ng-if="user.Role!='workers'">
+				<label id="teamsButton" ng-if="user.Role!='players'" class="item item-input defaultInput"
+					ng-click="openTeamsModal()" ng-class="{'is-eng' : isCurrentLangIsEnglish()}">
+					<img src="images/REG-CHOOSE-TEAMS-ICON@3x.png" />
+					{{user.Teams.length > 0 ? ("input_register_teams_selected" | translate) :
+					("input_register_teams_selection" | translate) }}
+				</label>
+				<span class="fan-groups-li" ng-repeat="team in user.Teams">{{team.Title}}</span>
+			</div>
+			<div class="fan-password-div">
+				<span class="fan-text">{{ 'fan_edit_change_password' | translate }}</span>
+				<div class="fan-inputs-password">
+					<label class="item item-input defaultInput">
+						<input type="password" ng-model="details.OldPassword" name="old-password" class="fan-pass-input"
+							placeholder="{{ 'fan_edit_old_password' | translate }}" />
+					</label>
+					<label class="item item-input defaultInput">
+						<input type="password" ng-model="details.NewPassword" name="password" class="fan-pass-input"
+							placeholder="{{ 'fan_edit_new_password' | translate }}" />
+					</label>
+					<label class="item item-input defaultInput">
+						<input type="password" ng-model="details.RepeatPassword" name="passwordConfirm"
+							class="fan-pass-input" placeholder="{{ 'fan_edit_repeat_new_password' | translate }}" />
+					</label>
+				</div>
+			</div>
+			<div class="fan-email-div">
+				<span class="fan-text">{{ 'fan_edit_email' | translate }}</span>
+				<label class="item item-input defaultInput fan-email-label">
+					<input type="email" name="email" class="fan-pass-input" ng-model="details.Email" />
+				</label>
+			</div>
+			<div class="fan-email-div" ng-if = "isPlayer == true">
+				<span class="fan-text">{{ 'Medical_certificate' | translate }}</span>
+				<div class="fan-medical-certification" ng-if="user.MCertification ==true || isSelected == true">
+					<div class="eye-img" ng-click="eye_click()">
+					</div>
+				</div>
+				<div class="fan-medical-certification" ng-if = "IsApproved == false">
+					<div class="upload-img" ng-click="upload_click()">
+					</div>
+				</div>
+			</div>
+			<!--<button c
+			lass="button button-full button-positive" ng-click="editFan()">
+					עריכה
+				</button> </div>-->
+			<div class="fan-checkbox-div" ng-class="{'is-eng' : isCurrentLangIsEnglish()}">
+				<span class="main-label">{{ 'fan_edit_alerts' | translate }}</span>
+				<ul class="list">
+					<li class="item item-toggle">
+						{{ 'fan_edit_alerts_reminder' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" id="cb1" ng-checked="user.IsStartAlert" ng-model="user.IsStartAlert">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<li class="item item-toggle">
+						{{ 'fan_edit_alerts_change_game_date' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" id="cb2" ng-checked="user.IsTimeChange" ng-model="user.IsTimeChange">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<!--<li class="item item-toggle">
+						{{ 'fan_edit_alerts_messages' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" ng-checked="details.IsGameRecords" ng-model="details.IsGameRecords">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>-->
+					<li class="item item-toggle">
+						{{ 'fan_edit_alerts_game_result' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" id="cb3" ng-checked="user.IsGameScores" ng-model="user.IsGameScores">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<li class="item item-toggle">
+						{{ 'text_friend_request' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" id="cb4" ng-checked="user.IsFriendRequest"
+								ng-model="user.IsFriendRequest">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+					<li class="item item-toggle">
+						{{ 'text_message' | translate }}
+						<label class="toggle toggle-loglig">
+							<input type="checkbox" id="cb5" ng-checked="user.IsMessage" ng-model="user.IsMessage">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+			<div class="fan-change-language language-panel" ng-class="{'is-eng' : isCurrentLangIsEnglish()}">
+				<button type="button" class="btn-choose-lang" ng-click="setLanguage('en');"
+					ng-disabled="isCurrentLangIsEnglish()">English</button>
+				<button type="button" class="btn-choose-lang" ng-click="setLanguage('iw');"
+					ng-disabled="isCurrentLangIsHebrew()">Hebrew</button>
+			</div>
+
+		</div>
+		<button class="button button-block button-positive ng-binding"
+			ng-click="updateDetailsSend();">{{ 'fan_edit_save' | translate }}</button>
+	</ion-content>
+</ion-view>

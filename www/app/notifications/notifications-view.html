@@ -1,0 +1,44 @@
+<ion-view cache-view="false" class="notifications-list">
+	<app-user-header ng-if="user.Role!='workers'" hide-teams="true"></app-user-header>
+	<referee-user-header ng-if="user.Role=='workers'"></referee-user-header>
+
+	<ion-content class="main-notification-header fan-content" ng-class="{'main-content-top':user.Role=='workers'}">
+		<div class="row">
+			<div class="col col-50">
+				<div class="btn-removes" ng-click="removeAll()" ng-class="{'force-float-right' : isCurrentLangIsHebrew()}">
+					{{ 'notifications_remove_all' | translate }}
+				</div>
+			</div>
+			<div class="col col-50 text-right">
+				<span class="main-label" ng-class="{'force-float-left' : isCurrentLangIsHebrew()}"> {{ 'notifications' | translate }} </span>
+			</div>
+
+		</div>
+		<div class="group-row row" ng-repeat="notification in notifications">
+			<div ng-if="notification.FriendshipStatus" class="col friend-request">
+				<p class="date text-right">{{notification.Timestamp1 | date:"dd/MM/yyyy"}}</p>
+				<div class="row no-padding">
+					<div class="col col-80 no-padding friend-info">
+						<p>{{'text_friend_request' | translate}}</p>
+						<img actual-src="{{notification.Image}}" ng-src="images/fan-default.jpg" alt="">
+						<span>{{notification.FullName || notification.UserName}}</span>
+					</div>
+					<div class="col col-20 no-padding friend-buttons">
+						<button class="button button-block button-positive button-small" ng-click="friendApprove(notification.Id)">{{'button_approve' | translate}}</button>
+						<button class="button button-block button-outline button-positive button-small" ng-click="friendReject(notification.Id)">{{'button_reject' | translate}}</button>
+					</div>
+				</div>
+			</div>
+			<div class="col col-20" ng-if="!notification.FriendshipStatus">
+				<div class="btn-remove" ng-click="remove(notification.MsgId)">
+				</div>
+			</div>
+			<div class="col col-80 text-right" ng-if="!notification.FriendshipStatus">
+				<span>{{notification.SendDate | date:"dd/MM/yyyy"}}</span>
+				<div class="message" ng-class="notification.IsRead ? '' : 'new-notification'">{{notification.Message}}
+				</div>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,37 @@
+<div class="main-padding" ng-if="!results">
+	<h4>{{ 'text_no_data' | translate }}</h4>
+</div>
+
+<div class="league-res-table">
+	<!--<h4>מחזור {{stage.Number + 1}}</h4>-->
+
+	<div class="main-label">{{Stage.Name}}</div>
+	<div ng-repeat="group in Stage.Groups">
+		<!--<pre>{{group | json}}</pre>-->
+		<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+			<thead>
+			<tr class="header">
+				<th>{{ 'text_position' | translate }}</th>
+				<th colspan="2">{{ 'text_team' | translate }}</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="tbl-row" ng-repeat="(index, team) in group.Teams" ng-click="openTeam(team.Id)">
+				<td class="first">{{team.Position}}</td>
+				<td>
+					<div class="text-right">
+						<a class="thumb item-image img-circle">
+							<img actual-src="{{util.teamImage(team.Logo)}}" ng-src="images/league-default.png"/>
+						</a>
+					</div>
+				</td>
+				<td> 
+					<div class="text-left">
+						{{team.Title}}
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

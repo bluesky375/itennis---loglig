@@ -1,0 +1,16 @@
+<div class="team-fans">
+
+	<div class="main-padding">
+		<h2 class="main-label">
+			{{ 'team_fans_fans' | translate}}: <span>{{teamFans.length}}</span>
+			<span ng-if="util.isLoggedIn() && !isCurrentLangIsHebrew()">
+				({{(teamFans|filter: {FriendshipStatus: 'Yes'}).length}} {{ 'team_fans_are_friends' | translate}} )
+			</span>
+			<span ng-if="util.isLoggedIn() && isCurrentLangIsHebrew()">
+				({{ 'team_fans_are_friends' | translate}} {{(teamFans|filter: {FriendshipStatus: 'Yes'}).length}})
+			</span>
+		</h2>
+	</div>
+
+	<ng-include src="'app/fan/inc-fan-fans.html'"></ng-include>
+</div>

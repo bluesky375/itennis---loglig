@@ -1,0 +1,67 @@
+﻿<ion-view class="loginPage">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<ion-content class="has-main-header padding" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+
+		<div class="list">
+
+			<form name="loginForm" novalidate>
+
+				<label class="item item-input defaultInput">
+					<input type="text" class="loginInput" placeholder='{{"input_login_worker_id" | translate}}'
+						   ng-model="user.userid" name="userid" ng-required="true" maxlength="9" ng-minlength="8"
+						   pattern="[0-9]*"/>
+				</label>
+
+				<label class="item item-input defaultInput">
+					<input type="password" class="loginInput"
+						   placeholder='{{"input_login_worker_password" | translate}}' ng-model="user.password"
+						   name="password" ng-required="true" maxlength="50"/>
+				</label>
+
+				<p id="tearmsOfUseRowWorker">
+                    <span class="checkbox" ng-click="user.termsOfUse = !user.termsOfUse"
+						  ng-class="user.termsOfUse ? 'mainChecked' : 'mainUnchecked'"></span>
+					<span class="termsOfUse">{{"text_confirm" | translate}}</span>
+					<span id="termsOfUseText" class="termsOfUseClass" ui-sref="app.termsOfUse">{{"text_terms_of_use" | translate}}</span>
+				</p>
+
+				<button class="button button-full button-positive" ng-click="login()">
+					{{"button_login_confirm" | translate}}
+					<img class="imageIcon" src="images/smile.png"/>
+				</button>
+				<div class="language-panel" ng-class="{'is-eng' : isCurrentLangIsEnglish()}">
+					<button type="button"
+							class="btn-choose-lang"
+							ng-click="setLanguageInner('en');"
+							ng-disabled="isCurrentLangIsEnglish()">English</button>
+					<button type="button"
+							class="btn-choose-lang"
+							ng-click="setLanguageInner('iw');"
+							ng-disabled="isCurrentLangIsHebrew()">Hebrew</button>
+				</div>
+
+				<div id="forgotUsername">
+					<p ui-sref="app.forgotPassword">{{'text_forgot_username_password' | translate}}</p>
+				</div>
+
+				<hr/>
+			</form>
+			<div id="passwordHint">
+				<p>{{'text_password_hint' | translate}}</p>
+			</div>
+			<div id="passwordHint">
+				<p>123abc12</p>
+			</div>
+
+		</div>
+
+	</ion-content>
+	<!-- remove assaf
+	<div id="register-later">
+		<a ui-sref="app.leaguesList">{{"button_register_later" | translate}}</a>
+	</div>
+	-->
+</ion-view>

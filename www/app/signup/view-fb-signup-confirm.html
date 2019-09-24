@@ -1,0 +1,40 @@
+﻿<ion-view class="signupPage">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<ion-content class="rtl has-main-header padding" ng-controller="modalTeamsCtrl">
+
+		<form name="signupForm" novalidate>
+
+			<div class="list">
+
+				<label id="teamsButton" class="item item-input defaultInput" ng-click="openTeamsModal()">
+					<img src="images/REG-CHOOSE-TEAMS-ICON@3x.png"/>
+					{{user.teams.length > 0 ? ("input_register_teams_selected" | translate) :
+					("input_register_teams_selection" | translate) }}
+				</label>
+
+				<div ng-hide="user.teams.length < 1" ng-repeat="team in user.teams">
+					<p class="teamResult">{{team.Title}}</p>
+				</div>
+
+				<p id="tearmsOfUseRow">
+                    <span ng-click="user.termsOfUse = !user.termsOfUse"
+						  ng-class="user.termsOfUse ? 'mainChecked' : 'mainUnchecked'"></span>
+					<span class="termsOfUse">{{"text_confirm" | translate}}</span>
+                    <span id="termsOfUseText" class="termsOfUseClass"
+						  ui-sref="#">{{"text_terms_of_use" | translate}}</span>
+				</p>
+
+			</div>
+
+			<button id="confirmRegistration" class="button button-full button-positive" ng-click="registerFanFB()">
+				{{"button_confirm_registration" | translate}}
+				<img class="icon" src="images/smile.png"/>
+			</button>
+
+		</form>
+
+	</ion-content>
+</ion-view>

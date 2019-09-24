@@ -1,0 +1,37 @@
+<ion-view class="roleChooserPage">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<ion-content class="has-main-header padding" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<p id="whoAreYouLabel">{{'text_who_are_you' | translate}}</p>
+		<!-- Cheng : need for assaf 9-1-7
+		<button class="button button-block button-positive"
+				ui-sref="app.login">{{'button_goto_login_fan' | translate}}
+		</button>
+		<button class="button button-block clearOrange"
+				ui-sref="app.loginWorker">{{'button_goto_login_worker' | translate}}
+		</button>
+		-->
+		<button class="button button-block button-positive"
+				ui-sref="app.loginWorker">{{'button_goto_login_worker' | translate}}
+		</button>
+		
+		<div class="language-panel" ng-class="{'is-eng' : isCurrentLangIsEnglish()}">
+			<button type="button"
+					class="btn-choose-lang"
+					ng-click="setLanguage('en');"
+					ng-disabled="isCurrentLangIsEnglish()">English</button>
+			<button type="button"
+					class="btn-choose-lang"
+					ng-click="setLanguage('iw');"
+					ng-disabled="isCurrentLangIsHebrew()">Hebrew</button>
+		</div>
+	</ion-content>
+
+	<!-- Cheng : need for assaf 9-1-7
+	<div id="register-later">
+		<a ui-sref="app.leaguesList">{{"button_register_later" | translate}}</a>
+	</div>
+	-->
+</ion-view>

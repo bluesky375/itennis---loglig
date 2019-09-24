@@ -1,0 +1,80 @@
+<!--<div class="league-top-nav" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<div class="cycle row">
+				<i class="col " ng-click="showCycle('pref')"
+				   ng-class="{'hidden-element' : indexPossition <= 0,
+				   'ion-arrow-right-b' : isCurrentLangIsHebrew(),
+				   'ion-arrow-left-b' : isCurrentLangIsEnglish()}"></i>
+				<span class="col col-67">{{ 'text_cycle' | translate }} {{cycleNumber + 1}}</span>
+				<i class="col" ng-click="showCycle('next')"
+				   ng-class="{'hidden-element' : indexPossition >= arrLenCecles - 1,
+				   'ion-arrow-left-b' : isCurrentLangIsHebrew(),
+				   'ion-arrow-right-b' : isCurrentLangIsEnglish()}"></i>
+			</div>
+		</div>
+		<div class="col">
+		</div>
+	</div>
+</div>-->
+
+<div ng-if="cycleNumber == game.CycleNumber && game">
+	<div ng-if="league.Type > 0"
+		ng-class="{'going-btn-left' : isCurrentLangIsHebrew(), 'going-btn-right' : isCurrentLangIsEnglish()}"
+		style="position:relative">
+		<a class="going-btn" ng-click="setGameBracket()">
+			&nbsp;&nbsp;{{"text_game_bracket" | translate}}&nbsp;&nbsp;
+		</a>
+	</div>
+	<app-next-game game="game" info="game"></app-next-game>
+
+	<div class="league-tabs">
+		<div class="nav-tabs">
+			<ul>
+				<li ng-click="gamesTab = 0" ng-class="{active: gamesTab == 0}" ng-show="nextGames.length>0">
+					<span>{{ 'games_upcoming' | translate }}</span>
+				</li>
+				<li ng-click="gamesTab = 1" ng-class="{active: gamesTab == 1}" ng-show="lastGames.length>0">
+					<span>{{ 'games_ended' | translate }}</span>
+				</li>
+			</ul>
+			<div class="tabs-view rtl">
+				<div class="tab-box" ng-show="gamesTab == 0">
+					<app-game-box info="nextGames" cycle="cycleNumber" stat="'next'" type="'dateOrder'"></app-game-box>
+				</div>
+				<div class="tab-box" ng-show="gamesTab == 1">
+					<app-game-box info="lastGames" cycle="cycleNumber" stat="'prev'" type="'-dateOrder'"></app-game-box>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-if="nextGames.length>0 && (game==undefined ||game == null)">
+	<div class="league-tabs">
+		<div class="nav-tabs">
+			<ul>
+				<li class="active"><span>{{ 'games_upcoming' | translate }}</span></li>
+			</ul>
+			<div class="tabs-view rtl">
+				<div class="tab-box">
+					<app-game-box info="nextGames" cycle="cycleNumber" stat="'next'" type="'dateOrder'"></app-game-box>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-if="lastGames.length>0 &&(game==undefined ||game == null)">
+	<div class="league-tabs">
+		<div class="nav-tabs">
+			<ul>
+				<li class="active"><span>{{ 'games_ended' | translate }}</span></li>
+			</ul>
+			<div class="tabs-view rtl">
+				<div class="tab-box">
+					<app-game-box info="lastGames" cycle="cycleNumber" stat="'prev'" type="'-dateOrder'"></app-game-box>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="signUpLeaguesListPage modal rtl" style="padding: 15px;">
+
+	<!-- Include Header -->
+	<ng-include src="'app/partial/main_header.html'"></ng-include>
+
+	<ion-content class="padding has-main-header">
+
+		<div class="list has-bottom" ng-show="!progress">
+
+			<ion-list>
+				<div ng-repeat="league in allLeagues track by league.LeagueId">
+					<ion-item class="item-stable"
+							  ng-click="toggleGroup(league)"
+							  ng-class="{active: isGroupShown(league)}">
+						<div class="leagueRow">
+							<p id="leagueTitle" class="leagueTitleUnchecked"
+							   ng-class="{teamsHidden: !isGroupShown(league), teamsShown: isGroupShown(league), leagueTitleChecked:league.checked}">
+								{{league.Name}}
+							</p>
+						</div>
+					</ion-item>
+
+					<div class="item-accordion"
+						 ng-repeat="team in league.Teams track by team.TeamId"
+						 ng-if="isGroupShown(league)"
+						 ng-model="team.checked"
+						 ng-click="selectTeam(team, league)">
+						<p ng-class="team.checked ? 'teamChecked' : 'teamUnchecked'">&nbsp;</p>
+						<p id="teamTitle" ng-class="team.checked ? 'teamTitleChecked' : 'teamTitleUnchecked'">
+							{{team.Title}}
+						</p>
+					</div>
+
+				</div>
+			</ion-list>
+		</div>
+
+	</ion-content>
+
+
+	<ion-footer-bar>
+		<button class="button button-full button-positive"
+				ng-click="confirmTeamsSelection()">
+			{{"button_ok" | translate}}
+		</button>
+	</ion-footer-bar>
+
+</div>

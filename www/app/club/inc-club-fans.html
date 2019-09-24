@@ -1,0 +1,29 @@
+<ion-list class ="team-fans">
+    
+    <div class="main-padding">
+        <h2 class="main-label">
+            {{ 'team_fans_fans' | translate}}: <span>{{fansList.length}}</span>
+            <span ng-if="util.isLoggedIn() && !isCurrentLangIsHebrew()">
+                ({{(fansList|filter: {FriendshipStatus: 'Yes'}).length}} {{ 'team_fans_are_friends' | translate}} )
+            </span>
+            <span ng-if="util.isLoggedIn() && isCurrentLangIsHebrew()">
+                ({{ 'team_fans_are_friends' | translate}} {{(fansList|filter: {FriendshipStatus: 'Yes'}).length}})
+            </span>
+        </h2>
+    </div>
+
+    <ion-item class="f-list" ng-repeat="fan in fansList | filter:searchQuery" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+        <div class="f">
+            <img class="f-img" ng-src="{{util.userImage(fan)}}" ng-click="util.showUser(fan)"/>
+
+            <div class="f-txt" ng-click="util.showUser(fan)">
+                <span class="f-name">{{fan.UserName != undefined ? fan.UserName : fan.FullName}}</span>
+            </div>
+            <i user="fan" ng-if="util.isLoggedIn() && fan.Id != user.Id" class="f-msg m-icon-message" app-message-button ng-show="fan.CanRcvMsg"></i>
+            <i user="fan" ng-if="util.isLoggedIn() && fan.Id != user.Id && fan.UserName != myName" app-friend-button ></i>
+            <i user="fan" ng-if="util.isLoggedIn() && fan.Id != user.Id" class="f-msg m-icon-message-off" app-message-button ng-show="!fan.CanRcvMsg" ></i>
+        </div>
+    </ion-item>
+</ion-list>
+
+

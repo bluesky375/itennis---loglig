@@ -1,0 +1,8 @@
+{
+  "name": "Loglig",
+  "app_id": "957674914328405",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

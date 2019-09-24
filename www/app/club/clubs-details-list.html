@@ -1,0 +1,43 @@
+<ion-view class="leagues-list">
+    <!-- Include Header -->
+  
+    <div class="header-first-raw">
+      <a class="header-icon menu_icon" menu-toggle="right"></a>
+      <h2 class="header-title areatitle" ng-if="areaStr == 'area1'" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+        <span class = "areatitle">{{'area_club_tilte'| translate }} - {{'area_North' | translate}}</span>
+      </h2>
+      <h2 class="header-title areatitle" ng-if="areaStr == 'area2'" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+        <span>{{'area_club_tilte'| translate }} - {{'area_Sharon' | translate}}</span>
+      </h2>
+      <h2 class="header-title areatitle" ng-if="areaStr == 'area3'" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+      <span>{{'area_club_tilte'| translate }} - {{'area_Center' | translate}}</span>
+      </h2>
+      <h2 class="header-title areatitle" ng-if="areaStr == 'area4'" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+      <span>{{'area_club_tilte'| translate }} - {{'area_Jerusalem' | translate}}</span>
+      </h2>
+      <h2 class="header-title areatitle" ng-if="areaStr == 'area5'" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+      <span>{{'area_club_tilte'| translate }} - {{'area_South' | translate}}</span>
+      </h2>
+      <a ng-show="backEnable" class="header-icon back-icon" ng-click="$ionicGoBack()"></a>
+      <a class="header-icon search-icon" ng-click="toggleSearchBar()"></a>
+      <div ng-show="isSearchVisible" class="search-bar">
+        <input type="text" ng-model="searchQuery.name" placeholder="{{ 'text_search' | translate }}">
+      </div>
+    </div>
+  
+    <ion-content class="has-main-header padding items-box">
+  
+      <div ng-repeat="item in clubs | filter:searchQuery.name" class="list-item" ui-sref="app.club({clubId: item.id})">
+        <a class="logo">
+          <img actual-src="{{util.clubImage(item.logo)}}" ng-src="images/league-default.png" />
+        </a>
+        <div class="item-cont">
+          <h4>{{item.name}}</h4>
+          <p class="subtitle">
+            {{item.totalPlayers}} {{"text_players" | translate}}
+          </p>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

@@ -1,0 +1,69 @@
+<ion-view cache-view="false" class="content">
+
+    <referee-user-header></referee-user-header>
+
+    <ion-content class="fan-content">
+        <div class="update-game-results-header">
+            <span class="update-score-title">{{"update_game_score" | translate}}</span>
+            <button class="close-x icon ion-close-round" ng-click="back()"></button>
+            <div class="thick-bottom-border"></div>
+        </div>
+
+        <div class="game-quarters-list" ng-repeat="set in currentGameSetsEdit">
+            <div class="set-score-game-quarter referee-set-score-bottom-border">
+                <span class="quarter-title">{{"quarter" | translate}} {{set.SetNumber}}</span>
+                <div class="set-team-score-container">
+                    <label for="home-team">{{currentGameEdit.HomeTeam}}</label>
+                    <input ng-disabled="!gamesetInEdit || gamesetInEdit.GameSetId != set.GameSetId" name="home-team"
+                           id="home-team" ng-model="set.inEditHomeTeamScore" type="text"/>
+                </div>
+
+
+                <div class="set-team-score-container">
+                    <label for="guest-team">{{currentGameEdit.GuestTeam}}</label>
+                    <input ng-disabled="!gamesetInEdit || gamesetInEdit.GameSetId != set.GameSetId" name="guest-team"
+                           id="guest-team" ng-model="set.inEditGuestTeamScore" type="text"/>
+                </div>
+
+                <button ng-if="isInEdit(set)" ng-disabled="currentGameSetsEdit.length == 1 && currentGameSetsEdit[0].GameSetId<0" class="button-calm referee-cancel-score" ng-click="cancelChanges(set)">
+                    {{"cancel" | translate}}
+                </button>
+                <button ng-if="isInEdit(set)" class="button-calm referee-save-score" ng-click="saveSet(set)">
+                    {{"save" | translate}}
+                </button>
+                <button ng-if="!isInEdit(set)" class="button-calm referee-edit-score fill" ng-click="editSet(set)">
+                    {{"edit" | translate}}
+                </button>
+
+                <div class="golden-checkbox-container">
+                    <input ng-disabled="!gamesetInEdit || gamesetInEdit.GameSetId != set.GameSetId"
+                           class="is-golden-checkbox" type="checkbox" ng-model="set.inEditIsGoldenSet">
+                    <span class="is-golden">{{"isGoldenQuarter" | translate}}</span>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="referee-set-score-bottom-border">
+            <button class="button-calm add-quarter icon ion-ios-plus-outline" ng-click="addQuarter()">
+                <span>{{"addQuarter" | translate}}</span>
+            </button>
+        </div>
+        <div class="referee-set-score-bottom-border technical-victory-container">
+            <span class="technical-victory-title">{{"technicalVictoryFor" | translate}}</span>
+            <button class="technical-victory-team button-calm referee-edit-score"
+                    ng-click="markTechnicalVictoryFor({teamId: currentGameEdit.HomeTeamId, name: currentGameEdit.HomeTeam})">
+                <span>{{currentGameEdit.HomeTeam}}</span>
+            </button>
+            <button class="technical-victory-team button-calm referee-edit-score"
+                    ng-click="markTechnicalVictoryFor({teamId: currentGameEdit.GuestTeamId, name: currentGameEdit.GuestTeam})">
+                <span>{{currentGameEdit.GuestTeam}}</span>
+            </button>
+        </div>
+        <div class="referee-set-score-save-cancel">
+            <button class="referee-cancel-set-score" ng-click="back()">{{"cancel" | translate}}</button>
+            <button class="referee-save-score final-save" ng-click="endGame()">{{"setScoreAndPublish" | translate}}</button>
+        </div>
+    </ion-content>
+</ion-view>

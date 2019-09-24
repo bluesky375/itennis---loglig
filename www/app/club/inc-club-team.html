@@ -1,0 +1,14 @@
+<div class="leagues-list border-no-top padding items-box ">
+    <div class="list-item" ng-repeat="leagueTeam in club.teams" 
+        ng-class="{'rtl' : isCurrentLangIsHebrew()}" ng-click="gotoTeam(leagueTeam)">
+        <a class="logo">
+            <img actual-src="{{util.teamImage(leagueTeam.logo)}}"/>
+        </a>
+        <div class="item-cont">
+            <h4>{{leagueTeam.team}}</h4>
+            <p class="subtitle">
+              {{leagueTeam.players}} {{"text_players" | translate}}
+            </p>
+        </div>
+    </div>
+</div>

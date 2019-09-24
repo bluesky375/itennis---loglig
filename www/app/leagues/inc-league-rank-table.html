@@ -1,0 +1,38 @@
+
+
+<div class="competition-menu items-box" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+
+	<div class="league-info" ng-if="false", ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+		<div class ="row" >
+			 <div class="col-50 text-right" ng-if="categoryNameList.length > 0">
+			 	{{ 'text_category' | translate }}
+				<button ng-click="openCategoryPopover($event)" class="normal-dropbtn">
+					{{selectedCategory.Name}}
+					<i class="ion-arrow-down-b"> </i>
+				</button>
+			 </div>
+		</div>		
+	</div>	
+
+	<div ng-if="competitionRegistration.length > 0" >
+		<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+			<thead>
+				<tr class="header">
+					<th class=" border-no-top">{{ 'text_rank' | translate }}</th>
+					<th class=" border-no-top">{{ 'text_player' | translate }}</th>
+					<!-- <th class=" border-no-top" style="width:120px">{{ 'text_competition_rank' | translate }}</th> -->
+					<th class=" border-no-top">{{ 'text_full_points' | translate }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="tbl-row" ng-repeat="cr in competitionRegistration" ng-click="toggleSelect(cr.UserId)" ng-class="{active: routeRankSelIndex == cr.UserId}">
+					<td class>{{cr.Rank}}</td>
+					<td >{{cr.PlayerName}}</td>
+					<!-- <td >{{cr.Rank}}</td> -->
+					<td>{{cr.Points}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

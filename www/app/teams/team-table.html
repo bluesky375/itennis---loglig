@@ -1,0 +1,82 @@
+<div class="main-padding" ng-if="!results" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+	<h4>{{ 'text_no_data' | translate }}</h4>
+</div>
+
+<div ng-repeat="(stageKey, stage) in results" class="league-res-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+	<div ng-repeat="(groupKey, group) in stage.Groups">
+		<div  ng-if="!leagueTableStages[stageKey].Playoff">
+			<div class="main-label">{{group.Title}}</div>
+			<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+				<thead>
+					<tr class="header">
+						<th>#</th>
+						<th>{{ 'text_team' | translate }}</th>
+						<th></th>
+						<th>{{ 'text_games' | translate }}</th>
+						<th>{{ 'text_points' | translate }}&nbsp;&nbsp;&nbsp;</th>
+						<th>{{ 'text_wins' | translate }}</th>
+						<th>{{ 'text_loses' | translate }}</th>
+						<th>{{ 'text_draw' | translate }}</th>
+						<th>{{ 'text_setPlus' | translate }}&nbsp;&nbsp;</th>
+						<th>{{ 'text_setMinus' | translate }}&nbsp;&nbsp;</th>
+						<th>{{ 'text_gamingPlus' | translate }}&nbsp;&nbsp;</th>
+						<th>{{ 'text_gamingMinus' | translate }}&nbsp;&nbsp;&nbsp;</th>
+						<th>{{ 'text_penalty' | translate }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="tbl-row" ng-repeat="t in group.Teams" ng-click="openTeam(t.Id)" ng-class="{active: t.Id == tId}" >
+						<td class>{{$index+1}}</td>
+						<td>
+							<a class="thumb item-image img-circle">
+								<img actual-src="{{util.teamImage(t.Logo)}}" ng-src="images/league-default.png"/>
+							</a>
+						</td>
+						<td class="name rank-table-teamname">{{t.Title}}</td>
+						<td>{{t.TennisInfo.Matches}}</td>
+						<td>{{t.TennisInfo.Points}}</td>
+						<td>{{t.TennisInfo.Wins}}</td>
+						<td>{{t.TennisInfo.Lost}}</td>
+						<td>{{t.Draw}}</td>	
+						<td>{{t.TennisInfo.PlayersSetsWon}}</td>
+						<td>{{t.TennisInfo.PlayersSetsLost}}</td>
+						<td>{{t.TennisInfo.PlayersGamingWon}}</td>
+						<td>{{t.TennisInfo.PlayersGamingLost}}</td>
+						<td>{{t.TennisInfo.Penalties}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div ng-if="leagueTableStages[stageKey].Playoff">
+			<div class="main-label">{{leagueTableStages[stageKey].Name}}</div>
+			<div ng-repeat="group in leagueTableStages[stageKey].Groups">
+				<!--<pre>{{group | json}}</pre>-->
+				<table class="league-table" ng-class="{'rtl' : isCurrentLangIsHebrew()}">
+					<thead>
+						<tr class="header">
+							<th>{{ 'text_position' | translate }}</th>
+							<th colspan="2">{{ 'text_team' | translate }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="tbl-row" ng-repeat="(index, team) in group.Teams" ng-click="openTeam(team.Id)">
+							<td class="first">{{$index+1}}</td>
+							<td>
+								<div class="text-right">
+									<a class="thumb item-image img-circle">
+										<img actual-src="{{util.teamImage(team.Logo)}}" ng-src="images/league-default.png"/>
+									</a>
+								</div>
+							</td>
+							<td> 
+								<div class="text-left">
+									{{team.Title}}
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

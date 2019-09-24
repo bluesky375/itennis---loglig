@@ -1,0 +1,21 @@
+<ion-view cache-view="false" class="content">
+
+    <referee-user-header></referee-user-header>
+
+    <ion-content class="fan-content" delegate-handle="refereePageDelegate" overflow-scroll="true">
+
+
+        <div class="tabs-view rtl">
+            <div class="league-tabs">
+                <app-game-box-edit info="refereeGames.ClosedGames" stat="'prev'"></app-game-box-edit>
+            </div>
+        </div>
+        <app-next-game-edit ng-if="refereeGames.LiveGame" id="nextGameRow" info="refereeGames.LiveGame" game="refereeGames.LiveGame"></app-next-game-edit>
+        <div class="tabs-view rtl">
+            <div class="league-tabs">
+                <app-game-box-edit info="refereeGames.NextGames" stat="'next'"></app-game-box-edit>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

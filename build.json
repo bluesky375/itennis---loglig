@@ -1,0 +1,11 @@
+{
+  "android": {
+    "release": {
+      "keystore": "loglig_release.keystore",
+      "storePassword": "PICpic123",
+      "alias": "Loglig-Israel-Tennis",
+      "password": "PICpic123",
+      "keystoreType": "JKS"
+    }
+  }
+}
